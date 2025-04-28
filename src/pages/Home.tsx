@@ -3,6 +3,7 @@ import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import Hero from '../components/Hero';
 import ServicePreview from '../components/ServicePreview';
+import Testimonials from '../components/Testimonials';
 
 const Home: React.FC = () => {
   return (
@@ -25,6 +26,7 @@ const Home: React.FC = () => {
           </a>
         </section>
       </div>
+      <Testimonials />
     </div>
   );
 };
