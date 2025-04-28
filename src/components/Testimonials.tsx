@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Quote } from 'lucide-react';
 import {
@@ -16,7 +17,22 @@ const testimonials = [
     title: "Academic Director, St. James's Boy School Ashford"
   },
   {
+    text: "Helpful support materials were made available for parents along with tools to create a healthier, happier & stronger relationship with their sons.",
+    author: "Lorraine Soares",
+    title: "Academic Director, St. James's Boy School Ashford"
+  },
+  {
+    text: "Mette's clear experience shone through, and her facilitation skills were very strong, specifically she handled sensitive questions very well. The feedback received was very strong with requests for further sessions.",
+    author: "Lorraine Soares",
+    title: "Academic Director, St. James's Boy School Ashford"
+  },
+  {
     text: "Mette is a wonderful presenter who clearly knows her stuff.",
+    author: "Dan Boorman",
+    title: "Deputy Headmaster, Bishopsgate School Egham"
+  },
+  {
+    text: "Mette's workshops were clearly structured, providing valuable and insightful information on raising a resilient child. I would fully recommend Mette's services and plan to use her company to run more workshops in the future.",
     author: "Dan Boorman",
     title: "Deputy Headmaster, Bishopsgate School Egham"
   },
@@ -26,29 +42,34 @@ const testimonials = [
     title: "HR Manager, Elavon U.S, Global Bank"
   },
   {
-    text: "The workshop provided excellent insights into modern parenting challenges. Highly recommended!",
-    author: "Sarah Johnson",
-    title: "Parent Coordinator, Brighton International School"
+    text: "I have no hesitation in recommending Mette. In fact, I would actively encourage by colleagues in other organisations to use her services to address the challenges of modern parenting.",
+    author: "Hamza Siddiq",
+    title: "HR Manager, Elavon U.S, Global Bank"
   },
   {
-    text: "Mette's approach to parenting education is both practical and enlightening. A true expert in her field.",
-    author: "Michael Chen",
-    title: "School Principal, Westminster Academy"
+    text: "Mette has organised and run a series of very successful separated parents' groups. The workshops are always on a relevant, engaging topic and are delivered with compassion, empathy and professionalism.",
+    author: "Emma Newman",
+    title: "Managing Partner, Stowe Family Law"
   },
   {
-    text: "The strategies shared in the workshop have made a significant difference in our school community.",
-    author: "Emma Thompson",
-    title: "Head of Parent Relations, St. Mary's College"
+    text: "Mette is incredibly easy to work with. She really listens to what you need and adapts her materials to suit the audience.",
+    author: "Emily Sampson",
+    title: "Trustee, Homestart Slough"
   },
   {
-    text: "An invaluable resource for parents and educators alike. Mette's expertise shines through.",
-    author: "James Wilson",
-    title: "Education Consultant"
+    text: "Mette's relaxed and engaging personal style has allowed our parents to really open up about their issues and to share their stories.",
+    author: "Emily Sampson",
+    title: "Trustee, Homestart Slough"
   },
   {
-    text: "The parent-teacher workshops were transformative for our school's approach to family engagement.",
-    author: "Rebecca Martinez",
-    title: "Family Engagement Coordinator, Global Education Institute"
+    text: "Mette offers practical tips for building strong bonds between family members, which parents can immediately take away and use!",
+    author: "Emily Sampson",
+    title: "Trustee, Homestart Slough"
+  },
+  {
+    text: "As well as running courses for us, Mette has been to speak at our Annual General Meeting where she won over an audience of Trustees, volunteers and referrers with her enthusiasm and passion for the work that she does.",
+    author: "Emily Sampson",
+    title: "Trustee, Homestart Slough"
   }
 ];
 
