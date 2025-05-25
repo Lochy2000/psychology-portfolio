@@ -11,20 +11,22 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ title, icon: Icon, description, details }: ServiceCardProps) => {
   return (
-    <div className="bg-white/50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-      <div className="flex items-center gap-3 mb-4">
-        <Icon className="text-sage-green" size={24} />
-        <h3 className="text-xl font-serif font-bold text-deep-teal">{title}</h3>
+    <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:bg-white/90 h-full">
+      <div className="flex items-center gap-4 mb-6">
+        <div className="w-14 h-14 bg-gradient-to-br from-sage-green to-blush-pink rounded-full flex items-center justify-center">
+          <Icon className="text-white" size={28} />
+        </div>
+        <h3 className="text-2xl font-serif font-bold text-deep-teal">{title}</h3>
       </div>
-      <p className="text-warm-gray mb-6">{description}</p>
-      <ul className="space-y-2">
+      <p className="text-warm-gray mb-8 leading-relaxed">{description}</p>
+      <div className="space-y-3">
         {details.map((detail, index) => (
-          <li key={index} className="flex items-center gap-2 text-warm-gray">
-            <span className="w-1.5 h-1.5 bg-sage-green rounded-full"></span>
-            <span>{detail}</span>
-          </li>
+          <div key={index} className="flex items-start gap-3 text-warm-gray">
+            <div className="w-2 h-2 bg-gradient-to-r from-sage-green to-blush-pink rounded-full mt-2 flex-shrink-0"></div>
+            <span className="text-sm leading-relaxed">{detail}</span>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
