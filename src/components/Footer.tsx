@@ -1,14 +1,13 @@
 
 import React from 'react';
-import { Facebook, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
+import { Facebook, Linkedin, Phone, Mail } from 'lucide-react';
 
 const Footer = () => {
-  const socialLinks = [
-    { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
+  const contactLinks = [
+    { icon: Mail, href: "mailto:mette@example.com", label: "Email" },
+    { icon: Phone, href: "tel:+33745233230", label: "Phone" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/mette-nyholm-theilmann-207947227/", label: "LinkedIn" },
+    { icon: Facebook, href: "https://www.facebook.com/mette.theilmann", label: "Facebook" },
   ];
 
   return (
@@ -16,20 +15,20 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center space-y-4">
           <div className="flex space-x-6">
-            {socialLinks.map((social) => (
+            {contactLinks.map((contact) => (
               <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                key={contact.label}
+                href={contact.href}
+                target={contact.href.startsWith('http') ? "_blank" : undefined}
+                rel={contact.href.startsWith('http') ? "noopener noreferrer" : undefined}
                 className="hover:text-sage-green transition-colors"
-                aria-label={social.label}
+                aria-label={contact.label}
               >
-                <social.icon size={24} />
+                <contact.icon size={24} />
               </a>
             ))}
           </div>
-          <p className="text-sm">© 2025 Mette. All rights reserved.</p>
+          <p className="text-sm">© 2025 Mette Nyholm Theilmann. All rights reserved.</p>
         </div>
       </div>
     </footer>

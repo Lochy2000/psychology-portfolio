@@ -32,7 +32,7 @@ I'm passionate about helping others - especially those living away from their ho
 
 Living in different cultures has taught me the power of perspective and how our environment shapes our stories. This experience allows me to understand the unique challenges faced by expats and those navigating cultural transitions.`,
       gradient: 'from-emerald-500/20 via-teal-500/10 to-transparent',
-      iconBg: 'from-emerald-500 to-teal-600'
+      iconBg: 'from-sage-green/60 to-deep-teal/60'
     },
     {
       id: 'philosophy',
@@ -45,7 +45,7 @@ We all hold the insight, wisdom, and strength to create meaningful change – ho
 
 My role is not to fix you or provide all the answers, but to create a safe space where you can explore, question, and rediscover your own truth. Together, we'll uncover the stories that shape your life and help you rewrite them in a way that truly serves you.`,
       gradient: 'from-rose-500/20 via-pink-500/10 to-transparent',
-      iconBg: 'from-rose-500 to-pink-600'
+      iconBg: 'from-blush-pink/60 to-sage-green/60'
     },
     {
       id: 'passion',
@@ -60,17 +60,21 @@ Together, we will embark on a journey of curiosity and exploration. We will look
 
 By the end of our work together, you will have the tools to rewrite your story - transforming it into a powerful narrative that supports your well-being and growth.`,
       gradient: 'from-purple-500/20 via-indigo-500/10 to-transparent',
-      iconBg: 'from-purple-500 to-indigo-600'
+      iconBg: 'from-warm-gray/60 to-deep-teal/60'
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cream via-blush-pink/5 to-sage-green/10 relative overflow-hidden">
-      {/* Animated background shapes */}
+      {/* Animated background shapes with subtle movement */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-blush-pink/10 to-sage-green/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-sage-green/10 to-deep-teal/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-purple-500/5 to-blush-pink/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        
+        {/* Subtle moving gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-sage-green/3 via-transparent to-blush-pink/3 animate-pulse opacity-40"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-deep-teal/2 via-transparent to-sage-green/2 animate-pulse opacity-60" style={{ animationDelay: '3s' }}></div>
       </div>
 
       <div className="container mx-auto px-4 py-12 lg:py-16 relative z-10">
@@ -92,8 +96,8 @@ By the end of our work together, you will have the tools to rewrite your story -
                       <div className={`absolute inset-0 bg-gradient-to-br ${section.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
                       <div className="relative z-10">
                         <div className="flex items-center gap-3 mb-4">
-                          <div className={`w-12 h-12 bg-gradient-to-br ${section.iconBg} rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                            <section.icon className="text-white" size={24} />
+                          <div className={`w-10 h-10 bg-gradient-to-br ${section.iconBg} rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                            <section.icon className="text-white" size={18} />
                           </div>
                           <h2 className="text-xl lg:text-2xl font-serif font-bold text-deep-teal">{section.title}</h2>
                         </div>
@@ -107,8 +111,8 @@ By the end of our work together, you will have the tools to rewrite your story -
                   <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto bg-gradient-to-br from-white via-white/95 to-blush-pink/10">
                     <DialogHeader>
                       <DialogTitle className="text-2xl font-serif font-bold text-deep-teal flex items-center gap-3">
-                        <div className={`w-10 h-10 bg-gradient-to-br ${section.iconBg} rounded-full flex items-center justify-center`}>
-                          <section.icon className="text-white" size={20} />
+                        <div className={`w-8 h-8 bg-gradient-to-br ${section.iconBg} rounded-full flex items-center justify-center`}>
+                          <section.icon className="text-white" size={16} />
                         </div>
                         {section.title}
                       </DialogTitle>
@@ -149,10 +153,10 @@ By the end of our work together, you will have the tools to rewrite your story -
                   className={`bg-gradient-to-br from-white/90 via-white/80 to-transparent backdrop-blur-sm p-4 lg:p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-white/30 group cursor-pointer relative overflow-hidden ${qualVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-warm-gray/10 via-sage-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="flex items-center gap-3 relative z-10">
-                    <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <BookOpen className="text-white flex-shrink-0" size={16} />
+                    <div className="w-6 h-6 bg-gradient-to-br from-warm-gray/60 to-sage-green/60 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm">
+                      <BookOpen className="text-white flex-shrink-0" size={12} />
                     </div>
                     <span className="text-warm-gray text-sm lg:text-base font-medium">{qualification}</span>
                   </div>
