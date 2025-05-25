@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Book, Heart } from 'lucide-react';
 
@@ -7,46 +6,49 @@ const Hero: React.FC = () => {
     <div className="relative">
       {/* Mobile Layout */}
       <div className="lg:hidden relative">
-        <div className="relative h-[70vh] overflow-hidden rounded-2xl">
+        {/* Title and subtitle above image on mobile */}
+        <div className="px-6 py-8 text-center">
+          <div className="space-y-4">
+            <h1 className="text-2xl font-serif font-bold text-deep-teal leading-tight">
+              Mette Nyholm Theilmann
+            </h1>
+            <p className="text-sm font-medium text-sage-green">
+              Narrative Psychologist | NLP Coach | Parenting Consultant
+            </p>
+          </div>
+        </div>
+        
+        {/* Image */}
+        <div className="relative h-[50vh] overflow-hidden rounded-2xl mx-6 mb-6">
           <img 
             src="https://res.cloudinary.com/dpw2txejq/image/upload/v1748177635/mette-website_baxurn.jpg" 
             alt="Mette Nyholm Theilmann - Narrative Psychologist" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/80 via-deep-teal/40 to-transparent"></div>
-          
-          {/* Text overlay */}
-          <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-            <div className="space-y-4">
-              <div className="space-y-2">
-                <h1 className="text-2xl font-serif font-bold leading-tight">
-                  Mette Nyholm Theilmann
-                </h1>
-                <p className="text-sm font-medium text-blush-pink">
-                  Narrative Psychologist | NLP Coach | Parenting Consultant
-                </p>
-              </div>
-              <h2 className="text-lg font-serif font-bold leading-relaxed">
-                Become the author of your own life by rewriting the story you tell yourself and others tell you
-              </h2>
-              <p className="text-sm leading-relaxed opacity-90">
-                Let's uncover the limiting beliefs that hold you back from living fully. By releasing what no longer serves you, we can rewrite a story that truly empowers and reflects who you are and want to be.
-              </p>
-              <div className="flex flex-col space-y-3 pt-4">
-                <a 
-                  href="/services" 
-                  className="flex items-center justify-center bg-gradient-to-r from-blush-pink via-sage-green to-deep-teal text-white px-6 py-3 rounded-full hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                >
-                  <Book className="mr-2" size={18} /> Explore Services
-                </a>
-                <a 
-                  href="/about" 
-                  className="flex items-center justify-center border-2 border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-deep-teal transition-all duration-300"
-                >
-                  <Heart className="mr-2" size={18} /> About Mette
-                </a>
-              </div>
-            </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/20 via-transparent to-transparent rounded-2xl"></div>
+        </div>
+        
+        {/* Content below image on mobile */}
+        <div className="px-6 pb-8 space-y-6">
+          <h2 className="text-lg font-serif font-bold text-deep-teal leading-relaxed">
+            Become the author of your own life by rewriting the story you tell yourself and others tell you
+          </h2>
+          <p className="text-sm text-warm-gray leading-relaxed">
+            Let's uncover the limiting beliefs that hold you back from living fully. By releasing what no longer serves you, we can rewrite a story that truly empowers and reflects who you are and want to be.
+          </p>
+          <div className="flex flex-col space-y-3 pt-4">
+            <a 
+              href="/services" 
+              className="flex items-center justify-center bg-gradient-to-r from-blush-pink via-sage-green to-deep-teal text-white px-6 py-3 rounded-full hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            >
+              <Book className="mr-2" size={18} /> Explore Services
+            </a>
+            <a 
+              href="/about" 
+              className="flex items-center justify-center border-2 border-sage-green text-sage-green px-6 py-3 rounded-full hover:bg-sage-green hover:text-white transition-all duration-300"
+            >
+              <Heart className="mr-2" size={18} /> About Mette
+            </a>
           </div>
         </div>
       </div>
