@@ -78,7 +78,7 @@ const ServicePreview: React.FC = () => {
           Tailored approaches to help you transform your life story and step into your personal power.
         </p>
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
         {services.map((service, index) => (
           <div 
             key={index} 
