@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Book, Heart } from 'lucide-react';
 
@@ -9,9 +10,6 @@ const Hero: React.FC = () => {
         {/* Title and subtitle above image on mobile */}
         <div className="px-6 py-8 text-center">
           <div className="space-y-4">
-            <h1 className="text-2xl font-serif font-bold text-deep-teal leading-tight">
-              Mette Nyholm Theilmann
-            </h1>
             <p className="text-sm font-medium text-sage-green">
               Narrative Psychologist | NLP Coach | Parenting Consultant
             </p>
@@ -36,6 +34,23 @@ const Hero: React.FC = () => {
           <p className="text-sm text-warm-gray leading-relaxed">
             Let's uncover the limiting beliefs that hold you back from living fully. By releasing what no longer serves you, we can rewrite a story that truly empowers and reflects who you are and want to be.
           </p>
+          
+          {/* Contact Information */}
+          <div className="bg-gradient-to-br from-sage-green/5 to-blush-pink/5 p-4 rounded-2xl border border-sage-green/20">
+            <div className="space-y-2 text-sm">
+              <p className="text-deep-teal font-medium">Get in touch:</p>
+              <p className="text-warm-gray">
+                <span className="font-medium">Email:</span> mette@metteteilmann.com
+              </p>
+              <p className="text-warm-gray">
+                <span className="font-medium">Mobile (France):</span> 0033 745 233 230
+              </p>
+              <p className="text-warm-gray">
+                <span className="font-medium">Mobile (UK):</span> 0447 756 918 126
+              </p>
+            </div>
+          </div>
+
           <div className="flex flex-col space-y-3 pt-4">
             <a 
               href="/services" 
@@ -47,7 +62,7 @@ const Hero: React.FC = () => {
               href="/about" 
               className="flex items-center justify-center border-2 border-sage-green text-sage-green px-6 py-3 rounded-full hover:bg-sage-green hover:text-white transition-all duration-300"
             >
-              <Heart className="mr-2" size={18} /> About Mette
+              <Heart className="mr-2" size={18} /> About
             </a>
           </div>
         </div>
@@ -57,9 +72,6 @@ const Hero: React.FC = () => {
       <div className="hidden lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fade-in">
         <div className="space-y-6 order-2 lg:order-1">
           <div className="space-y-2">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-deep-teal leading-tight">
-              Mette Nyholm Theilmann
-            </h1>
             <p className="text-lg sm:text-xl text-sage-green font-medium">
               Narrative Psychologist | NLP Coach | Parenting Consultant
             </p>
@@ -73,6 +85,28 @@ const Hero: React.FC = () => {
           <p className="text-base lg:text-lg text-warm-gray italic border-l-4 border-gradient-to-b from-blush-pink to-sage-green pl-4 bg-gradient-to-r from-blush-pink/10 to-sage-green/10 p-4 rounded-r-lg">
             "Our identity is not formed in isolation - we develop, heal, and grow through connections with others. People are shaped by people."
           </p>
+          
+          {/* Contact Information */}
+          <div className="bg-gradient-to-br from-sage-green/5 to-blush-pink/5 p-6 rounded-2xl border border-sage-green/20">
+            <div className="space-y-3">
+              <p className="text-deep-teal font-semibold text-lg">Get in touch:</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                <p className="text-warm-gray">
+                  <span className="font-medium">Email:</span><br />
+                  mette@metteteilmann.com
+                </p>
+                <p className="text-warm-gray">
+                  <span className="font-medium">Mobile (France):</span><br />
+                  0033 745 233 230
+                </p>
+                <p className="text-warm-gray md:col-span-1">
+                  <span className="font-medium">Mobile (UK):</span><br />
+                  0447 756 918 126
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
             <a 
               href="/services" 
@@ -84,7 +118,7 @@ const Hero: React.FC = () => {
               href="/about" 
               className="flex items-center justify-center border-2 border-sage-green text-deep-teal px-6 lg:px-8 py-3 lg:py-4 rounded-full hover:bg-gradient-to-r hover:from-sage-green hover:to-blush-pink hover:text-white transition-all duration-300 hover:shadow-xl"
             >
-              <Heart className="mr-2" /> About Mette
+              <Heart className="mr-2" /> About
             </a>
           </div>
         </div>

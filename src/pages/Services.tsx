@@ -1,15 +1,18 @@
 
-import React from 'react';
-import { Brain, Users, Heart, Building2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { Brain, Users, Heart, Building2, X } from 'lucide-react';
 import ExpandableContentCard from '../components/ExpandableContentCard';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
+import { useIsMobile } from '../hooks/use-mobile';
 
 const Services = () => {
   const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
   const { ref: approachRef, isVisible: approachVisible } = useScrollAnimation();
   const { ref: workingRef, isVisible: workingVisible } = useScrollAnimation();
+  const isMobile = useIsMobile();
+  const [activeModal, setActiveModal] = useState<string | null>(null);
 
   const services = [
     {
@@ -58,6 +61,25 @@ Together, we'll create a new narrative that reflects how you want your family li
       iconBg: 'from-rose-500 to-pink-600'
     },
     {
+      title: "HerEdge Côte d'Azur",
+      icon: Building2,
+      summary: "Local networking and support for women in the French Riviera region.",
+      fullContent: `HerEdge Côte d'Azur is our local chapter dedicated to supporting women in the French Riviera region.
+
+We create opportunities for networking, professional development, and personal growth specifically tailored to the unique needs of women living and working on the Côte d'Azur.
+
+Our local initiatives include:
+• Monthly networking events
+• Professional mentorship programs
+• Work-life balance workshops
+• Cultural integration support for expat women
+• Local business development opportunities
+
+Join our community of empowered women making their mark on the French Riviera.`,
+      gradient: 'from-blue-500/20 via-teal-500/10 to-transparent',
+      iconBg: 'from-blue-500 to-teal-600'
+    },
+    {
       title: "HerEdge Corporate Support",
       icon: Building2,
       summary: "Creating workplaces where women are truly seen, supported, and empowered beyond simple representation.",
@@ -76,6 +98,176 @@ We believe true progress includes everyone. That's why we actively engage men - 
       iconBg: 'from-amber-500 to-orange-600'
     }
   ];
+
+  const workingOptions = [
+    {
+      id: 'discovery',
+      title: 'Discovery Call',
+      content: (
+        <div className="bg-gradient-to-br from-sage-green/5 to-blush-pink/5 p-6 md:p-8 rounded-2xl border border-sage-green/20">
+          <h3 className="text-xl md:text-2xl font-serif font-bold text-deep-teal mb-4 flex items-center">
+            <span className="w-6 h-6 bg-sage-green rounded-full mr-3 flex-shrink-0"></span>
+            Free 20-Minute Discovery Call (on Zoom)
+          </h3>
+          <p className="text-warm-gray mb-6 leading-relaxed">We begin with a free 20-minute Zoom call where:</p>
+          <ul className="space-y-3 text-warm-gray mb-6">
+            <li className="flex items-start">
+              <span className="text-sage-green mr-2">•</span>
+              You get a feel for how I work.
+            </li>
+            <li className="flex items-start">
+              <span className="text-sage-green mr-2">•</span>
+              I gain a deeper understanding of your situation and needs.
+            </li>
+            <li className="flex items-start">
+              <span className="text-sage-green mr-2">•</span>
+              We both decide if we're a good fit to work together.
+            </li>
+          </ul>
+          <p className="text-deep-teal font-medium">➡️ No pressure, just a friendly intro chat to explore possibilities.</p>
+        </div>
+      )
+    },
+    {
+      id: 'ongoing',
+      title: 'Ongoing Support (Online or In-Person)',
+      content: (
+        <div className="space-y-8">
+          <div className="bg-gradient-to-br from-blush-pink/5 to-sage-green/5 p-6 md:p-8 rounded-2xl border border-blush-pink/20">
+            <h3 className="text-xl md:text-2xl font-serif font-bold text-deep-teal mb-4 flex items-center">
+              <span className="w-6 h-6 bg-sage-green rounded-full mr-3 flex-shrink-0"></span>
+              Option A: Online via Zoom
+            </h3>
+            <p className="text-warm-gray mb-4"><strong>Format:</strong> 3 x 60-minute sessions</p>
+            <p className="text-warm-gray mb-4">Between sessions, you'll receive:</p>
+            <ul className="space-y-2 text-warm-gray mb-4">
+              <li className="flex items-start">
+                <span className="text-blush-pink mr-2">•</span>
+                A personalized summary report with key insights and next steps
+              </li>
+              <li className="flex items-start">
+                <span className="text-blush-pink mr-2">•</span>
+                Relevant articles to support your journey
+              </li>
+              <li className="flex items-start">
+                <span className="text-blush-pink mr-2">•</span>
+                For parenting clients: Access to supportive videos
+              </li>
+            </ul>
+          </div>
+          
+          <div className="bg-gradient-to-br from-deep-teal/5 to-blush-pink/5 p-6 md:p-8 rounded-2xl border border-deep-teal/20">
+            <h3 className="text-xl md:text-2xl font-serif font-bold text-deep-teal mb-4 flex items-center">
+              <span className="w-6 h-6 bg-sage-green rounded-full mr-3 flex-shrink-0"></span>
+              Option B: In Person (Côte d'Azur)
+            </h3>
+            <p className="text-warm-gray mb-4"><strong>Format:</strong> 3 x 60-minute sessions</p>
+            <p className="text-warm-gray mb-4"><strong>Location options:</strong></p>
+            <ul className="space-y-2 text-warm-gray mb-6">
+              <li className="flex items-start">
+                <span className="text-deep-teal mr-2">•</span>
+                At your home
+              </li>
+              <li className="flex items-start">
+                <span className="text-deep-teal mr-2">•</span>
+                In a rented space (+ €15/session)
+              </li>
+            </ul>
+            <p className="text-warm-gray mb-4"><strong>Experience:</strong></p>
+            <p className="text-warm-gray mb-4">Creative, hands-on exploration using practical methods</p>
+            <p className="text-warm-gray mb-4">Between sessions, you'll receive:</p>
+            <ul className="space-y-2 text-warm-gray">
+              <li className="flex items-start">
+                <span className="text-deep-teal mr-2">•</span>
+                A personalized action report
+              </li>
+              <li className="flex items-start">
+                <span className="text-deep-teal mr-2">•</span>
+                Articles for further support
+              </li>
+              <li className="flex items-start">
+                <span className="text-deep-teal mr-2">•</span>
+                Parenting videos + a journal for reflection
+              </li>
+            </ul>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'organisations',
+      title: 'Organisations & Schools',
+      content: (
+        <div className="bg-gradient-to-br from-sage-green/5 to-deep-teal/5 p-6 md:p-8 rounded-2xl border border-sage-green/20">
+          <h3 className="text-xl md:text-2xl font-serif font-bold text-deep-teal mb-4 flex items-center">
+            <span className="w-6 h-6 bg-sage-green rounded-full mr-3 flex-shrink-0"></span>
+            Tailored Support for Businesses, Schools & Community Groups
+          </h3>
+          <p className="text-warm-gray mb-6 leading-relaxed">We offer bespoke packages, developed collaboratively to create meaningful, lasting impact.</p>
+          
+          <p className="text-warm-gray mb-4 font-medium">Step-by-step approach:</p>
+          <ol className="space-y-3 text-warm-gray mb-6">
+            <li className="flex items-start">
+              <span className="text-sage-green mr-3 font-bold">1.</span>
+              Free Introductory Zoom Call
+            </li>
+            <li className="flex items-start">
+              <span className="text-sage-green mr-3 font-bold">2.</span>
+              Two in-person consultation sessions at your office
+            </li>
+            <li className="flex items-start">
+              <span className="text-sage-green mr-3 font-bold">3.</span>
+              Custom Package Creation including:
+              <ul className="ml-6 mt-2 space-y-1">
+                <li className="flex items-start">
+                  <span className="text-deep-teal mr-2">•</span>
+                  Webinars
+                </li>
+                <li className="flex items-start">
+                  <span className="text-deep-teal mr-2">•</span>
+                  In-house workshops
+                </li>
+                <li className="flex items-start">
+                  <span className="text-deep-teal mr-2">•</span>
+                  Resource memberships
+                </li>
+                <li className="flex items-start">
+                  <span className="text-deep-teal mr-2">•</span>
+                  Curated articles & toolkits
+                </li>
+                <li className="flex items-start">
+                  <span className="text-deep-teal mr-2">•</span>
+                  Other tailored services
+                </li>
+              </ul>
+            </li>
+          </ol>
+          
+          <p className="text-deep-teal font-medium"><strong>Outcome:</strong> A plan that aligns with your team's needs, values, and vision for long-term change.</p>
+        </div>
+      )
+    }
+  ];
+
+  const MobileModal = ({ option, isOpen, onClose }: { option: typeof workingOptions[0], isOpen: boolean, onClose: () => void }) => {
+    if (!isOpen) return null;
+    
+    return (
+      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+          <div className="sticky top-0 bg-white border-b p-4 flex justify-between items-center rounded-t-2xl">
+            <h2 className="text-lg font-serif font-bold text-deep-teal">{option.title}</h2>
+            <button onClick={onClose} className="p-2 hover:bg-sage-green/10 rounded-full">
+              <X size={20} />
+            </button>
+          </div>
+          <div className="p-4">
+            {option.content}
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cream via-cream/90 to-blush-pink/15 relative overflow-hidden">
@@ -175,139 +367,39 @@ We believe true progress includes everyone. That's why we actively engage men - 
               How We Can Work Together
             </h2>
             
-            <Tabs defaultValue="discovery" className="w-full">
-              <TabsList className="grid w-full grid-cols-3 mb-8 bg-sage-green/10">
-                <TabsTrigger value="discovery" className="data-[state=active]:bg-sage-green data-[state=active]:text-white">Discovery Call</TabsTrigger>
-                <TabsTrigger value="ongoing" className="data-[state=active]:bg-sage-green data-[state=active]:text-white">Ongoing Support</TabsTrigger>
-                <TabsTrigger value="organisations" className="data-[state=active]:bg-sage-green data-[state=active]:text-white">Organisations & Schools</TabsTrigger>
-              </TabsList>
-              
-              <TabsContent value="discovery" className="mt-8">
-                <div className="bg-gradient-to-br from-sage-green/5 to-blush-pink/5 p-8 rounded-2xl border border-sage-green/20">
-                  <h3 className="text-2xl font-serif font-bold text-deep-teal mb-4">🟢 Free 20-Minute Discovery Call (on Zoom)</h3>
-                  <p className="text-warm-gray mb-6 leading-relaxed">We begin with a free 20-minute Zoom call where:</p>
-                  <ul className="space-y-3 text-warm-gray mb-6">
-                    <li className="flex items-start">
-                      <span className="text-sage-green mr-2">•</span>
-                      You get a feel for how I work.
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-sage-green mr-2">•</span>
-                      I gain a deeper understanding of your situation and needs.
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-sage-green mr-2">•</span>
-                      We both decide if we're a good fit to work together.
-                    </li>
-                  </ul>
-                  <p className="text-deep-teal font-medium">➡️ No pressure, just a friendly intro chat to explore possibilities.</p>
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="ongoing" className="mt-8">
-                <div className="space-y-8">
-                  <div className="bg-gradient-to-br from-blush-pink/5 to-sage-green/5 p-8 rounded-2xl border border-blush-pink/20">
-                    <h3 className="text-2xl font-serif font-bold text-deep-teal mb-4">🟢 Option A: Online via Zoom</h3>
-                    <p className="text-warm-gray mb-4"><strong>Format:</strong> 3 x 60-minute sessions</p>
-                    <p className="text-warm-gray mb-4">Between sessions, you'll receive:</p>
-                    <ul className="space-y-2 text-warm-gray mb-4">
-                      <li className="flex items-start">
-                        <span className="text-blush-pink mr-2">•</span>
-                        A personalized summary report with key insights and next steps
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-blush-pink mr-2">•</span>
-                        Relevant articles to support your journey
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-blush-pink mr-2">•</span>
-                        For parenting clients: Access to supportive videos
-                      </li>
-                    </ul>
+            {isMobile ? (
+              <div className="space-y-4">
+                {workingOptions.map((option) => (
+                  <div key={option.id}>
+                    <button
+                      onClick={() => setActiveModal(option.id)}
+                      className="w-full p-4 bg-sage-green/10 hover:bg-sage-green/20 rounded-2xl text-left transition-colors border border-sage-green/20"
+                    >
+                      <h3 className="font-serif font-bold text-deep-teal text-lg">{option.title}</h3>
+                    </button>
+                    <MobileModal 
+                      option={option} 
+                      isOpen={activeModal === option.id} 
+                      onClose={() => setActiveModal(null)} 
+                    />
                   </div>
-                  
-                  <div className="bg-gradient-to-br from-deep-teal/5 to-blush-pink/5 p-8 rounded-2xl border border-deep-teal/20">
-                    <h3 className="text-2xl font-serif font-bold text-deep-teal mb-4">🟢 Option B: In Person (Côte d'Azur)</h3>
-                    <p className="text-warm-gray mb-4"><strong>Format:</strong> 3 x 60-minute sessions</p>
-                    <p className="text-warm-gray mb-4"><strong>Location options:</strong></p>
-                    <ul className="space-y-2 text-warm-gray mb-6">
-                      <li className="flex items-start">
-                        <span className="text-deep-teal mr-2">•</span>
-                        At your home
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-deep-teal mr-2">•</span>
-                        In a rented space (+ €15/session)
-                      </li>
-                    </ul>
-                    <p className="text-warm-gray mb-4"><strong>Experience:</strong></p>
-                    <p className="text-warm-gray mb-4">Creative, hands-on exploration using practical methods</p>
-                    <p className="text-warm-gray mb-4">Between sessions, you'll receive:</p>
-                    <ul className="space-y-2 text-warm-gray">
-                      <li className="flex items-start">
-                        <span className="text-deep-teal mr-2">•</span>
-                        A personalized action report
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-deep-teal mr-2">•</span>
-                        Articles for further support
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-deep-teal mr-2">•</span>
-                        Parenting videos + a journal for reflection
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="organisations" className="mt-8">
-                <div className="bg-gradient-to-br from-sage-green/5 to-deep-teal/5 p-8 rounded-2xl border border-sage-green/20">
-                  <h3 className="text-2xl font-serif font-bold text-deep-teal mb-4">🟢 Tailored Support for Businesses, Schools & Community Groups</h3>
-                  <p className="text-warm-gray mb-6 leading-relaxed">We offer bespoke packages, developed collaboratively to create meaningful, lasting impact.</p>
-                  
-                  <p className="text-warm-gray mb-4 font-medium">Step-by-step approach:</p>
-                  <ol className="space-y-3 text-warm-gray mb-6">
-                    <li className="flex items-start">
-                      <span className="text-sage-green mr-3 font-bold">1.</span>
-                      Free Introductory Zoom Call
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-sage-green mr-3 font-bold">2.</span>
-                      Two in-person consultation sessions at your office
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-sage-green mr-3 font-bold">3.</span>
-                      Custom Package Creation including:
-                      <ul className="ml-6 mt-2 space-y-1">
-                        <li className="flex items-start">
-                          <span className="text-deep-teal mr-2">•</span>
-                          Webinars
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-deep-teal mr-2">•</span>
-                          In-house workshops
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-deep-teal mr-2">•</span>
-                          Resource memberships
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-deep-teal mr-2">•</span>
-                          Curated articles & toolkits
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-deep-teal mr-2">•</span>
-                          Other tailored services
-                        </li>
-                      </ul>
-                    </li>
-                  </ol>
-                  
-                  <p className="text-deep-teal font-medium"><strong>Outcome:</strong> A plan that aligns with your team's needs, values, and vision for long-term change.</p>
-                </div>
-              </TabsContent>
-            </Tabs>
+                ))}
+              </div>
+            ) : (
+              <Tabs defaultValue="discovery" className="w-full">
+                <TabsList className="grid w-full grid-cols-3 mb-8 bg-sage-green/10">
+                  <TabsTrigger value="discovery" className="data-[state=active]:bg-sage-green data-[state=active]:text-white">Discovery Call</TabsTrigger>
+                  <TabsTrigger value="ongoing" className="data-[state=active]:bg-sage-green data-[state=active]:text-white">Ongoing Support</TabsTrigger>
+                  <TabsTrigger value="organisations" className="data-[state=active]:bg-sage-green data-[state=active]:text-white">Organisations & Schools</TabsTrigger>
+                </TabsList>
+                
+                {workingOptions.map((option) => (
+                  <TabsContent key={option.id} value={option.id} className="mt-8">
+                    {option.content}
+                  </TabsContent>
+                ))}
+              </Tabs>
+            )}
           </div>
         </section>
       </div>
