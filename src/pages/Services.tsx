@@ -1,8 +1,10 @@
+
 import React from 'react';
 import { Brain, Users, Heart, Building2 } from 'lucide-react';
 import ExpandableContentCard from '../components/ExpandableContentCard';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../components/ui/dialog';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 
 const Services = () => {
   const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
@@ -172,20 +174,140 @@ We believe true progress includes everyone. That's why we actively engage men - 
             <h2 className="text-3xl lg:text-4xl font-serif font-bold text-deep-teal mb-8 text-center">
               How We Can Work Together
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-gradient-to-br from-sage-green/5 to-blush-pink/5 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-sage-green/10">
-                <h3 className="font-serif font-bold text-deep-teal mb-3 text-lg">1:1 Sessions</h3>
-                <p className="text-warm-gray text-sm leading-relaxed">In-person (Côte d'Azur) or international online, tailored to your unique situation and goals.</p>
-              </div>
-              <div className="bg-gradient-to-br from-blush-pink/5 to-sage-green/5 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-blush-pink/10">
-                <h3 className="font-serif font-bold text-deep-teal mb-3 text-lg">Workshops & Talks</h3>
-                <p className="text-warm-gray text-sm leading-relaxed">Interactive, practical, and designed to meet the needs of your organisation - whether it's a company, school, or community group.</p>
-              </div>
-              <div className="bg-gradient-to-br from-deep-teal/5 to-blush-pink/5 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-deep-teal/10">
-                <h3 className="font-serif font-bold text-deep-teal mb-3 text-lg">Customised Programs</h3>
-                <p className="text-warm-gray text-sm leading-relaxed">Developed in collaboration with your company or school to create long-term, meaningful impact for parents, staff, and students.</p>
-              </div>
-            </div>
+            
+            <Tabs defaultValue="discovery" className="w-full">
+              <TabsList className="grid w-full grid-cols-3 mb-8 bg-sage-green/10">
+                <TabsTrigger value="discovery" className="data-[state=active]:bg-sage-green data-[state=active]:text-white">Discovery Call</TabsTrigger>
+                <TabsTrigger value="ongoing" className="data-[state=active]:bg-sage-green data-[state=active]:text-white">Ongoing Support</TabsTrigger>
+                <TabsTrigger value="organisations" className="data-[state=active]:bg-sage-green data-[state=active]:text-white">Organisations & Schools</TabsTrigger>
+              </TabsList>
+              
+              <TabsContent value="discovery" className="mt-8">
+                <div className="bg-gradient-to-br from-sage-green/5 to-blush-pink/5 p-8 rounded-2xl border border-sage-green/20">
+                  <h3 className="text-2xl font-serif font-bold text-deep-teal mb-4">🟢 Free 20-Minute Discovery Call (on Zoom)</h3>
+                  <p className="text-warm-gray mb-6 leading-relaxed">We begin with a free 20-minute Zoom call where:</p>
+                  <ul className="space-y-3 text-warm-gray mb-6">
+                    <li className="flex items-start">
+                      <span className="text-sage-green mr-2">•</span>
+                      You get a feel for how I work.
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-sage-green mr-2">•</span>
+                      I gain a deeper understanding of your situation and needs.
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-sage-green mr-2">•</span>
+                      We both decide if we're a good fit to work together.
+                    </li>
+                  </ul>
+                  <p className="text-deep-teal font-medium">➡️ No pressure, just a friendly intro chat to explore possibilities.</p>
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="ongoing" className="mt-8">
+                <div className="space-y-8">
+                  <div className="bg-gradient-to-br from-blush-pink/5 to-sage-green/5 p-8 rounded-2xl border border-blush-pink/20">
+                    <h3 className="text-2xl font-serif font-bold text-deep-teal mb-4">🟢 Option A: Online via Zoom</h3>
+                    <p className="text-warm-gray mb-4"><strong>Format:</strong> 3 x 60-minute sessions</p>
+                    <p className="text-warm-gray mb-4">Between sessions, you'll receive:</p>
+                    <ul className="space-y-2 text-warm-gray mb-4">
+                      <li className="flex items-start">
+                        <span className="text-blush-pink mr-2">•</span>
+                        A personalized summary report with key insights and next steps
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-blush-pink mr-2">•</span>
+                        Relevant articles to support your journey
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-blush-pink mr-2">•</span>
+                        For parenting clients: Access to supportive videos
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-deep-teal/5 to-blush-pink/5 p-8 rounded-2xl border border-deep-teal/20">
+                    <h3 className="text-2xl font-serif font-bold text-deep-teal mb-4">🟢 Option B: In Person (Côte d'Azur)</h3>
+                    <p className="text-warm-gray mb-4"><strong>Format:</strong> 3 x 60-minute sessions</p>
+                    <p className="text-warm-gray mb-4"><strong>Location options:</strong></p>
+                    <ul className="space-y-2 text-warm-gray mb-6">
+                      <li className="flex items-start">
+                        <span className="text-deep-teal mr-2">•</span>
+                        At your home
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-deep-teal mr-2">•</span>
+                        In a rented space (+ €15/session)
+                      </li>
+                    </ul>
+                    <p className="text-warm-gray mb-4"><strong>Experience:</strong></p>
+                    <p className="text-warm-gray mb-4">Creative, hands-on exploration using practical methods</p>
+                    <p className="text-warm-gray mb-4">Between sessions, you'll receive:</p>
+                    <ul className="space-y-2 text-warm-gray">
+                      <li className="flex items-start">
+                        <span className="text-deep-teal mr-2">•</span>
+                        A personalized action report
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-deep-teal mr-2">•</span>
+                        Articles for further support
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-deep-teal mr-2">•</span>
+                        Parenting videos + a journal for reflection
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="organisations" className="mt-8">
+                <div className="bg-gradient-to-br from-sage-green/5 to-deep-teal/5 p-8 rounded-2xl border border-sage-green/20">
+                  <h3 className="text-2xl font-serif font-bold text-deep-teal mb-4">🟢 Tailored Support for Businesses, Schools & Community Groups</h3>
+                  <p className="text-warm-gray mb-6 leading-relaxed">We offer bespoke packages, developed collaboratively to create meaningful, lasting impact.</p>
+                  
+                  <p className="text-warm-gray mb-4 font-medium">Step-by-step approach:</p>
+                  <ol className="space-y-3 text-warm-gray mb-6">
+                    <li className="flex items-start">
+                      <span className="text-sage-green mr-3 font-bold">1.</span>
+                      Free Introductory Zoom Call
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-sage-green mr-3 font-bold">2.</span>
+                      Two in-person consultation sessions at your office
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-sage-green mr-3 font-bold">3.</span>
+                      Custom Package Creation including:
+                      <ul className="ml-6 mt-2 space-y-1">
+                        <li className="flex items-start">
+                          <span className="text-deep-teal mr-2">•</span>
+                          Webinars
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-deep-teal mr-2">•</span>
+                          In-house workshops
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-deep-teal mr-2">•</span>
+                          Resource memberships
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-deep-teal mr-2">•</span>
+                          Curated articles & toolkits
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-deep-teal mr-2">•</span>
+                          Other tailored services
+                        </li>
+                      </ul>
+                    </li>
+                  </ol>
+                  
+                  <p className="text-deep-teal font-medium"><strong>Outcome:</strong> A plan that aligns with your team's needs, values, and vision for long-term change.</p>
+                </div>
+              </TabsContent>
+            </Tabs>
           </div>
         </section>
       </div>
