@@ -10,6 +10,9 @@ const Hero: React.FC = () => {
         {/* Title and subtitle above image on mobile */}
         <div className="px-6 py-8 text-center">
           <div className="space-y-4">
+            <h1 className="text-3xl font-serif font-bold text-deep-teal">
+              Mette Theilmann
+            </h1>
             <p className="text-sm font-medium text-sage-green">
               Narrative Psychologist | NLP Coach | Parenting Consultant
             </p>
@@ -72,6 +75,9 @@ const Hero: React.FC = () => {
       <div className="hidden lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fade-in">
         <div className="space-y-6 order-2 lg:order-1">
           <div className="space-y-2">
+            <h1 className="text-4xl lg:text-5xl font-serif font-bold text-deep-teal">
+              Mette Theilmann
+            </h1>
             <p className="text-lg sm:text-xl text-sage-green font-medium">
               Narrative Psychologist | NLP Coach | Parenting Consultant
             </p>

@@ -4,7 +4,6 @@ import { Brain, Users, Heart, Building2, X } from 'lucide-react';
 import ExpandableContentCard from '../components/ExpandableContentCard';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../components/ui/dialog';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { useIsMobile } from '../hooks/use-mobile';
 
 const Services = () => {
@@ -103,14 +102,19 @@ We believe true progress includes everyone. That's why we actively engage men - 
     {
       id: 'discovery',
       title: 'Discovery Call',
+      gradient: 'from-sage-green/20 via-sage-green/10 to-transparent',
       content: (
-        <div className="bg-gradient-to-br from-sage-green/5 to-blush-pink/5 p-6 md:p-8 rounded-2xl border border-sage-green/20">
-          <h3 className="text-xl md:text-2xl font-serif font-bold text-deep-teal mb-4 flex items-center">
-            <span className="w-6 h-6 bg-sage-green rounded-full mr-3 flex-shrink-0"></span>
-            Free 20-Minute Discovery Call (on Zoom)
-          </h3>
-          <p className="text-warm-gray mb-6 leading-relaxed">We begin with a free 20-minute Zoom call where:</p>
-          <ul className="space-y-3 text-warm-gray mb-6">
+        <div className="space-y-4">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 bg-sage-green rounded-full flex items-center justify-center flex-shrink-0">
+              <span className="text-white text-sm font-bold">1</span>
+            </div>
+            <h3 className="text-xl font-serif font-bold text-deep-teal">
+              Free 20-Minute Discovery Call (on Zoom)
+            </h3>
+          </div>
+          <p className="text-warm-gray mb-4 leading-relaxed">We begin with a free 20-minute Zoom call where:</p>
+          <ul className="space-y-2 text-warm-gray mb-4">
             <li className="flex items-start">
               <span className="text-sage-green mr-2">•</span>
               You get a feel for how I work.
@@ -130,40 +134,44 @@ We believe true progress includes everyone. That's why we actively engage men - 
     },
     {
       id: 'ongoing',
-      title: 'Ongoing Support (Online or In-Person)',
+      title: 'Ongoing Support',
+      gradient: 'from-blush-pink/20 via-blush-pink/10 to-transparent',
       content: (
-        <div className="space-y-8">
-          <div className="bg-gradient-to-br from-blush-pink/5 to-sage-green/5 p-6 md:p-8 rounded-2xl border border-blush-pink/20">
-            <h3 className="text-xl md:text-2xl font-serif font-bold text-deep-teal mb-4 flex items-center">
-              <span className="w-6 h-6 bg-sage-green rounded-full mr-3 flex-shrink-0"></span>
-              Option A: Online via Zoom
+        <div className="space-y-6">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 bg-blush-pink rounded-full flex items-center justify-center flex-shrink-0">
+              <span className="text-white text-sm font-bold">2</span>
+            </div>
+            <h3 className="text-xl font-serif font-bold text-deep-teal">
+              Online or In-Person Support
             </h3>
-            <p className="text-warm-gray mb-4"><strong>Format:</strong> 3 x 60-minute sessions</p>
-            <p className="text-warm-gray mb-4">Between sessions, you'll receive:</p>
-            <ul className="space-y-2 text-warm-gray mb-4">
+          </div>
+          
+          <div className="bg-gradient-to-br from-sage-green/10 to-transparent p-4 rounded-2xl border border-sage-green/20">
+            <h4 className="font-serif font-bold text-deep-teal mb-3">Option A: Online via Zoom</h4>
+            <p className="text-warm-gray mb-3"><strong>Format:</strong> 3 x 60-minute sessions</p>
+            <p className="text-warm-gray mb-2">Between sessions, you'll receive:</p>
+            <ul className="space-y-1 text-warm-gray text-sm">
               <li className="flex items-start">
-                <span className="text-blush-pink mr-2">•</span>
+                <span className="text-sage-green mr-2">•</span>
                 A personalized summary report with key insights and next steps
               </li>
               <li className="flex items-start">
-                <span className="text-blush-pink mr-2">•</span>
+                <span className="text-sage-green mr-2">•</span>
                 Relevant articles to support your journey
               </li>
               <li className="flex items-start">
-                <span className="text-blush-pink mr-2">•</span>
+                <span className="text-sage-green mr-2">•</span>
                 For parenting clients: Access to supportive videos
               </li>
             </ul>
           </div>
           
-          <div className="bg-gradient-to-br from-deep-teal/5 to-blush-pink/5 p-6 md:p-8 rounded-2xl border border-deep-teal/20">
-            <h3 className="text-xl md:text-2xl font-serif font-bold text-deep-teal mb-4 flex items-center">
-              <span className="w-6 h-6 bg-sage-green rounded-full mr-3 flex-shrink-0"></span>
-              Option B: In Person (Côte d'Azur)
-            </h3>
-            <p className="text-warm-gray mb-4"><strong>Format:</strong> 3 x 60-minute sessions</p>
-            <p className="text-warm-gray mb-4"><strong>Location options:</strong></p>
-            <ul className="space-y-2 text-warm-gray mb-6">
+          <div className="bg-gradient-to-br from-deep-teal/10 to-transparent p-4 rounded-2xl border border-deep-teal/20">
+            <h4 className="font-serif font-bold text-deep-teal mb-3">Option B: In Person (Côte d'Azur)</h4>
+            <p className="text-warm-gray mb-3"><strong>Format:</strong> 3 x 60-minute sessions</p>
+            <p className="text-warm-gray mb-2"><strong>Location options:</strong></p>
+            <ul className="space-y-1 text-warm-gray text-sm mb-3">
               <li className="flex items-start">
                 <span className="text-deep-teal mr-2">•</span>
                 At your home
@@ -173,10 +181,9 @@ We believe true progress includes everyone. That's why we actively engage men - 
                 In a rented space (+ €15/session)
               </li>
             </ul>
-            <p className="text-warm-gray mb-4"><strong>Experience:</strong></p>
-            <p className="text-warm-gray mb-4">Creative, hands-on exploration using practical methods</p>
-            <p className="text-warm-gray mb-4">Between sessions, you'll receive:</p>
-            <ul className="space-y-2 text-warm-gray">
+            <p className="text-warm-gray mb-2"><strong>Experience:</strong> Creative, hands-on exploration using practical methods</p>
+            <p className="text-warm-gray mb-2">Between sessions, you'll receive:</p>
+            <ul className="space-y-1 text-warm-gray text-sm">
               <li className="flex items-start">
                 <span className="text-deep-teal mr-2">•</span>
                 A personalized action report
@@ -197,28 +204,33 @@ We believe true progress includes everyone. That's why we actively engage men - 
     {
       id: 'organisations',
       title: 'Organisations & Schools',
+      gradient: 'from-deep-teal/20 via-deep-teal/10 to-transparent',
       content: (
-        <div className="bg-gradient-to-br from-sage-green/5 to-deep-teal/5 p-6 md:p-8 rounded-2xl border border-sage-green/20">
-          <h3 className="text-xl md:text-2xl font-serif font-bold text-deep-teal mb-4 flex items-center">
-            <span className="w-6 h-6 bg-sage-green rounded-full mr-3 flex-shrink-0"></span>
-            Tailored Support for Businesses, Schools & Community Groups
-          </h3>
-          <p className="text-warm-gray mb-6 leading-relaxed">We offer bespoke packages, developed collaboratively to create meaningful, lasting impact.</p>
+        <div className="space-y-4">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 bg-deep-teal rounded-full flex items-center justify-center flex-shrink-0">
+              <span className="text-white text-sm font-bold">3</span>
+            </div>
+            <h3 className="text-xl font-serif font-bold text-deep-teal">
+              Tailored Support for Businesses, Schools & Community Groups
+            </h3>
+          </div>
+          <p className="text-warm-gray mb-4 leading-relaxed">We offer bespoke packages, developed collaboratively to create meaningful, lasting impact.</p>
           
-          <p className="text-warm-gray mb-4 font-medium">Step-by-step approach:</p>
-          <ol className="space-y-3 text-warm-gray mb-6">
+          <p className="text-warm-gray mb-3 font-medium">Step-by-step approach:</p>
+          <ol className="space-y-2 text-warm-gray">
             <li className="flex items-start">
-              <span className="text-sage-green mr-3 font-bold">1.</span>
+              <span className="text-deep-teal mr-3 font-bold">1.</span>
               Free Introductory Zoom Call
             </li>
             <li className="flex items-start">
-              <span className="text-sage-green mr-3 font-bold">2.</span>
+              <span className="text-deep-teal mr-3 font-bold">2.</span>
               Two in-person consultation sessions at your office
             </li>
             <li className="flex items-start">
-              <span className="text-sage-green mr-3 font-bold">3.</span>
+              <span className="text-deep-teal mr-3 font-bold">3.</span>
               Custom Package Creation including:
-              <ul className="ml-6 mt-2 space-y-1">
+              <ul className="ml-6 mt-1 space-y-1 text-sm">
                 <li className="flex items-start">
                   <span className="text-deep-teal mr-2">•</span>
                   Webinars
@@ -243,7 +255,7 @@ We believe true progress includes everyone. That's why we actively engage men - 
             </li>
           </ol>
           
-          <p className="text-deep-teal font-medium"><strong>Outcome:</strong> A plan that aligns with your team's needs, values, and vision for long-term change.</p>
+          <p className="text-deep-teal font-medium mt-4"><strong>Outcome:</strong> A plan that aligns with your team's needs, values, and vision for long-term change.</p>
         </div>
       )
     }
@@ -253,15 +265,15 @@ We believe true progress includes everyone. That's why we actively engage men - 
     if (!isOpen) return null;
     
     return (
-      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl">
-          <div className="sticky top-0 bg-white border-b p-4 flex justify-between items-center rounded-t-2xl">
+      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-end justify-center p-0">
+        <div className="bg-white rounded-t-3xl w-full max-h-[85vh] overflow-y-auto shadow-2xl animate-slide-in-right">
+          <div className="sticky top-0 bg-white border-b p-4 flex justify-between items-center rounded-t-3xl">
             <h2 className="text-lg font-serif font-bold text-deep-teal">{option.title}</h2>
             <button onClick={onClose} className="p-2 hover:bg-sage-green/10 rounded-full">
               <X size={20} />
             </button>
           </div>
-          <div className="p-4">
+          <div className="p-6">
             {option.content}
           </div>
         </div>
@@ -367,39 +379,51 @@ We believe true progress includes everyone. That's why we actively engage men - 
               How We Can Work Together
             </h2>
             
-            {isMobile ? (
-              <div className="space-y-4">
-                {workingOptions.map((option) => (
-                  <div key={option.id}>
-                    <button
-                      onClick={() => setActiveModal(option.id)}
-                      className="w-full p-4 bg-sage-green/10 hover:bg-sage-green/20 rounded-2xl text-left transition-colors border border-sage-green/20"
-                    >
-                      <h3 className="font-serif font-bold text-deep-teal text-lg">{option.title}</h3>
-                    </button>
-                    <MobileModal 
-                      option={option} 
-                      isOpen={activeModal === option.id} 
-                      onClose={() => setActiveModal(null)} 
-                    />
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <Tabs defaultValue="discovery" className="w-full">
-                <TabsList className="grid w-full grid-cols-3 mb-8 bg-sage-green/10">
-                  <TabsTrigger value="discovery" className="data-[state=active]:bg-sage-green data-[state=active]:text-white">Discovery Call</TabsTrigger>
-                  <TabsTrigger value="ongoing" className="data-[state=active]:bg-sage-green data-[state=active]:text-white">Ongoing Support</TabsTrigger>
-                  <TabsTrigger value="organisations" className="data-[state=active]:bg-sage-green data-[state=active]:text-white">Organisations & Schools</TabsTrigger>
-                </TabsList>
-                
-                {workingOptions.map((option) => (
-                  <TabsContent key={option.id} value={option.id} className="mt-8">
-                    {option.content}
-                  </TabsContent>
-                ))}
-              </Tabs>
-            )}
+            <div className="grid md:grid-cols-3 gap-6">
+              {workingOptions.map((option) => (
+                <div key={option.id}>
+                  {isMobile ? (
+                    <>
+                      <button
+                        onClick={() => setActiveModal(option.id)}
+                        className={`w-full p-6 bg-gradient-to-br ${option.gradient} hover:shadow-lg rounded-2xl text-left transition-all duration-300 border border-sage-green/20 group`}
+                      >
+                        <h3 className="font-serif font-bold text-deep-teal text-lg mb-2">{option.title}</h3>
+                        <p className="text-sage-green text-sm group-hover:text-deep-teal transition-colors">
+                          Tap to learn more →
+                        </p>
+                      </button>
+                      <MobileModal 
+                        option={option} 
+                        isOpen={activeModal === option.id} 
+                        onClose={() => setActiveModal(null)} 
+                      />
+                    </>
+                  ) : (
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className={`w-full p-6 bg-gradient-to-br ${option.gradient} hover:shadow-lg rounded-2xl text-left transition-all duration-300 border border-sage-green/20 group cursor-pointer hover:scale-105`}>
+                          <h3 className="font-serif font-bold text-deep-teal text-lg mb-2">{option.title}</h3>
+                          <p className="text-sage-green text-sm group-hover:text-deep-teal transition-colors">
+                            Click to learn more →
+                          </p>
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto bg-gradient-to-br from-white via-white/95 to-blush-pink/10">
+                        <DialogHeader>
+                          <DialogTitle className="text-2xl font-serif font-bold text-deep-teal">
+                            {option.title}
+                          </DialogTitle>
+                        </DialogHeader>
+                        <div className="mt-4">
+                          {option.content}
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </div>

@@ -2,6 +2,7 @@
 import React from 'react';
 import { ChevronRight, Sparkles } from 'lucide-react';
 import Hero from '../components/Hero';
+import WhoYouAre from '../components/WhoYouAre';
 import ServicePreview from '../components/ServicePreview';
 import Testimonials from '../components/Testimonials';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
@@ -13,6 +14,7 @@ const Home: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-cream via-cream/90 to-blush-pink/20 text-deep-teal">
       <div className="container mx-auto px-4 py-8 lg:py-12">
         <Hero />
+        <WhoYouAre />
         <ServicePreview />
         <section ref={ctaRef} className="mt-16 lg:mt-20 text-center">
           <div className={`bg-gradient-to-br from-white/80 via-white/70 to-sage-green/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-2xl max-w-4xl mx-auto border border-sage-green/20 transition-all duration-1000 ${ctaVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}>
