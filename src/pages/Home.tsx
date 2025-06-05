@@ -9,21 +9,74 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Home: React.FC = () => {
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
+  const { ref: journeyRef, isVisible: journeyVisible } = useScrollAnimation();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cream via-cream/95 to-blush-pink/10 text-deep-teal">
       <div className="container mx-auto px-4 py-8 lg:py-12">
         <div className="space-y-20">
+          {/* Hero Section */}
           <Hero />
+          
+          {/* Who You Are Section */}
           <WhoYouAre />
+          
+          {/* Journey Section - New addition for better flow */}
+          <section ref={journeyRef} className="py-16">
+            <div className={`text-center transition-all duration-1000 ${journeyVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
+              <h2 className="text-3xl lg:text-4xl font-serif font-bold text-deep-teal mb-8">
+                Your Journey to Transformation
+              </h2>
+              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div className={`transition-all duration-1000 ${journeyVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`} style={{ animationDelay: '0.2s' }}>
+                  <div className="bg-gradient-to-br from-sage-green/10 to-transparent p-6 rounded-2xl border border-sage-green/20 h-full">
+                    <div className="w-12 h-12 bg-gradient-to-br from-sage-green to-sage-green/80 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white font-bold text-lg">1</span>
+                    </div>
+                    <h3 className="text-xl font-serif font-bold text-deep-teal mb-3">Explore</h3>
+                    <p className="text-warm-gray text-sm leading-relaxed">
+                      We begin by gently exploring the stories that have shaped your life and identity.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className={`transition-all duration-1000 ${journeyVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`} style={{ animationDelay: '0.4s' }}>
+                  <div className="bg-gradient-to-br from-blush-pink/10 to-transparent p-6 rounded-2xl border border-blush-pink/20 h-full">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blush-pink to-blush-pink/80 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white font-bold text-lg">2</span>
+                    </div>
+                    <h3 className="text-xl font-serif font-bold text-deep-teal mb-3">Transform</h3>
+                    <p className="text-warm-gray text-sm leading-relaxed">
+                      Together, we'll challenge limiting beliefs and create new empowering narratives.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className={`transition-all duration-1000 ${journeyVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`} style={{ animationDelay: '0.6s' }}>
+                  <div className="bg-gradient-to-br from-deep-teal/10 to-transparent p-6 rounded-2xl border border-deep-teal/20 h-full">
+                    <div className="w-12 h-12 bg-gradient-to-br from-deep-teal to-deep-teal/80 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white font-bold text-lg">3</span>
+                    </div>
+                    <h3 className="text-xl font-serif font-bold text-deep-teal mb-3">Thrive</h3>
+                    <p className="text-warm-gray text-sm leading-relaxed">
+                      Step into your authentic power and live the life you truly want to create.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          {/* Services Preview */}
           <ServicePreview />
           
+          {/* Call to Action */}
           <section ref={ctaRef} className="text-center">
             <div className={`bg-gradient-to-br from-sage-green/10 to-blush-pink/10 backdrop-blur-sm rounded-xl p-8 lg:p-12 shadow-lg max-w-4xl mx-auto border border-sage-green/20 transition-all duration-1000 ${ctaVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}>
               <div className="flex items-center justify-center gap-3 mb-6">
                 <Sparkles className="text-blush-pink animate-pulse" size={24} />
                 <h2 className="text-3xl lg:text-4xl font-serif font-bold text-deep-teal">
-                  Rewrite Your Narrative
+                  Ready to Rewrite Your Story?
                 </h2>
                 <Sparkles className="text-blush-pink animate-pulse" size={24} />
               </div>

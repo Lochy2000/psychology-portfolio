@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Book, Heart } from 'lucide-react';
+import { Book, Heart, Award, Users } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -16,6 +16,17 @@ const Hero: React.FC = () => {
             <p className="text-base font-medium text-sage-green">
               Narrative Psychologist | NLP Coach | Parenting Consultant
             </p>
+            {/* Mobile Trust Indicators */}
+            <div className="flex justify-center items-center gap-4 text-xs text-warm-gray mt-3">
+              <div className="flex items-center gap-1">
+                <Award size={14} className="text-sage-green" />
+                <span>25+ Years</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <Users size={14} className="text-sage-green" />
+                <span>500+ Clients</span>
+              </div>
+            </div>
           </div>
         </div>
         
@@ -74,14 +85,26 @@ const Hero: React.FC = () => {
       {/* Desktop Layout */}
       <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center animate-fade-in">
         <div className="space-y-8 order-2 lg:order-1">
-          <div className="space-y-3">
+          <div className="space-y-4">
             <h1 className="text-5xl font-serif font-bold text-deep-teal">
               Mette Theilmann
             </h1>
             <p className="text-xl text-sage-green font-medium">
               Narrative Psychologist | NLP Coach | Parenting Consultant
             </p>
+            {/* Desktop Trust Indicators */}
+            <div className="flex items-center gap-6 text-sm text-warm-gray">
+              <div className="flex items-center gap-2">
+                <Award size={16} className="text-sage-green" />
+                <span>25+ Years Experience</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Users size={16} className="text-sage-green" />
+                <span>500+ Clients Supported</span>
+              </div>
+            </div>
           </div>
+          
           <h2 className="text-3xl font-serif font-bold text-deep-teal leading-relaxed">
             Become the author of your own life by rewriting the story you tell yourself and others tell you
           </h2>
