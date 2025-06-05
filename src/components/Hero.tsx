@@ -1,29 +1,31 @@
-
 import React from 'react';
 import { Book, Heart, Award, Users } from 'lucide-react';
+import { useMouseParallax } from '../hooks/useMouseParallax';
 
 const Hero: React.FC = () => {
+  const mousePosition = useMouseParallax(0.05);
+
   return (
-    <div className="relative">
+    <div className="relative animated-background">
       {/* Mobile Layout */}
       <div className="lg:hidden relative">
         {/* Title and subtitle above image on mobile */}
         <div className="px-6 py-6 text-center">
-          <div className="space-y-3">
-            <h1 className="text-3xl font-serif font-bold text-deep-teal">
+          <div className="space-y-3 animate-fade-in">
+            <h1 className="text-3xl font-serif font-bold text-deep-teal text-shimmer">
               Mette Theilmann
             </h1>
-            <p className="text-base font-medium text-sage-green">
+            <p className="text-base font-medium text-sage-green gentle-float">
               Narrative Psychologist | NLP Coach | Parenting Consultant
             </p>
             {/* Mobile Trust Indicators */}
-            <div className="flex justify-center items-center gap-4 text-xs text-warm-gray mt-3">
-              <div className="flex items-center gap-1">
-                <Award size={14} className="text-sage-green" />
+            <div className="flex justify-center items-center gap-4 text-xs text-warm-gray mt-3 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="flex items-center gap-1 hover-lift">
+                <Award size={14} className="text-sage-green pulse-glow" />
                 <span>25+ Years</span>
               </div>
-              <div className="flex items-center gap-1">
-                <Users size={14} className="text-sage-green" />
+              <div className="flex items-center gap-1 hover-lift">
+                <Users size={14} className="text-sage-green pulse-glow" />
                 <span>500+ Clients</span>
               </div>
             </div>
@@ -31,26 +33,26 @@ const Hero: React.FC = () => {
         </div>
         
         {/* Image */}
-        <div className="relative h-[45vh] overflow-hidden rounded-2xl mx-6 mb-6">
+        <div className="relative h-[45vh] overflow-hidden rounded-2xl mx-6 mb-6 hover-lift">
           <img 
             src="https://res.cloudinary.com/dpw2txejq/image/upload/v1748177635/mette-website_baxurn.jpg" 
             alt="Mette Nyholm Theilmann - Narrative Psychologist" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/30 via-transparent to-transparent rounded-2xl"></div>
         </div>
         
         {/* Content below image on mobile */}
         <div className="px-6 pb-8 space-y-6">
-          <h2 className="text-xl font-serif font-bold text-deep-teal leading-relaxed">
+          <h2 className="text-xl font-serif font-bold text-deep-teal leading-relaxed animate-fade-in" style={{ animationDelay: '0.3s' }}>
             Become the author of your own life by rewriting the story you tell yourself and others tell you
           </h2>
-          <p className="text-base text-warm-gray leading-relaxed">
+          <p className="text-base text-warm-gray leading-relaxed animate-fade-in" style={{ animationDelay: '0.4s' }}>
             Let's uncover the limiting beliefs that hold you back from living fully. By releasing what no longer serves you, we can rewrite a story that truly empowers and reflects who you are and want to be.
           </p>
           
           {/* Contact Information */}
-          <div className="bg-gradient-to-br from-sage-green/10 to-blush-pink/10 p-5 rounded-xl border border-sage-green/20">
+          <div className="bg-gradient-to-br from-sage-green/10 to-blush-pink/10 p-5 rounded-xl border border-sage-green/20 hover-lift animate-fade-in" style={{ animationDelay: '0.5s' }}>
             <div className="space-y-2 text-sm">
               <p className="text-deep-teal font-semibold">Get in touch:</p>
               <p className="text-warm-gray">
@@ -65,7 +67,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col space-y-3 pt-2">
+          <div className="flex flex-col space-y-3 pt-2 animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <a 
               href="/services" 
               className="flex items-center justify-center bg-gradient-to-r from-sage-green to-blush-pink text-white px-6 py-3 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-base font-medium"
@@ -85,38 +87,41 @@ const Hero: React.FC = () => {
       {/* Desktop Layout */}
       <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center animate-fade-in">
         <div className="space-y-8 order-2 lg:order-1">
-          <div className="space-y-4">
-            <h1 className="text-5xl font-serif font-bold text-deep-teal">
+          <div 
+            className="space-y-4 mouse-parallax"
+            style={{ transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)` }}
+          >
+            <h1 className="text-5xl font-serif font-bold text-deep-teal text-shimmer">
               Mette Theilmann
             </h1>
-            <p className="text-xl text-sage-green font-medium">
+            <p className="text-xl text-sage-green font-medium gentle-float">
               Narrative Psychologist | NLP Coach | Parenting Consultant
             </p>
             {/* Desktop Trust Indicators */}
-            <div className="flex items-center gap-6 text-sm text-warm-gray">
-              <div className="flex items-center gap-2">
-                <Award size={16} className="text-sage-green" />
+            <div className="flex items-center gap-6 text-sm text-warm-gray animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="flex items-center gap-2 hover-lift">
+                <Award size={16} className="text-sage-green pulse-glow" />
                 <span>25+ Years Experience</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Users size={16} className="text-sage-green" />
+              <div className="flex items-center gap-2 hover-lift">
+                <Users size={16} className="text-sage-green pulse-glow" />
                 <span>500+ Clients Supported</span>
               </div>
             </div>
           </div>
           
-          <h2 className="text-3xl font-serif font-bold text-deep-teal leading-relaxed">
+          <h2 className="text-3xl font-serif font-bold text-deep-teal leading-relaxed animate-fade-in" style={{ animationDelay: '0.3s' }}>
             Become the author of your own life by rewriting the story you tell yourself and others tell you
           </h2>
-          <p className="text-lg text-warm-gray leading-relaxed">
+          <p className="text-lg text-warm-gray leading-relaxed animate-fade-in" style={{ animationDelay: '0.4s' }}>
             Let's uncover the limiting beliefs that hold you back from living fully. By releasing what no longer serves you, we can rewrite a story that truly empowers and reflects who you are and want to be.
           </p>
-          <p className="text-lg text-warm-gray italic border-l-4 border-sage-green pl-6 bg-gradient-to-r from-sage-green/5 to-transparent py-4 rounded-r-lg">
+          <p className="text-lg text-warm-gray italic border-l-4 border-sage-green pl-6 bg-gradient-to-r from-sage-green/5 to-transparent py-4 rounded-r-lg hover-lift animate-fade-in" style={{ animationDelay: '0.5s' }}>
             "Our identity is not formed in isolation - we develop, heal, and grow through connections with others. People are shaped by people."
           </p>
           
           {/* Contact Information */}
-          <div className="bg-gradient-to-br from-sage-green/10 to-blush-pink/10 p-6 rounded-xl border border-sage-green/20">
+          <div className="bg-gradient-to-br from-sage-green/10 to-blush-pink/10 p-6 rounded-xl border border-sage-green/20 hover-lift animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <div className="space-y-4">
               <p className="text-deep-teal font-semibold text-lg">Get in touch:</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-base">
@@ -136,7 +141,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
+          <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-4 animate-fade-in" style={{ animationDelay: '0.7s' }}>
             <a 
               href="/services" 
               className="flex items-center justify-center bg-gradient-to-r from-sage-green to-blush-pink text-white px-8 py-4 rounded-full hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-lg font-medium"
@@ -152,11 +157,14 @@ const Hero: React.FC = () => {
           </div>
         </div>
         <div className="order-1 lg:order-2">
-          <div className="relative group">
+          <div 
+            className="relative group mouse-parallax"
+            style={{ transform: `translate(${-mousePosition.x * 0.5}px, ${-mousePosition.y * 0.5}px)` }}
+          >
             <img 
               src="https://res.cloudinary.com/dpw2txejq/image/upload/v1748177635/mette-website_baxurn.jpg" 
               alt="Mette Nyholm Theilmann - Narrative Psychologist" 
-              className="rounded-2xl shadow-2xl object-cover w-full h-[600px] transform group-hover:scale-105 transition-transform duration-500"
+              className="rounded-2xl shadow-2xl object-cover w-full h-[600px] transform group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/30 via-transparent to-blush-pink/10 rounded-2xl opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
           </div>
