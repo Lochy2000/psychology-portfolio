@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Book, Heart, Award, Users } from 'lucide-react';
 import { useMouseParallax } from '../hooks/useMouseParallax';
@@ -6,55 +7,62 @@ const Hero: React.FC = () => {
   const mousePosition = useMouseParallax(0.05);
 
   return (
-    <div className="relative animated-background">
+    <div className="relative animated-background paper-texture">
       {/* Mobile Layout */}
       <div className="lg:hidden relative">
-        {/* Title and subtitle above image on mobile */}
-        <div className="px-6 py-6 text-center">
-          <div className="space-y-3 animate-fade-in">
-            <h1 className="text-3xl font-serif font-bold text-deep-teal text-shimmer">
-              Mette Theilmann
-            </h1>
-            <p className="text-base font-medium text-sage-green gentle-float">
-              Narrative Psychologist | NLP Coach | Parenting Consultant
-            </p>
-            {/* Mobile Trust Indicators */}
-            <div className="flex justify-center items-center gap-4 text-xs text-warm-gray mt-3 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="flex items-center gap-1 hover-lift">
-                <Award size={14} className="text-sage-green pulse-glow" />
-                <span>25+ Years</span>
-              </div>
-              <div className="flex items-center gap-1 hover-lift">
-                <Users size={14} className="text-sage-green pulse-glow" />
-                <span>500+ Clients</span>
+        {/* Cinematic intro with overlay */}
+        <div className="relative h-[50vh] overflow-hidden rounded-3xl mx-6 mb-8 story-chapter">
+          <img 
+            src="https://res.cloudinary.com/dpw2txejq/image/upload/v1748177635/mette-website_baxurn.jpg" 
+            alt="Mette Nyholm Theilmann - Narrative Psychologist" 
+            className="w-full h-full object-cover transition-transform duration-[3000ms] hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/60 via-transparent to-transparent rounded-3xl"></div>
+          
+          {/* Overlay content */}
+          <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+            <div className="space-y-3 animate-fade-in">
+              <h1 className="text-4xl font-serif font-bold text-shimmer">
+                Mette Theilmann
+              </h1>
+              <p className="text-lg font-medium text-cream/90 gentle-float">
+                Narrative Psychologist | NLP Coach | Parenting Consultant
+              </p>
+              {/* Mobile Trust Indicators */}
+              <div className="flex justify-center items-center gap-4 text-sm text-cream/80 mt-3 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                <div className="flex items-center gap-1 hover-lift">
+                  <Award size={14} className="text-sage-green pulse-glow" />
+                  <span>25+ Years</span>
+                </div>
+                <div className="flex items-center gap-1 hover-lift">
+                  <Users size={14} className="text-sage-green pulse-glow" />
+                  <span>500+ Clients</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
         
-        {/* Image */}
-        <div className="relative h-[45vh] overflow-hidden rounded-2xl mx-6 mb-6 hover-lift">
-          <img 
-            src="https://res.cloudinary.com/dpw2txejq/image/upload/v1748177635/mette-website_baxurn.jpg" 
-            alt="Mette Nyholm Theilmann - Narrative Psychologist" 
-            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/30 via-transparent to-transparent rounded-2xl"></div>
-        </div>
-        
         {/* Content below image on mobile */}
-        <div className="px-6 pb-8 space-y-6">
-          <h2 className="text-xl font-serif font-bold text-deep-teal leading-relaxed animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            Become the author of your own life by rewriting the story you tell yourself and others tell you
-          </h2>
-          <p className="text-base text-warm-gray leading-relaxed animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <div className="px-6 pb-8 space-y-8">
+          {/* Main headline with journal background feel */}
+          <div className="bg-gradient-to-br from-white/80 to-sage-green/5 backdrop-blur-sm rounded-2xl p-8 border border-sage-green/20 story-chapter">
+            <h2 className="text-2xl font-serif font-bold text-deep-teal leading-relaxed animate-fade-in mb-4" style={{ animationDelay: '0.3s' }}>
+              Become the author of your own life by rewriting the story you tell yourself and others tell you
+            </h2>
+            <div className="handwritten-quote text-lg font-handwritten text-warm-gray/80 italic border-l-4 border-sage-green/30 pl-4">
+              Every story can be rewritten. You hold the pen.
+            </div>
+          </div>
+          
+          <p className="text-base text-warm-gray leading-relaxed animate-fade-in prose" style={{ animationDelay: '0.4s' }}>
             Let's uncover the limiting beliefs that hold you back from living fully. By releasing what no longer serves you, we can rewrite a story that truly empowers and reflects who you are and want to be.
           </p>
           
           {/* Contact Information */}
-          <div className="bg-gradient-to-br from-sage-green/10 to-blush-pink/10 p-5 rounded-xl border border-sage-green/20 hover-lift animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <div className="space-y-2 text-sm">
-              <p className="text-deep-teal font-semibold">Get in touch:</p>
+          <div className="bg-gradient-to-br from-sage-green/10 to-blush-pink/10 p-6 rounded-xl border border-sage-green/20 hover-lift animate-fade-in paper-texture" style={{ animationDelay: '0.5s' }}>
+            <div className="space-y-3 text-sm">
+              <p className="text-deep-teal font-semibold text-lg mb-4">Let's Connect</p>
               <p className="text-warm-gray">
                 <span className="font-medium">Email:</span> mette@metteteilmann.com
               </p>
@@ -67,106 +75,124 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col space-y-3 pt-2 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="flex flex-col space-y-4 pt-2 animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <a 
               href="/services" 
-              className="flex items-center justify-center bg-gradient-to-r from-sage-green to-blush-pink text-white px-6 py-3 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-base font-medium"
+              className="flex items-center justify-center bg-gradient-to-r from-sage-green to-blush-pink text-white px-8 py-4 rounded-full hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-lg font-medium pulse-glow"
             >
-              <Book className="mr-2" size={18} /> Explore Services
+              <Book className="mr-2" size={20} /> Explore My Work
             </a>
             <a 
               href="/about" 
-              className="flex items-center justify-center border-2 border-sage-green text-sage-green px-6 py-3 rounded-full hover:bg-sage-green hover:text-white transition-all duration-300 text-base font-medium"
+              className="flex items-center justify-center border-2 border-sage-green text-sage-green px-8 py-4 rounded-full hover:bg-sage-green hover:text-white transition-all duration-300 text-lg font-medium story-chapter"
             >
-              <Heart className="mr-2" size={18} /> About
+              <Heart className="mr-2" size={20} /> My Story
             </a>
           </div>
         </div>
       </div>
 
       {/* Desktop Layout */}
-      <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center animate-fade-in">
-        <div className="space-y-8 order-2 lg:order-1">
+      <div className="hidden lg:grid lg:grid-cols-2 gap-16 items-center animate-fade-in">
+        <div className="space-y-10 order-2 lg:order-1">
           <div 
-            className="space-y-4 mouse-parallax"
+            className="space-y-6 mouse-parallax"
             style={{ transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)` }}
           >
-            <h1 className="text-5xl font-serif font-bold text-deep-teal text-shimmer">
+            <h1 className="text-6xl font-serif font-bold text-deep-teal text-shimmer">
               Mette Theilmann
             </h1>
-            <p className="text-xl text-sage-green font-medium gentle-float">
+            <p className="text-2xl text-sage-green font-medium gentle-float">
               Narrative Psychologist | NLP Coach | Parenting Consultant
             </p>
             {/* Desktop Trust Indicators */}
-            <div className="flex items-center gap-6 text-sm text-warm-gray animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="flex items-center gap-2 hover-lift">
-                <Award size={16} className="text-sage-green pulse-glow" />
-                <span>25+ Years Experience</span>
+            <div className="flex items-center gap-8 text-base text-warm-gray animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="flex items-center gap-3 hover-lift">
+                <Award size={20} className="text-sage-green pulse-glow" />
+                <span className="font-medium">25+ Years Experience</span>
               </div>
-              <div className="flex items-center gap-2 hover-lift">
-                <Users size={16} className="text-sage-green pulse-glow" />
-                <span>500+ Clients Supported</span>
+              <div className="flex items-center gap-3 hover-lift">
+                <Users size={20} className="text-sage-green pulse-glow" />
+                <span className="font-medium">500+ Clients Supported</span>
               </div>
             </div>
           </div>
           
-          <h2 className="text-3xl font-serif font-bold text-deep-teal leading-relaxed animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            Become the author of your own life by rewriting the story you tell yourself and others tell you
-          </h2>
-          <p className="text-lg text-warm-gray leading-relaxed animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          {/* Main headline with journal feel */}
+          <div className="bg-gradient-to-br from-white/70 to-sage-green/5 backdrop-blur-sm rounded-2xl p-10 border border-sage-green/20 story-chapter animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <h2 className="text-4xl font-serif font-bold text-deep-teal leading-relaxed mb-6">
+              Become the author of your own life by rewriting the story you tell yourself and others tell you
+            </h2>
+            <div className="handwritten-quote text-2xl font-handwritten text-warm-gray/80 italic border-l-4 border-sage-green/30 pl-6">
+              Every story can be rewritten. You hold the pen.
+            </div>
+          </div>
+          
+          <p className="text-xl text-warm-gray leading-relaxed animate-fade-in prose" style={{ animationDelay: '0.4s' }}>
             Let's uncover the limiting beliefs that hold you back from living fully. By releasing what no longer serves you, we can rewrite a story that truly empowers and reflects who you are and want to be.
           </p>
-          <p className="text-lg text-warm-gray italic border-l-4 border-sage-green pl-6 bg-gradient-to-r from-sage-green/5 to-transparent py-4 rounded-r-lg hover-lift animate-fade-in" style={{ animationDelay: '0.5s' }}>
+          
+          <p className="text-xl text-warm-gray italic border-l-4 border-blush-pink/30 pl-6 bg-gradient-to-r from-blush-pink/5 to-transparent py-6 rounded-r-xl hover-lift animate-fade-in" style={{ animationDelay: '0.5s' }}>
             "Our identity is not formed in isolation - we develop, heal, and grow through connections with others. People are shaped by people."
           </p>
           
           {/* Contact Information */}
-          <div className="bg-gradient-to-br from-sage-green/10 to-blush-pink/10 p-6 rounded-xl border border-sage-green/20 hover-lift animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="bg-gradient-to-br from-sage-green/10 to-blush-pink/10 p-8 rounded-2xl border border-sage-green/20 hover-lift animate-fade-in paper-texture" style={{ animationDelay: '0.6s' }}>
             <div className="space-y-4">
-              <p className="text-deep-teal font-semibold text-lg">Get in touch:</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-base">
+              <p className="text-deep-teal font-semibold text-xl">Let's Begin Your Journey</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-base">
                 <p className="text-warm-gray">
-                  <span className="font-medium">Email:</span><br />
+                  <span className="font-medium text-deep-teal">Email:</span><br />
                   mette@metteteilmann.com
                 </p>
                 <p className="text-warm-gray">
-                  <span className="font-medium">Mobile (France):</span><br />
+                  <span className="font-medium text-deep-teal">Mobile (France):</span><br />
                   0033 745 233 230
                 </p>
                 <p className="text-warm-gray md:col-span-1">
-                  <span className="font-medium">Mobile (UK):</span><br />
+                  <span className="font-medium text-deep-teal">Mobile (UK):</span><br />
                   0447 756 918 126
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-4 animate-fade-in" style={{ animationDelay: '0.7s' }}>
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 pt-4 animate-fade-in" style={{ animationDelay: '0.7s' }}>
             <a 
               href="/services" 
-              className="flex items-center justify-center bg-gradient-to-r from-sage-green to-blush-pink text-white px-8 py-4 rounded-full hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-lg font-medium"
+              className="flex items-center justify-center bg-gradient-to-r from-sage-green to-blush-pink text-white px-10 py-5 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-xl font-medium pulse-glow"
             >
-              <Book className="mr-2" /> Explore Services
+              <Book className="mr-3" size={22} /> Explore My Work
             </a>
             <a 
               href="/about" 
-              className="flex items-center justify-center border-2 border-sage-green text-deep-teal px-8 py-4 rounded-full hover:bg-sage-green hover:text-white transition-all duration-300 hover:shadow-lg text-lg font-medium"
+              className="flex items-center justify-center border-2 border-sage-green text-deep-teal px-10 py-5 rounded-full hover:bg-sage-green hover:text-white transition-all duration-300 hover:shadow-lg text-xl font-medium story-chapter"
             >
-              <Heart className="mr-2" /> About
+              <Heart className="mr-3" size={22} /> My Story
             </a>
           </div>
         </div>
+        
         <div className="order-1 lg:order-2">
           <div 
-            className="relative group mouse-parallax"
+            className="relative group mouse-parallax story-chapter"
             style={{ transform: `translate(${-mousePosition.x * 0.5}px, ${-mousePosition.y * 0.5}px)` }}
           >
             <img 
               src="https://res.cloudinary.com/dpw2txejq/image/upload/v1748177635/mette-website_baxurn.jpg" 
               alt="Mette Nyholm Theilmann - Narrative Psychologist" 
-              className="rounded-2xl shadow-2xl object-cover w-full h-[600px] transform group-hover:scale-105 transition-transform duration-700"
+              className="rounded-3xl shadow-2xl object-cover w-full h-[700px] transform group-hover:scale-105 transition-transform duration-[2000ms]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/30 via-transparent to-blush-pink/10 rounded-2xl opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/30 via-transparent to-blush-pink/10 rounded-3xl opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
+            
+            {/* Floating quote overlay */}
+            <div className="absolute bottom-8 left-8 right-8">
+              <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-xl gentle-float">
+                <p className="handwritten-quote text-lg font-handwritten text-deep-teal italic text-center">
+                  "Your story is not your destiny. It's your starting point."
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
