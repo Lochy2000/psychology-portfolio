@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -191,4 +190,138 @@
 
 .pulse-glow {
   animation: gentle-pulse 4s ease-in-out infinite;
+}
+
+/* Handwritten/Narrative Typography */
+.handwritten-quote {
+  font-family: 'Dancing Script', cursive;
+  position: relative;
+}
+
+.handwritten-quote::before {
+  content: '"';
+  font-size: 1.5em;
+  opacity: 0.3;
+  position: absolute;
+  left: -0.3em;
+  top: -0.1em;
+}
+
+.handwritten-quote::after {
+  content: '"';
+  font-size: 1.5em;
+  opacity: 0.3;
+  position: absolute;
+  right: -0.3em;
+  bottom: -0.3em;
+}
+
+/* Story Chapter Animations */
+.story-chapter {
+  position: relative;
+  overflow: hidden;
+}
+
+.story-chapter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.8s ease;
+}
+
+.story-chapter:hover::before {
+  left: 100%;
+}
+
+/* Paper texture overlay */
+.paper-texture {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.3) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(245,240,230,0.2) 0%, transparent 50%);
+  position: relative;
+}
+
+.paper-texture::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F5F0E6' fill-opacity='0.05'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Enhanced decorative elements */
+.chapter-number {
+  position: relative;
+}
+
+.chapter-number::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--sage-green), var(--blush-pink));
+  border-radius: 1px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.chapter-number:hover::before {
+  transform: scaleX(1);
+}
+
+/* Journey path enhancements */
+@keyframes path-draw {
+  0% {
+    stroke-dasharray: 0, 1000;
+  }
+  100% {
+    stroke-dasharray: 1000, 0;
+  }
+}
+
+.journey-path {
+  animation: path-draw 3s ease-in-out forwards;
+}
+
+/* Enhanced gentle animations */
+@keyframes story-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.story-reveal {
+  animation: story-reveal 0.8s ease-out forwards;
+}
+
+/* Prose styling for better readability */
+.prose p {
+  color: var(--warm-gray);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.prose p:first-of-type::first-letter {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--sage-green);
+  float: left;
+  line-height: 1;
+  margin-right: 0.1em;
+  margin-top: 0.1em;
 }

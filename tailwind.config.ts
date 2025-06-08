@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -13,7 +12,8 @@ export default {
     extend: {
       fontFamily: {
         'serif': ['Lora', 'serif'],
-        'sans': ['Open Sans', 'sans-serif']
+        'sans': ['Open Sans', 'sans-serif'],
+        'handwritten': ['Dancing Script', 'cursive']
       },
       colors: {
         'sage-green': '#9CAF88',
