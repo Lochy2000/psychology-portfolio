@@ -10,6 +10,27 @@ const Hero: React.FC = () => {
     <div className="relative animated-background paper-texture overflow-hidden">
       {/* Mobile Layout */}
       <div className="lg:hidden relative">
+        {/* Mobile Title - Above Image */}
+        <div className="px-6 pt-8 pb-6 text-center space-y-4">
+          <h1 className="text-4xl font-serif font-bold text-deep-teal text-shimmer px-4">
+            Mette Theilmann
+          </h1>
+          <p className="text-lg font-medium text-sage-green gentle-float px-2">
+            Narrative Psychologist | NLP Coach | Parenting Consultant
+          </p>
+          {/* Mobile Trust Indicators */}
+          <div className="flex justify-center items-center gap-4 text-sm text-warm-gray mt-3 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="flex items-center gap-1 hover-lift">
+              <Award size={14} className="text-sage-green pulse-glow" />
+              <span>25+ Years</span>
+            </div>
+            <div className="flex items-center gap-1 hover-lift">
+              <Users size={14} className="text-sage-green pulse-glow" />
+              <span>500+ Clients</span>
+            </div>
+          </div>
+        </div>
+
         {/* Cinematic intro with overlay */}
         <div className="relative h-[60vh] overflow-hidden rounded-3xl mx-6 mb-8 story-chapter">
           <img 
@@ -22,27 +43,6 @@ const Hero: React.FC = () => {
         
         {/* Content below image on mobile */}
         <div className="px-6 pb-8 space-y-8">
-          {/* Title and credentials */}
-          <div className="text-center space-y-4">
-            <h1 className="text-4xl font-serif font-bold text-deep-teal text-shimmer">
-              Mette Theilmann
-            </h1>
-            <p className="text-lg font-medium text-sage-green gentle-float">
-              Narrative Psychologist | NLP Coach | Parenting Consultant
-            </p>
-            {/* Mobile Trust Indicators */}
-            <div className="flex justify-center items-center gap-4 text-sm text-warm-gray mt-3 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="flex items-center gap-1 hover-lift">
-                <Award size={14} className="text-sage-green pulse-glow" />
-                <span>25+ Years</span>
-              </div>
-              <div className="flex items-center gap-1 hover-lift">
-                <Users size={14} className="text-sage-green pulse-glow" />
-                <span>500+ Clients</span>
-              </div>
-            </div>
-          </div>
-          
           {/* Main headline with journal background feel */}
           <div className="bg-gradient-to-br from-white/80 to-sage-green/5 backdrop-blur-sm rounded-2xl p-8 border border-sage-green/20 story-chapter">
             <h2 className="text-2xl font-serif font-bold text-deep-teal leading-relaxed animate-fade-in mb-4" style={{ animationDelay: '0.3s' }}>
@@ -93,16 +93,16 @@ const Hero: React.FC = () => {
       {/* Desktop Layout */}
       <div className="hidden lg:block animate-fade-in">
         <div className="max-w-7xl mx-auto px-4 py-12">
-          {/* Title Section - Full Width */}
-          <div className="text-center mb-16 py-8">
+          {/* Title Section - Full Width with proper padding */}
+          <div className="text-center mb-16 py-12 px-8">
             <div 
               className="space-y-6 mouse-parallax"
               style={{ transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px)` }}
             >
-              <h1 className="text-6xl xl:text-7xl font-serif font-bold text-deep-teal text-shimmer leading-tight">
+              <h1 className="text-6xl xl:text-7xl font-serif font-bold text-deep-teal text-shimmer leading-tight px-8 py-4">
                 Mette Theilmann
               </h1>
-              <p className="text-2xl text-sage-green font-medium gentle-float">
+              <p className="text-2xl text-sage-green font-medium gentle-float px-4">
                 Narrative Psychologist | NLP Coach | Parenting Consultant
               </p>
               {/* Desktop Trust Indicators */}
@@ -119,10 +119,10 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Content Grid - Balanced Layout */}
-          <div className="grid lg:grid-cols-5 gap-12 items-start">
-            {/* Left Content - 3 columns */}
-            <div className="lg:col-span-3 space-y-8">
+          {/* Content Grid - Better balanced layout */}
+          <div className="grid lg:grid-cols-12 gap-8 items-start">
+            {/* Left Content - 7 columns */}
+            <div className="lg:col-span-7 space-y-8">
               {/* Main headline with journal feel */}
               <div className="bg-gradient-to-br from-white/70 to-sage-green/5 backdrop-blur-sm rounded-2xl p-8 border border-sage-green/20 story-chapter animate-fade-in" style={{ animationDelay: '0.3s' }}>
                 <h2 className="text-3xl lg:text-4xl font-serif font-bold text-deep-teal leading-relaxed mb-6">
@@ -157,8 +157,8 @@ const Hero: React.FC = () => {
               </div>
             </div>
             
-            {/* Right Image - 2 columns */}
-            <div className="lg:col-span-2">
+            {/* Right Image - 5 columns */}
+            <div className="lg:col-span-5">
               <div 
                 className="relative group mouse-parallax story-chapter"
                 style={{ transform: `translate(${-mousePosition.x * 0.3}px, ${-mousePosition.y * 0.3}px)` }}
