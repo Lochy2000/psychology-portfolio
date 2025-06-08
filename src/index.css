@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -130,6 +131,16 @@
   }
 }
 
+/* Prevent text shimmer from being clipped */
+@keyframes shimmer-safe {
+  0%, 100% {
+    background-position: -200% 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+}
+
 .animated-background {
   position: relative;
   overflow: hidden;
@@ -177,11 +188,13 @@
 
 .text-shimmer {
   background: linear-gradient(90deg, #2C5F6B, #9CAF88, #2C5F6B);
-  background-size: 200% 100%;
+  background-size: 400% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradient-shift 3s ease-in-out infinite;
+  animation: shimmer-safe 3s ease-in-out infinite;
+  display: inline-block;
+  padding: 0 0.2em;
 }
 
 .gentle-float {
