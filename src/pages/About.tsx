@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Globe, Heart, BookOpen, Sparkles, Award, Users, ChevronDown } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
@@ -83,19 +82,25 @@ This is where the real magic happens - when you realize you've always held the p
     <div className="min-h-screen bg-gradient-to-br from-cream via-cream/95 to-blush-pink/10 text-deep-teal animated-background">
       <div className="container mx-auto px-4 py-12 lg:py-16">
         <div className="max-w-6xl mx-auto">
-          {/* Header - Book Opening */}
+          {/* Header - Book Opening with proper spacing */}
           <div ref={headerRef} className={`text-center mb-16 transition-all duration-1000 ${headerVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
-            <div className="relative py-8">
+            <div className="relative py-12 safe-text-container">
               <div className="w-24 h-24 bg-gradient-to-br from-sage-green to-blush-pink rounded-full flex items-center justify-center mx-auto mb-6 gentle-float">
                 <BookOpen className="text-white" size={32} />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-serif font-bold text-deep-teal mb-4 text-shimmer leading-tight">My Story</h1>
-              <div className="handwritten-quote text-xl font-handwritten text-warm-gray/80 max-w-2xl mx-auto leading-relaxed">
+              <div className="title-safe">
+                <h1 className="text-4xl lg:text-5xl font-serif font-bold text-deep-teal mb-6 leading-tight px-4 py-4">
+                  <span className="text-shimmer-container">
+                    <span className="text-shimmer">My Story</span>
+                  </span>
+                </h1>
+              </div>
+              <div className="handwritten-quote text-xl font-handwritten text-warm-gray/80 max-w-2xl mx-auto leading-relaxed py-4">
                 Every therapist has their own journey of transformation. Here's mine.
               </div>
               
               {/* Trust indicators */}
-              <div className="flex justify-center items-center gap-8 text-sm text-warm-gray mt-8">
+              <div className="flex justify-center items-center gap-8 text-sm text-warm-gray mt-8 pt-4">
                 <div className="flex items-center gap-2 hover-lift">
                   <Award size={18} className="text-sage-green pulse-glow" />
                   <span className="font-medium">25+ Years Experience</span>
@@ -211,14 +216,16 @@ This is where the real magic happens - when you realize you've always held the p
             ))}
           </div>
 
-          {/* Qualifications - Redesigned as Story Elements */}
-          <div ref={qualRef} className="space-y-8 pb-16">
+          {/* Qualifications - Redesigned as Story Elements with proper spacing */}
+          <div ref={qualRef} className="space-y-8 pb-20">
             <div className={`text-center mb-12 transition-all duration-1000 ${qualVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
               <div className="w-16 h-16 bg-gradient-to-br from-deep-teal to-sage-green rounded-full flex items-center justify-center mx-auto mb-6 gentle-float">
                 <Award className="text-white" size={24} />
               </div>
-              <h2 className="text-3xl lg:text-4xl font-serif font-bold text-deep-teal mb-4">My Professional Journey</h2>
-              <div className="handwritten-quote text-lg font-handwritten text-warm-gray/80 max-w-2xl mx-auto leading-relaxed">
+              <div className="title-safe">
+                <h2 className="text-3xl lg:text-4xl font-serif font-bold text-deep-teal mb-6 py-4">My Professional Journey</h2>
+              </div>
+              <div className="handwritten-quote text-lg font-handwritten text-warm-gray/80 max-w-2xl mx-auto leading-relaxed py-2">
                 Every qualification tells a story of growth, learning, and deepening understanding.
               </div>
             </div>
@@ -235,7 +242,7 @@ This is where the real magic happens - when you realize you've always held the p
                       <div className="w-8 h-8 bg-gradient-to-br from-sage-green to-blush-pink rounded-full flex items-center justify-center mt-1">
                         <BookOpen className="text-white" size={14} />
                       </div>
-                      <span className="text-warm-gray font-medium leading-relaxed">{qualification}</span>
+                      <span className="text-warm-gray font-medium leading-relaxed py-1">{qualification}</span>
                     </div>
                   </div>
                 ))}
