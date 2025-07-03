@@ -17,11 +17,11 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-cream border-b border-sage-green/20 sticky top-0 z-50">
+    <nav className="bg-cream border-b border-sage-green/20 sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="font-serif font-bold text-xl text-deep-teal">
-            {/* Logo or brand name can go here if needed */}
+          <Link to="/" className="font-serif font-bold text-xl text-deep-teal shrink-0">
+            Mette Theilmann
           </Link>
           
           {!isMobile && (
@@ -30,7 +30,7 @@ const Navigation = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-warm-gray hover:text-deep-teal transition-colors ${
+                  className={`text-warm-gray hover:text-deep-teal transition-colors whitespace-nowrap ${
                     location.pathname === link.path ? 'text-deep-teal font-semibold' : ''
                   }`}
                 >
@@ -43,7 +43,7 @@ const Navigation = () => {
           <div className="flex items-center space-x-4">
             <Link 
               to="/contact"
-              className="bg-sage-green text-white px-4 py-2 rounded-full hover:bg-deep-teal transition-colors"
+              className="bg-sage-green text-white px-3 py-2 sm:px-4 sm:py-2 rounded-full hover:bg-deep-teal transition-colors text-sm sm:text-base whitespace-nowrap"
             >
               {isMobile ? 'Contact' : 'Book a Consultation'}
             </Link>
@@ -51,7 +51,8 @@ const Navigation = () => {
             {isMobile && (
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-deep-teal p-2"
+                className="text-deep-teal p-2 z-50 relative"
+                aria-label="Toggle menu"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -61,13 +62,13 @@ const Navigation = () => {
         
         {/* Mobile Menu */}
         {isMobile && isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-sage-green/20 py-4">
+          <div className="md:hidden bg-white border-t border-sage-green/20 py-4 absolute left-0 right-0 top-16 shadow-lg z-40">
             {links.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-2 text-warm-gray hover:text-deep-teal transition-colors ${
+                className={`block px-4 py-3 text-warm-gray hover:text-deep-teal transition-colors ${
                   location.pathname === link.path ? 'text-deep-teal font-semibold bg-sage-green/10' : ''
                 }`}
               >
