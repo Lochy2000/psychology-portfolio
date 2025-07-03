@@ -117,94 +117,97 @@ We believe true progress includes everyone. That's why we actively engage men - 
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cream via-cream/90 to-blush-pink/15 relative overflow-hidden animated-background">
-      {/* Floating decorative elements */}
+      {/* Floating decorative elements - responsive positioning */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-10 text-6xl opacity-10 animate-gentle-pulse">📚</div>
-        <div className="absolute bottom-32 left-10 text-4xl opacity-15 animate-gentle-pulse" style={{ animationDelay: '2s' }}>✨</div>
-        <div className="absolute top-1/2 right-1/4 text-5xl opacity-10 animate-gentle-pulse" style={{ animationDelay: '4s' }}>🌿</div>
+        <div className="absolute top-20 right-4 sm:right-10 text-4xl sm:text-6xl opacity-10 animate-gentle-pulse">📚</div>
+        <div className="absolute bottom-32 left-4 sm:left-10 text-3xl sm:text-4xl opacity-15 animate-gentle-pulse" style={{ animationDelay: '2s' }}>✨</div>
+        <div className="absolute top-1/2 right-1/4 text-4xl sm:text-5xl opacity-10 animate-gentle-pulse" style={{ animationDelay: '4s' }}>🌿</div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 relative z-10">
+      <div className="container mx-auto px-4 py-8 sm:py-16 relative z-10">
         {/* Hero Section */}
-        <div className="text-center mb-20 animate-fade-in">
+        <div className="text-center mb-12 sm:mb-20 animate-fade-in">
           <div 
-            className="handwritten-quote text-lg text-warm-gray/80 mb-4 italic mouse-parallax"
+            className="handwritten-quote text-base sm:text-lg text-warm-gray/80 mb-4 italic mouse-parallax"
             style={{ transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)` }}
           >
             "Every story can be rewritten..."
           </div>
-          <h1 className="text-4xl lg:text-5xl font-serif font-bold text-deep-teal mb-6 text-shimmer">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-deep-teal mb-4 sm:mb-6 text-shimmer px-4">
             Chapters of Transformation
           </h1>
-          <p className="text-lg lg:text-xl text-warm-gray max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-warm-gray max-w-3xl mx-auto leading-relaxed px-4">
             Journey through the different ways we can work together to rewrite your story and step into your personal power.
           </p>
         </div>
         
         {/* Services as Story Chapters */}
-        <section ref={servicesRef} className="mb-20">
-          <div className="space-y-8">
+        <section ref={servicesRef} className="mb-12 sm:mb-20">
+          <div className="space-y-6 sm:space-y-8">
             {services.map((service, index) => (
               <div 
                 key={service.id}
-                className={`story-chapter bg-gradient-to-br from-white/90 via-white/80 to-transparent backdrop-blur-sm rounded-3xl overflow-hidden shadow-xl border border-white/30 transition-all duration-700 hover:shadow-2xl ${servicesVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}
+                className={`story-chapter bg-gradient-to-br from-white/90 via-white/80 to-transparent backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-white/30 transition-all duration-700 hover:shadow-2xl ${servicesVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 {/* Chapter Header */}
                 <div 
-                  className={`p-8 lg:p-12 bg-gradient-to-br ${service.gradient} cursor-pointer group relative overflow-hidden`}
+                  className={`p-6 sm:p-8 lg:p-12 bg-gradient-to-br ${service.gradient} cursor-pointer group relative overflow-hidden`}
                   onClick={() => toggleService(service.id)}
                 >
-                  <div className="absolute top-4 right-4 text-4xl opacity-20 group-hover:opacity-30 transition-opacity duration-300">
+                  {/* Responsive decorative illustration */}
+                  <div className="absolute top-4 right-4 text-2xl sm:text-3xl lg:text-4xl opacity-20 group-hover:opacity-30 transition-opacity duration-300">
                     {service.illustration}
                   </div>
                   
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className={`w-16 h-16 bg-gradient-to-br ${service.iconBg} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                          <service.icon className="text-white" size={28} />
+                  <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
+                    <div className="flex-1 w-full">
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
+                        {/* Responsive icon sizing */}
+                        <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${service.iconBg} rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                          <service.icon className="text-white" size={20} />
                         </div>
-                        <div>
-                          <span className="text-sm text-warm-gray/70 font-medium">Chapter {index + 1}</span>
-                          <h3 className="text-2xl lg:text-3xl font-serif font-bold text-deep-teal">{service.title}</h3>
+                        <div className="min-w-0 flex-1">
+                          <span className="text-xs sm:text-sm text-warm-gray/70 font-medium">Chapter {index + 1}</span>
+                          <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-deep-teal break-words">{service.title}</h3>
                         </div>
                       </div>
                       
-                      <div className="handwritten-quote text-base lg:text-lg text-deep-teal/80 italic mb-4 font-serif">
+                      <div className="handwritten-quote text-sm sm:text-base lg:text-lg text-deep-teal/80 italic mb-4 font-serif">
                         {service.pullQuote}
                       </div>
                       
-                      <p className="text-warm-gray leading-relaxed text-base lg:text-lg max-w-4xl">
+                      <p className="text-warm-gray leading-relaxed text-sm sm:text-base lg:text-lg max-w-none pr-0 sm:pr-12">
                         {service.summary}
                       </p>
                     </div>
                     
-                    <div className="ml-4 flex items-center justify-center w-10 h-10 bg-white/20 rounded-full backdrop-blur-sm group-hover:bg-white/30 transition-colors duration-300">
+                    {/* Responsive chevron button */}
+                    <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full backdrop-blur-sm group-hover:bg-white/30 transition-colors duration-300 flex-shrink-0 self-center sm:self-start">
                       {expandedService === service.id ? 
-                        <ChevronUp className="text-deep-teal" size={20} /> : 
-                        <ChevronDown className="text-deep-teal" size={20} />
+                        <ChevronUp className="text-deep-teal" size={16} /> : 
+                        <ChevronDown className="text-deep-teal" size={16} />
                       }
                     </div>
                   </div>
                 </div>
                 
-                {/* Expandable Content */}
+                {/* Expandable Content - improved overflow handling */}
                 <div className={`overflow-hidden transition-all duration-700 ease-in-out ${
-                  expandedService === service.id ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
+                  expandedService === service.id ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
                 }`}>
-                  <div className="p-8 lg:p-12 bg-white/50 backdrop-blur-sm border-t border-white/30">
-                    <div className="prose prose-lg max-w-none text-warm-gray leading-relaxed">
+                  <div className="p-6 sm:p-8 lg:p-12 bg-white/50 backdrop-blur-sm border-t border-white/30">
+                    <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none text-warm-gray leading-relaxed">
                       {service.fullContent.split('\n').map((paragraph, i) => (
                         paragraph.trim() && (
-                          <p key={i} className="mb-4">
+                          <p key={i} className="mb-4 break-words">
                             {paragraph.trim()}
                           </p>
                         )
                       ))}
                     </div>
-                    <div className="mt-8 text-center">
-                      <button className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-sage-green to-blush-pink text-white rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105 font-medium">
+                    <div className="mt-6 sm:mt-8 text-center">
+                      <button className="inline-flex items-center px-6 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-sage-green to-blush-pink text-white rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105 font-medium text-sm sm:text-base">
                         Let's start your story today →
                       </button>
                     </div>
@@ -215,23 +218,23 @@ We believe true progress includes everyone. That's why we actively engage men - 
           </div>
         </section>
 
-        {/* My Approach - Redesigned as Journey */}
-        <section ref={approachRef} className="mb-20">
-          <div className={`bg-gradient-to-br from-white/90 via-white/80 to-sage-green/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-xl border border-white/30 transition-all duration-1000 ${approachVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}>
-            <div className="text-center mb-12">
-              <div className="handwritten-quote text-lg text-warm-gray/80 mb-4 italic">
+        {/* My Approach - responsive improvements */}
+        <section ref={approachRef} className="mb-12 sm:mb-20">
+          <div className={`bg-gradient-to-br from-white/90 via-white/80 to-sage-green/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl border border-white/30 transition-all duration-1000 ${approachVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}>
+            <div className="text-center mb-8 sm:mb-12">
+              <div className="handwritten-quote text-base sm:text-lg text-warm-gray/80 mb-4 italic">
                 "The journey of a thousand miles begins with a single step..."
               </div>
-              <h2 className="text-3xl lg:text-4xl font-serif font-bold text-deep-teal">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-deep-teal px-4">
                 The Path We Walk Together
               </h2>
             </div>
             
             <div className="relative">
-              {/* Journey Path Line */}
-              <div className="absolute left-8 top-16 bottom-16 w-1 bg-gradient-to-b from-sage-green via-blush-pink to-deep-teal rounded-full opacity-30"></div>
+              {/* Journey Path Line - responsive */}
+              <div className="absolute left-6 sm:left-8 top-12 sm:top-16 bottom-12 sm:bottom-16 w-0.5 sm:w-1 bg-gradient-to-b from-sage-green via-blush-pink to-deep-teal rounded-full opacity-30"></div>
               
-              <div className="space-y-12">
+              <div className="space-y-8 sm:space-y-12">
                 {[
                   {
                     step: 1,
@@ -255,13 +258,13 @@ We believe true progress includes everyone. That's why we actively engage men - 
                     color: "from-deep-teal to-deep-teal/80"
                   }
                 ].map((step, index) => (
-                  <div key={step.step} className="flex items-start gap-6 relative">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${step.color} rounded-full flex items-center justify-center shadow-lg z-10 gentle-float`} style={{ animationDelay: `${index * 2}s` }}>
-                      <span className="text-2xl">{step.icon}</span>
+                  <div key={step.step} className="flex items-start gap-4 sm:gap-6 relative">
+                    <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${step.color} rounded-full flex items-center justify-center shadow-lg z-10 gentle-float flex-shrink-0`} style={{ animationDelay: `${index * 2}s` }}>
+                      <span className="text-lg sm:text-xl lg:text-2xl">{step.icon}</span>
                     </div>
-                    <div className="flex-1 pt-2">
-                      <h3 className="font-serif font-bold text-deep-teal mb-2 text-xl">{step.title}</h3>
-                      <p className="text-warm-gray leading-relaxed">{step.description}</p>
+                    <div className="flex-1 pt-1 sm:pt-2 min-w-0">
+                      <h3 className="font-serif font-bold text-deep-teal mb-2 text-lg sm:text-xl break-words">{step.title}</h3>
+                      <p className="text-warm-gray leading-relaxed text-sm sm:text-base break-words">{step.description}</p>
                     </div>
                   </div>
                 ))}
@@ -270,19 +273,19 @@ We believe true progress includes everyone. That's why we actively engage men - 
           </div>
         </section>
 
-        {/* How We Work Together - Simplified */}
+        {/* How We Work Together - responsive grid */}
         <section ref={workingRef}>
-          <div className={`bg-gradient-to-br from-white/90 via-white/80 to-blush-pink/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-xl border border-white/30 transition-all duration-1000 ${workingVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}>
-            <div className="text-center mb-12">
-              <div className="handwritten-quote text-lg text-warm-gray/80 mb-4 italic">
+          <div className={`bg-gradient-to-br from-white/90 via-white/80 to-blush-pink/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl border border-white/30 transition-all duration-1000 ${workingVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}>
+            <div className="text-center mb-8 sm:mb-12">
+              <div className="handwritten-quote text-base sm:text-lg text-warm-gray/80 mb-4 italic">
                 "Choose your own adventure..."
               </div>
-              <h2 className="text-3xl lg:text-4xl font-serif font-bold text-deep-teal">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-deep-teal px-4">
                 Ways We Can Work Together
               </h2>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {[
                 {
                   title: "Discovery Call",
@@ -303,11 +306,11 @@ We believe true progress includes everyone. That's why we actively engage men - 
                   cta: "Meet in Person"
                 }
               ].map((option, index) => (
-                <div key={index} className="text-center p-6 bg-gradient-to-br from-sage-green/10 to-transparent rounded-2xl border border-sage-green/20 hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="text-4xl mb-4">{option.icon}</div>
-                  <h3 className="font-serif font-bold text-deep-teal text-lg mb-3">{option.title}</h3>
-                  <p className="text-warm-gray text-sm mb-4 leading-relaxed">{option.description}</p>
-                  <button className="text-sage-green font-medium hover:text-deep-teal transition-colors duration-300">
+                <div key={index} className="text-center p-4 sm:p-6 bg-gradient-to-br from-sage-green/10 to-transparent rounded-xl sm:rounded-2xl border border-sage-green/20 hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{option.icon}</div>
+                  <h3 className="font-serif font-bold text-deep-teal text-base sm:text-lg mb-2 sm:mb-3 break-words">{option.title}</h3>
+                  <p className="text-warm-gray text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed break-words">{option.description}</p>
+                  <button className="text-sage-green font-medium hover:text-deep-teal transition-colors duration-300 text-sm">
                     {option.cta} →
                   </button>
                 </div>

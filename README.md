@@ -1,73 +1,303 @@
-# Welcome to your Lovable project
 
-## Project info
+# Mette Theilmann - Narrative Psychology & Coaching Website
 
-**URL**: https://lovable.dev/projects/a7ab716f-bb20-447c-bee3-b672d0e7f1ce
+A modern, responsive website for Mette Nyholm Theilmann, featuring narrative psychology services, NLP coaching, parenting support, and corporate wellness solutions through HerEdge.
 
-## How can I edit this code?
+## 🌐 Live Demo
+[View Live Website](https://lovable.dev/projects/a7ab716f-bb20-447c-bee3-b672d0e7f1ce)
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
+- **Frontend Framework**: React 18.3.1 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS with custom design system
+- **UI Components**: Shadcn/ui component library
+- **Icons**: Lucide React
+- **Routing**: React Router DOM
+- **State Management**: TanStack React Query
+- **Animation**: CSS animations with Tailwind utilities
+- **Deployment**: Lovable platform
 
-**Use Lovable**
+## ✨ Key Features
+- **Responsive Design**: Fully responsive across all devices and screen sizes
+- **Modern Animations**: Smooth, elegant animations and transitions
+- **Accessibility**: WCAG compliant with proper contrast ratios and keyboard navigation
+- **Performance Optimized**: Tree-shaken components and optimized assets
+- **SEO Ready**: Semantic HTML structure and meta tag support
+- **Interactive Elements**: Expandable service cards, hover effects, and scroll animations
+- **Multi-page Navigation**: Home, About, Services, and Contact pages
+- **Contact Integration**: Direct email, phone, and WhatsApp contact options
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a7ab716f-bb20-447c-bee3-b672d0e7f1ce) and start prompting.
+## 🎨 Design System
+- **Color Palette**: 
+  - Cream (#F5F0E6) - Background
+  - Sage Green (#9CAF88) - Primary accent
+  - Blush Pink (#E6D1C5) - Secondary accent
+  - Deep Teal (#2C5F6B) - Text headers
+  - Warm Gray (#8A8276) - Body text
+- **Typography**: 
+  - Headers: Lora serif font
+  - Body: Open Sans
+  - Decorative: Dancing Script for quotes
+- **Components**: Consistent card layouts, gradient backgrounds, and glass-morphism effects
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📱 Screenshots
+- Homepage with hero section and service preview
+- Responsive services page with expandable cards
+- Contact page with multiple communication options
+- Mobile-optimized navigation and layouts
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## ⚙️ Installation & Development Setup
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
+- Node.js (version 18 or higher)
+- npm or yarn package manager
 
-Follow these steps:
+### Local Development Setup
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. **Clone the repository**
+   ```bash
+   git clone <YOUR_GIT_URL>
+   cd mette-theilmann-website
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+4. **Open in browser**
+   Navigate to `http://localhost:5173`
+
+### Build for Production
+```bash
+npm run build
 ```
 
-**Edit a file directly in GitHub**
+### Preview Production Build
+```bash
+npm run preview
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 🧩 Project Structure
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # Shadcn/ui components
+│   ├── Footer.tsx      # Site footer with contact info
+│   ├── Navigation.tsx  # Main navigation bar
+│   ├── ServiceCard.tsx # Individual service card component
+│   ├── ServicePreview.tsx # Services section for homepage
+│   └── ScrollToTop.tsx # Auto-scroll to top on route change
+├── pages/              # Page components
+│   ├── Home.tsx        # Homepage with hero and overview
+│   ├── About.tsx       # About page with personal story
+│   ├── Services.tsx    # Detailed services with expandable cards
+│   ├── Contact.tsx     # Contact information and CTAs
+│   └── NotFound.tsx    # 404 error page
+├── hooks/              # Custom React hooks
+│   ├── use-mobile.tsx  # Mobile device detection
+│   ├── useMouseParallax.tsx # Mouse movement parallax effect
+│   └── useScrollAnimation.tsx # Scroll-triggered animations
+├── lib/                # Utility functions
+│   └── utils.ts        # Common utility functions
+├── App.tsx             # Main app component with routing
+├── main.tsx           # React app entry point
+└── index.css          # Global styles and Tailwind config
+```
 
-## What technologies are used for this project?
+### Key Components
+- **Navigation**: Responsive nav with mobile menu
+- **ServiceCard**: Reusable card component for services
+- **Footer**: Contact information and social links
+- **ScrollToTop**: Ensures pages load at top on navigation
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🖼️ Design & Styling
 
-## How can I deploy this project?
+### Styling Approach
+- **Tailwind CSS**: Utility-first CSS framework for rapid development
+- **Custom Design System**: Consistent color palette and typography
+- **Component-based**: Modular, reusable styled components
+- **Responsive-first**: Mobile-first approach with breakpoint utilities
 
-Simply open [Lovable](https://lovable.dev/projects/a7ab716f-bb20-447c-bee3-b672d0e7f1ce) and click on Share -> Publish.
+### Global Styles (`src/index.css`)
+- Custom color variables matching brand palette
+- Animation keyframes for smooth transitions
+- Typography scale and font loading
+- Responsive utilities and helper classes
 
-## Can I connect a custom domain to my Lovable project?
+### Theme Configuration (`tailwind.config.ts`)
+- Custom color extensions
+- Font family definitions
+- Animation configurations
+- Responsive breakpoint customizations
 
-Yes, you can!
+### Styling Guidelines
+- Use semantic color names (sage-green, deep-teal)
+- Maintain consistent spacing scale (4, 8, 12, 16, 20, 24)
+- Apply hover states for interactive elements
+- Ensure proper contrast ratios for accessibility
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 📦 Component Documentation
+
+### ServiceCard Component
+**Props:**
+- `title: string` - Service title
+- `icon: LucideIcon` - Icon component from Lucide
+- `description: string` - Service description
+- `details: string[]` - Array of service detail points
+
+**Usage:**
+```tsx
+<ServiceCard
+  title="Narrative Psychology"
+  icon={Brain}
+  description="Explore and challenge..."
+  details={["Detail 1", "Detail 2"]}
+/>
+```
+
+### Navigation Component
+- Responsive navigation with mobile hamburger menu
+- Active route highlighting
+- Sticky positioning with backdrop blur
+- Contact CTA button
+
+### Footer Component
+- Contact information display
+- Social media links (email, phone)
+- Copyright information
+- Responsive layout
+
+---
+
+## 🔁 Deployment Instructions
+
+### Lovable Platform Deployment
+1. Push changes to the main branch
+2. Open [Lovable Project](https://lovable.dev/projects/a7ab716f-bb20-447c-bee3-b672d0e7f1ce)
+3. Click "Share" → "Publish"
+4. Site automatically deploys to Lovable subdomain
+
+### Custom Domain Setup
+1. Navigate to Project > Settings > Domains in Lovable
+2. Click "Connect Domain"
+3. Follow DNS configuration instructions
+4. Domain will be active within 24-48 hours
+
+### Manual Build Deployment
+For other platforms (Vercel, Netlify):
+1. Run `npm run build`
+2. Upload `dist/` folder contents
+3. Configure single-page application (SPA) routing
+
+---
+
+## 🔐 Environment Variables
+
+This project currently doesn't require environment variables for basic functionality. 
+
+For future integrations, create a `.env` file:
+```env
+# Analytics (if added)
+VITE_GA_TRACKING_ID=
+
+# Contact Forms (if added)
+VITE_EMAILJS_SERVICE_ID=
+VITE_EMAILJS_TEMPLATE_ID=
+VITE_EMAILJS_PUBLIC_KEY=
+```
+
+---
+
+## 📈 Analytics & Integrations
+
+### Potential Integrations
+- **Google Analytics**: Track visitor behavior and conversions
+- **Contact Forms**: EmailJS or similar service for contact form handling
+- **Scheduling**: Calendly integration for booking consultations
+- **CRM**: Integration with client management systems
+
+### Current Contact Methods
+- Direct email links (`mailto:`)
+- Phone number links (`tel:`)
+- WhatsApp integration (`wa.me/`)
+
+---
+
+## 📋 Known Issues & Future Improvements
+
+### Known Issues
+- None currently identified
+
+### Future Enhancements
+- **Contact Form**: Add interactive contact form with validation
+- **Booking System**: Integrate appointment scheduling
+- **Blog Section**: Add content management for articles/insights
+- **Testimonials**: Client testimonial carousel
+- **Multilingual**: French language support for local clients
+- **Analytics**: Visitor tracking and conversion metrics
+- **SEO**: Enhanced meta tags and structured data
+- **Performance**: Image optimization and lazy loading
+
+### Accessibility Improvements
+- Enhanced keyboard navigation
+- Screen reader optimizations
+- Focus management improvements
+- Color contrast validation
+
+---
+
+## 🧪 Testing
+
+### Manual Testing Checklist
+- [ ] Responsive design across all breakpoints
+- [ ] Navigation functionality on mobile/desktop
+- [ ] All contact links working properly
+- [ ] Service card expansion/collapse
+- [ ] Smooth animations and transitions
+- [ ] Cross-browser compatibility (Chrome, Firefox, Safari, Edge)
+
+### Future Testing Implementation
+- **Unit Tests**: Jest + React Testing Library
+- **E2E Tests**: Cypress or Playwright
+- **Accessibility Tests**: axe-core integration
+- **Performance Tests**: Lighthouse CI
+
+---
+
+## 👨‍💻 Contributors
+
+**Mette Nyholm Theilmann** - Content and Requirements
+**Development Team** - Implementation and Design
+
+## 📄 License
+
+This project is proprietary and confidential. All rights reserved.
+
+---
+
+## 📞 Contact & Support
+
+For technical support or questions about this website:
+- **Email**: mette@metteteilmann.com
+- **Phone France**: +33 745 233 230
+- **Phone UK**: +44 775 691 8126
+- **WhatsApp**: [+33 745 233 230](https://wa.me/33745233230)
+
+---
+
+*Built with ❤️ using modern web technologies for optimal performance and user experience.*
