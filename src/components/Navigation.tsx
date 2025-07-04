@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -20,12 +19,11 @@ const Navigation = () => {
     <nav className="bg-cream border-b border-sage-green/20 sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="font-serif font-bold text-xl text-deep-teal shrink-0">
-            Mette Theilmann
-          </Link>
+          {/* Empty space for logo area - keeping layout balanced */}
+          <div className="w-8"></div>
           
           {!isMobile && (
-            <div className="hidden md:flex space-x-8">
+            <div className="flex space-x-8 flex-1 justify-center">
               {links.map((link) => (
                 <Link
                   key={link.path}
