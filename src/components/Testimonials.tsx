@@ -76,19 +76,19 @@ const testimonials = [
 const Testimonials = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
-  const [expandedCards, setExpandedCards] = useState<{[key: number]: boolean}>({});
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
 
-  // Auto-scroll functionality
+  // Auto-scroll functionality - only when no card is expanded
   useEffect(() => {
-    if (!api) return;
+    if (!api || !isAutoScrolling || expandedCard !== null) return;
 
     const autoScroll = setInterval(() => {
       api.scrollNext();
-    }, 5000); // Auto-scroll every 5 seconds
+    }, 3000); // Auto-scroll every 3 seconds
 
-    // Clean up interval on component unmount or api change
     return () => clearInterval(autoScroll);
-  }, [api]);
+  }, [api, isAutoScrolling, expandedCard]);
 
   // Track current slide
   useEffect(() => {
@@ -101,21 +101,28 @@ const Testimonials = () => {
     });
   }, [api]);
 
-  const toggleExpanded = (index: number) => {
-    setExpandedCards(prev => ({
-      ...prev,
-      [index]: !prev[index]
-    }));
+  const handleCardClick = (index: number) => {
+    // Stop auto-scrolling when a card is clicked
+    setIsAutoScrolling(false);
+    
+    // Toggle expanded state
+    if (expandedCard === index) {
+      setExpandedCard(null);
+      // Resume auto-scrolling after collapse
+      setTimeout(() => setIsAutoScrolling(true), 1000);
+    } else {
+      setExpandedCard(index);
+    }
   };
 
-  // Group testimonials for responsive display
-  const groupedTestimonials = [];
-  for (let i = 0; i < testimonials.length; i += 2) {
-    groupedTestimonials.push(testimonials.slice(i, i + 2));
-  }
+  const handleCloseExpanded = () => {
+    setExpandedCard(null);
+    // Resume auto-scrolling after closing
+    setTimeout(() => setIsAutoScrolling(true), 1000);
+  };
 
   return (
-    <section className="py-16 lg:py-20 bg-gradient-to-br from-sage-green/10 via-sage-green/5 to-blush-pink/10">
+    <section className="py-16 lg:py-20 bg-gradient-to-br from-sage-green/10 via-sage-green/5 to-blush-pink/10 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 lg:mb-16">
           <div className="inline-flex flex-col items-center gap-4 mb-8">
@@ -138,41 +145,20 @@ const Testimonials = () => {
             }}
           >
             <CarouselContent className="-ml-4">
-              {/* Mobile: Single cards */}
-              <div className="md:hidden">
-                {testimonials.map((testimonial, index) => (
-                  <CarouselItem key={index} className="pl-4 basis-full">
-                    <TestimonialCard 
-                      testimonial={testimonial} 
-                      index={index}
-                      isExpanded={expandedCards[index] || false}
-                      onToggle={() => toggleExpanded(index)}
-                    />
-                  </CarouselItem>
-                ))}
-              </div>
-
-              {/* Desktop: Paired cards */}
-              <div className="hidden md:block">
-                {groupedTestimonials.map((group, groupIndex) => (
-                  <CarouselItem key={groupIndex} className="pl-4">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      {group.map((testimonial, index) => {
-                        const actualIndex = groupIndex * 2 + index;
-                        return (
-                          <TestimonialCard 
-                            key={actualIndex}
-                            testimonial={testimonial} 
-                            index={actualIndex}
-                            isExpanded={expandedCards[actualIndex] || false}
-                            onToggle={() => toggleExpanded(actualIndex)}
-                          />
-                        );
-                      })}
-                    </div>
-                  </CarouselItem>
-                ))}
-              </div>
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem 
+                  key={index} 
+                  className="pl-4 md:basis-1/2 lg:basis-1/3"
+                >
+                  <TestimonialCard 
+                    testimonial={testimonial} 
+                    index={index}
+                    isExpanded={expandedCard === index}
+                    onClick={() => handleCardClick(index)}
+                    onClose={handleCloseExpanded}
+                  />
+                </CarouselItem>
+              ))}
             </CarouselContent>
             
             <CarouselPrevious className="hidden lg:flex -left-16 bg-white/80 hover:bg-white border-sage-green/30 text-sage-green hover:text-deep-teal shadow-lg" />
@@ -181,17 +167,52 @@ const Testimonials = () => {
 
           {/* Progress Indicators */}
           <div className="flex justify-center mt-8 space-x-2">
-            {Array.from({ length: Math.ceil(testimonials.length / 2) }).map((_, index) => (
+            {testimonials.map((_, index) => (
               <button
                 key={index}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  current === index ? 'bg-sage-green scale-125' : 'bg-sage-green/30'
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  Math.floor(current * testimonials.length / testimonials.length) === index ? 'bg-sage-green scale-125' : 'bg-sage-green/30'
                 }`}
                 onClick={() => api?.scrollTo(index)}
               />
             ))}
           </div>
+
+          {/* Auto-scroll indicator */}
+          {isAutoScrolling && expandedCard === null && (
+            <div className="text-center mt-4">
+              <p className="text-sm text-sage-green/70 font-medium">
+                Click any card to pause and read more
+              </p>
+            </div>
+          )}
         </div>
+
+        {/* Expanded Card Overlay */}
+        {expandedCard !== null && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50" onClick={handleCloseExpanded}>
+            <div className="bg-white rounded-2xl p-6 lg:p-8 max-w-2xl max-h-[80vh] overflow-y-auto shadow-2xl" onClick={e => e.stopPropagation()}>
+              <div className="flex justify-between items-start mb-6">
+                <Quote className="text-sage-green flex-shrink-0" size={32} />
+                <button
+                  onClick={handleCloseExpanded}
+                  className="text-warm-gray hover:text-deep-teal transition-colors p-2"
+                >
+                  <ChevronDown className="rotate-180" size={24} />
+                </button>
+              </div>
+              
+              <p className="text-warm-gray mb-6 italic leading-relaxed text-lg">
+                "{testimonials[expandedCard].fullText}"
+              </p>
+              
+              <div className="border-t border-sage-green/10 pt-4">
+                <p className="font-bold text-deep-teal text-lg">{testimonials[expandedCard].author}</p>
+                <p className="text-warm-gray/80 text-sm leading-relaxed">{testimonials[expandedCard].title}</p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -202,36 +223,38 @@ const TestimonialCard = ({
   testimonial, 
   index, 
   isExpanded, 
-  onToggle 
+  onClick,
+  onClose
 }: {
   testimonial: typeof testimonials[0];
   index: number;
   isExpanded: boolean;
-  onToggle: () => void;
+  onClick: () => void;
+  onClose: () => void;
 }) => {
   return (
-    <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-lg border border-sage-green/20 hover-lift h-full flex flex-col">
+    <div 
+      className={`bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-sage-green/20 hover-lift h-full flex flex-col cursor-pointer transition-all duration-300 ${
+        isExpanded ? 'ring-2 ring-sage-green/50' : 'hover:shadow-xl'
+      }`}
+      onClick={onClick}
+    >
       <Quote className="text-sage-green mb-4 flex-shrink-0" size={28} />
       
       <div className="flex-1">
-        <p className="text-warm-gray mb-6 italic leading-relaxed text-lg">
-          "{isExpanded ? testimonial.fullText : testimonial.text}"
+        <p className="text-warm-gray mb-6 italic leading-relaxed text-base line-clamp-4">
+          "{testimonial.text}"
         </p>
-        
-        {testimonial.fullText !== testimonial.text && (
-          <button
-            onClick={onToggle}
-            className="flex items-center gap-2 text-sage-green hover:text-deep-teal transition-colors mb-4 font-medium"
-          >
-            <span className="text-sm">{isExpanded ? 'Show less' : 'Read more'}</span>
-            <ChevronDown className={`transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} size={16} />
-          </button>
-        )}
       </div>
       
       <div className="border-t border-sage-green/10 pt-4 mt-auto">
-        <p className="font-bold text-deep-teal text-lg">{testimonial.author}</p>
+        <p className="font-bold text-deep-teal text-base">{testimonial.author}</p>
         <p className="text-warm-gray/80 text-sm leading-relaxed">{testimonial.title}</p>
+      </div>
+      
+      <div className="mt-4 flex items-center justify-center">
+        <span className="text-sage-green text-sm font-medium">Click to read full testimony</span>
+        <ChevronDown className="ml-2 text-sage-green" size={16} />
       </div>
     </div>
   );
