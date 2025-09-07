@@ -1,10 +1,49 @@
 
-import React from 'react';
-import { Mail, MessageCircle, Phone } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, MessageCircle, Phone, Send } from 'lucide-react';
 import { useMouseParallax } from '../hooks/useMouseParallax';
+import { useToast } from '../hooks/use-toast';
 
 const Contact = () => {
   const mousePosition = useMouseParallax(0.03);
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for reaching out. I'll get back to you within 24-48 hours.",
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      setIsSubmitting(false);
+    }, 1500);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cream via-cream/95 to-blush-pink/10 text-deep-teal animated-background">
@@ -91,6 +130,103 @@ const Contact = () => {
                 Whether you're seeking individual support, parenting guidance, or corporate solutions, 
                 I'm here to help you rewrite your story and step into your power.
               </p>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="mt-12 lg:mt-16">
+            <div className="bg-gradient-to-br from-white/90 to-blush-pink/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 lg:p-12 shadow-2xl border border-sage-green/10 animate-fade-in hover-lift">
+              <h3 className="text-xl sm:text-2xl font-serif font-bold text-deep-teal mb-6 text-center">
+                Send Me a Message
+              </h3>
+              
+              <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-warm-gray mb-2">
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 bg-white/70 border border-sage-green/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-sage-green focus:border-transparent transition-all duration-300"
+                      placeholder="Jane Doe"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-warm-gray mb-2">
+                      Your Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 bg-white/70 border border-sage-green/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-sage-green focus:border-transparent transition-all duration-300"
+                      placeholder="jane@example.com"
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-warm-gray mb-2">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 bg-white/70 border border-sage-green/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-sage-green focus:border-transparent transition-all duration-300"
+                    placeholder="How can I help you?"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-warm-gray mb-2">
+                    Your Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={6}
+                    className="w-full px-4 py-3 bg-white/70 border border-sage-green/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-sage-green focus:border-transparent transition-all duration-300 resize-none"
+                    placeholder="Tell me about your journey and how I can support you..."
+                  />
+                </div>
+                
+                <div className="text-center">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-sage-green to-deep-teal text-white rounded-full hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <span className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></span>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <Send className="ml-3" size={20} />
+                      </>
+                    )}
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

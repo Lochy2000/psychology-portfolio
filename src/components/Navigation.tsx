@@ -19,8 +19,14 @@ const Navigation = () => {
     <nav className="bg-cream border-b border-sage-green/20 sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Empty space for logo area - keeping layout balanced */}
-          <div className="w-8"></div>
+          {/* Brand/Logo */}
+          <Link 
+            to="/" 
+            className="flex items-center space-x-2 text-deep-teal hover:text-sage-green transition-colors duration-300 group"
+          >
+            <span className="text-2xl font-serif font-bold tracking-wide group-hover:scale-105 transition-transform duration-300">Mette</span>
+            <span className="hidden sm:inline text-sm text-warm-gray/70 font-light">Coaching</span>
+          </Link>
           
           {!isMobile && (
             <div className="flex space-x-8 flex-1 justify-center">
@@ -28,11 +34,14 @@ const Navigation = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-warm-gray hover:text-deep-teal transition-colors whitespace-nowrap ${
+                  className={`relative text-warm-gray hover:text-deep-teal transition-colors whitespace-nowrap ${
                     location.pathname === link.path ? 'text-deep-teal font-semibold' : ''
                   }`}
                 >
                   {link.label}
+                  {location.pathname === link.path && (
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-sage-green to-deep-teal rounded-full animate-slide-in"></span>
+                  )}
                 </Link>
               ))}
             </div>

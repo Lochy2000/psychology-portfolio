@@ -148,6 +148,50 @@
   }
 }
 
+/* Navigation underline animation */
+@keyframes slide-in {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out forwards;
+}
+
+/* Mobile expandable sections transitions */
+.expandable-content {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.expand-enter {
+  max-height: 0;
+  opacity: 0;
+}
+
+.expand-enter-active {
+  max-height: 1000px;
+  opacity: 1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.expand-exit {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.expand-exit-active {
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .animated-background {
   position: relative;
   overflow: hidden;
@@ -212,6 +256,17 @@
   overflow: visible;
   line-height: 1.2;
   will-change: background-position;
+  text-shadow: 0 0 20px rgba(44, 95, 107, 0.1);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+/* Fallback for better accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .text-shimmer-safe {
+    animation: none;
+    background: rgb(44, 95, 107);
+    -webkit-text-fill-color: rgb(44, 95, 107);
+  }
 }
 
 /* Ensure safe containers */
@@ -432,6 +487,41 @@
 
 .border-sage-green {
   border-color: rgb(156, 175, 136);
+}
+
+/* Enhanced contrast utilities for gradient backgrounds */
+.text-high-contrast {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.bg-gradient-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.05));
+  pointer-events: none;
+}
+
+/* Ensure better readability on gradient backgrounds */
+.gradient-text-safe {
+  position: relative;
+  z-index: 1;
+}
+
+.gradient-text-safe::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  opacity: 0;
+}
+
+/* Improved contrast for warm gray on light backgrounds */
+.text-warm-gray-enhanced {
+  color: rgb(74, 74, 74);
 }
 
 /* Responsive breakpoints for better mobile experience */

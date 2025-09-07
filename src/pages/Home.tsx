@@ -69,8 +69,8 @@ const Home: React.FC = () => {
                       <ChevronDown className={`transform transition-transform duration-300 ${expandedSections.chapter1 ? 'rotate-180' : ''}`} size={20} />
                     </button>
                     
-                    {expandedSections.chapter1 && (
-                      <div className="mt-4 p-6 bg-white/40 rounded-xl space-y-6 animate-fade-in border border-sage-green/10">
+                    <div className={`mt-4 overflow-hidden transition-all duration-500 ease-in-out ${expandedSections.chapter1 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                      <div className="p-6 bg-white/40 rounded-xl space-y-6 border border-sage-green/10">
                         <p className="text-warm-gray leading-relaxed text-lg">
                           You're seeking a safe, supportive space and guide to help you explore the stories you've been told - and the ones you tell yourself - so you can reconnect with your true power.
                         </p>
@@ -80,7 +80,7 @@ const Home: React.FC = () => {
                           </p>
                         </div>
                       </div>
-                    )}
+                    </div>
                   </div>
 
                   {/* Desktop Content - Always Visible */}
@@ -154,13 +154,13 @@ const Home: React.FC = () => {
                       </button>
                     </div>
                     
-                    {expandedSections[`step${index}`] && (
-                      <div className="mt-6 pt-6 border-t border-sage-green/20 animate-fade-in">
+                    <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedSections[`step${index}`] ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}>
+                      <div className="mt-6 pt-6 border-t border-sage-green/20">
                         <p className="text-warm-gray leading-relaxed">
                           {step.detail}
                         </p>
                       </div>
-                    )}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -226,8 +226,8 @@ const Home: React.FC = () => {
                     <ChevronDown className={`transform transition-transform duration-300 ${expandedSections.cta ? 'rotate-180' : ''}`} size={18} />
                   </button>
                   
-                  {expandedSections.cta && (
-                    <div className="text-center mb-8 animate-fade-in bg-white/30 rounded-2xl p-6">
+                  <div className={`text-center mb-8 overflow-hidden transition-all duration-500 ease-in-out ${expandedSections.cta ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="bg-white/30 rounded-2xl p-6">
                       <p className="text-lg text-warm-gray leading-relaxed mb-6">
                         Together, we'll uncover the narratives that shape your life and rewrite them into powerful, empowering scripts that truly reflect who you are.
                       </p>
@@ -237,7 +237,7 @@ const Home: React.FC = () => {
                         </p>
                       </div>
                     </div>
-                  )}
+                  </div>
                 </div>
                 
                 {/* Desktop - Full Content */}
