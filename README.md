@@ -4,7 +4,7 @@
 A modern, responsive website for Mette Nyholm Theilmann, featuring narrative psychology services, NLP coaching, parenting support, and corporate wellness solutions through HerEdge.
 
 ## 🌐 Live Demo
-[View Live Website](https://lovable.dev/projects/a7ab716f-bb20-447c-bee3-b672d0e7f1ce)
+// ...existing code...
 
 ## 🛠️ Tech Stack
 - **Frontend Framework**: React 18.3.1 with TypeScript
@@ -15,7 +15,7 @@ A modern, responsive website for Mette Nyholm Theilmann, featuring narrative psy
 - **Routing**: React Router DOM
 - **State Management**: TanStack React Query
 - **Animation**: CSS animations with Tailwind utilities
-- **Deployment**: Lovable platform
+// ...existing code...
 
 ## ✨ Key Features
 - **Responsive Design**: Fully responsive across all devices and screen sizes
@@ -186,14 +186,14 @@ src/
 
 ## 🔁 Deployment Instructions
 
-### Lovable Platform Deployment
+// ...existing code...
 1. Push changes to the main branch
-2. Open [Lovable Project](https://lovable.dev/projects/a7ab716f-bb20-447c-bee3-b672d0e7f1ce)
+// ...existing code...
 3. Click "Share" → "Publish"
-4. Site automatically deploys to Lovable subdomain
+// ...existing code...
 
 ### Custom Domain Setup
-1. Navigate to Project > Settings > Domains in Lovable
+// ...existing code...
 2. Click "Connect Domain"
 3. Follow DNS configuration instructions
 4. Domain will be active within 24-48 hours

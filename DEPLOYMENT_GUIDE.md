@@ -1,17 +1,16 @@
 
 # Deployment Guide - Mette Theilmann Website
 
-## 🚀 Quick Deployment (Lovable Platform)
+// ...existing code...
 
 ### Current Setup
-The website is currently deployed on the Lovable platform with automatic deployment.
+// ...existing code...
 
 1. **Access the Project**
-   - URL: https://lovable.dev/projects/a7ab716f-bb20-447c-bee3-b672d0e7f1ce
-   - Login to your Lovable account
+// ...existing code...
 
 2. **Deploy Changes**
-   - Make changes through the Lovable editor
+// ...existing code...
    - Changes are automatically committed and deployed
    - Live site updates within minutes
 
@@ -25,7 +24,7 @@ The website is currently deployed on the Lovable platform with automatic deploym
 ## 🌐 Custom Domain Setup
 
 ### Prerequisites
-- Paid Lovable plan required
+// ...existing code...
 - Domain ownership and DNS access
 
 ### Step-by-Step Domain Connection
@@ -39,13 +38,12 @@ The website is currently deployed on the Lovable platform with automatic deploym
    
    **Option A: Root Domain (yourdomain.com)**
    ```
-   A Record: @ → [Lovable IP Address]
-   CNAME: www → [your-project].lovable.app
+// ...existing code...
    ```
 
    **Option B: Subdomain (services.yourdomain.com)**
    ```
-   CNAME: services → [your-project].lovable.app
+// ...existing code...
    ```
 
 3. **DNS Provider Examples**
@@ -54,7 +52,7 @@ The website is currently deployed on the Lovable platform with automatic deploym
    ```
    Type: CNAME
    Name: @ (or subdomain)
-   Target: [your-project].lovable.app
+// ...existing code...
    TTL: Auto
    ```
 
@@ -62,7 +60,7 @@ The website is currently deployed on the Lovable platform with automatic deploym
    ```
    Type: CNAME
    Host: @ (or subdomain)  
-   Points to: [your-project].lovable.app
+// ...existing code...
    TTL: 1 Hour
    ```
 
@@ -70,7 +68,7 @@ The website is currently deployed on the Lovable platform with automatic deploym
    ```
    Type: CNAME Record
    Host: @ (or subdomain)
-   Value: [your-project].lovable.app
+// ...existing code...
    TTL: Automatic
    ```
 
@@ -386,7 +384,7 @@ For deployment assistance:
 - **Security Concerns**: Review security headers
 
 **Emergency Contacts:**
-- Lovable Support: Platform documentation
+// ...existing code...
 - DNS Provider: Your domain registrar support
 - CDN Provider: Platform-specific support
 
