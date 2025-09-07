@@ -38,12 +38,12 @@ const Home: React.FC = () => {
               {/* Chapter Header - Centered and Clean */}
               <div className="text-center mb-12 lg:mb-16">
                 <div className="inline-flex flex-col items-center gap-4 mb-8">
-                  <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-sage-green to-blush-pink rounded-full flex items-center justify-center gentle-float shadow-lg">
+                  <div className="w-14 h-14 lg:w-16 lg:h-16 icon-professional rounded-full flex items-center justify-center">
                     <BookOpen className="text-white" size={24} />
                   </div>
                   <div className="text-center">
-                    <span className="text-sm font-handwritten text-sage-green/70 block mb-2">Chapter One</span>
-                    <h2 className="text-3xl lg:text-5xl font-serif font-bold text-deep-teal leading-tight">Who You Are</h2>
+                    <span className="text-base font-handwritten text-sage-green/70 block mb-2">Chapter One</span>
+                    <h2 className="text-3xl lg:text-4xl font-serif font-bold text-deep-teal leading-tight">Who You Are</h2>
                   </div>
                 </div>
               </div>
@@ -54,7 +54,7 @@ const Home: React.FC = () => {
                 <div className="lg:col-span-7 space-y-6 lg:space-y-8">
                   {/* Primary Message - Prominent */}
                   <div className="bg-gradient-to-r from-sage-green/15 via-sage-green/10 to-transparent p-6 lg:p-8 rounded-2xl border-l-4 border-sage-green shadow-sm">
-                    <p className="text-xl lg:text-2xl font-medium text-deep-teal leading-relaxed">
+                    <p className="text-lg lg:text-xl font-semibold text-deep-teal leading-relaxed">
                       You crave control, freedom, and authenticity - but inner doubts hold you back.
                     </p>
                   </div>
@@ -75,7 +75,7 @@ const Home: React.FC = () => {
                           You're seeking a safe, supportive space and guide to help you explore the stories you've been told - and the ones you tell yourself - so you can reconnect with your true power.
                         </p>
                         <div className="bg-gradient-to-r from-sage-green/10 to-transparent p-4 rounded-xl border-l-3 border-sage-green/40">
-                          <p className="handwritten-quote text-lg font-handwritten text-deep-teal/80 italic text-center">
+                          <p className="handwritten-quote text-xl font-handwritten text-deep-teal/80 italic text-center">
                             Every story can be rewritten. You hold the pen. ✨
                           </p>
                         </div>
@@ -85,7 +85,7 @@ const Home: React.FC = () => {
 
                   {/* Desktop Content - Always Visible */}
                   <div className="hidden lg:block space-y-8">
-                    <p className="text-lg lg:text-xl text-warm-gray leading-relaxed">
+                    <p className="text-base lg:text-lg text-warm-gray leading-relaxed">
                       You're seeking a safe, supportive space and guide to help you explore the stories you've been told - and the ones you tell yourself - so you can reconnect with your true power.
                     </p>
                     <div className="bg-gradient-to-r from-sage-green/10 via-sage-green/5 to-transparent p-6 lg:p-8 rounded-2xl border-l-4 border-sage-green/30 hover-lift shadow-sm">
@@ -118,12 +118,12 @@ const Home: React.FC = () => {
               {/* Chapter Header */}
               <div className="text-center mb-12 lg:mb-16">
                 <div className="inline-flex flex-col items-center gap-4 mb-8">
-                  <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-blush-pink to-deep-teal rounded-full flex items-center justify-center gentle-float shadow-lg">
+                  <div className="w-14 h-14 lg:w-16 lg:h-16 icon-professional-pink rounded-full flex items-center justify-center">
                     <Compass className="text-white" size={24} />
                   </div>
                   <div className="text-center">
-                    <span className="text-sm font-handwritten text-blush-pink/70 block mb-2">Chapter Two</span>
-                    <h2 className="text-3xl lg:text-5xl font-serif font-bold text-deep-teal text-shimmer leading-tight">
+                    <span className="text-base font-handwritten text-blush-pink/70 block mb-2">Chapter Two</span>
+                    <h2 className="text-3xl lg:text-4xl font-serif font-bold text-deep-teal text-shimmer leading-tight">
                       Your Transformation Journey
                     </h2>
                   </div>
@@ -139,7 +139,7 @@ const Home: React.FC = () => {
                 ].map((step, index) => (
                   <div key={step.title} className="bg-white/50 rounded-2xl p-6 border border-sage-green/20 shadow-sm">
                     <div className="flex items-center gap-4">
-                      <div className={`w-14 h-14 bg-gradient-to-br from-${step.color} to-${step.color}/80 rounded-full flex items-center justify-center shrink-0 shadow-lg`}>
+                      <div className="w-14 h-14 icon-subtle rounded-full flex items-center justify-center shrink-0">
                         <step.icon className="text-white" size={22} />
                       </div>
                       <div className="flex-1">
@@ -178,7 +178,7 @@ const Home: React.FC = () => {
                         transform: `translate(${mousePosition.x * (index + 1) * 0.5}px, ${mousePosition.y * (index + 1) * 0.5}px)`,
                         animationDelay: step.delay
                       }}>
-                      <div className={`w-18 h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-${step.color} to-${step.color}/80 rounded-full flex items-center justify-center mx-auto mb-6 gentle-float shadow-lg`}>
+                      <div className="w-18 h-18 lg:w-20 lg:h-20 icon-professional rounded-full flex items-center justify-center mx-auto mb-6">
                         <step.icon className="text-white" size={28} />
                       </div>
                       <h3 className="text-2xl lg:text-3xl font-serif font-bold text-deep-teal mb-6 text-center">{step.title}</h3>
@@ -203,7 +203,7 @@ const Home: React.FC = () => {
           <section ref={ctaRef} className="text-center py-12 lg:py-20">
             <div className={`bg-gradient-to-br from-sage-green/20 via-sage-green/10 to-blush-pink/20 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-2xl max-w-6xl mx-auto border border-sage-green/30 transition-all duration-1000 hover-lift ${ctaVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}>
               <div className="mb-8 lg:mb-10">
-                <div className="w-18 lg:w-24 h-18 lg:h-24 bg-gradient-to-br from-sage-green to-blush-pink rounded-full flex items-center justify-center mx-auto mb-6 lg:mb-8 gentle-float shadow-xl">
+                <div className="w-18 lg:w-24 h-18 lg:h-24 icon-professional rounded-full flex items-center justify-center mx-auto mb-6 lg:mb-8">
                   <BookOpen className="text-white" size={32} />
                 </div>
                 <h2 className="text-4xl lg:text-6xl font-serif font-bold text-deep-teal mb-6 lg:mb-8 text-shimmer leading-tight">

@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
               <span className="text-shimmer-safe block">Mette Theilmann</span>
             </h1>
           </div>
-          <p className="text-base sm:text-lg font-medium text-sage-green gentle-float px-2 py-1 leading-relaxed">
+          <p className="text-lg sm:text-xl font-medium text-sage-green gentle-float px-2 py-1 leading-relaxed">
             Narrative Psychologist | NLP Coach | Parenting Consultant
           </p>
           {/* Mobile Trust Indicators */}
@@ -47,15 +47,15 @@ const Hero: React.FC = () => {
         <div className="px-4 pb-8 space-y-6">
           {/* Main headline with journal background feel */}
           <div className="bg-gradient-to-br from-white/80 to-sage-green/5 backdrop-blur-sm rounded-2xl p-6 border border-sage-green/20 story-chapter">
-            <h2 className="text-xl sm:text-2xl font-serif font-bold text-deep-teal leading-relaxed animate-fade-in mb-4 py-1" style={{ animationDelay: '0.3s' }}>
-              Become the author of your own life by rewriting the story you tell yourself and others tell you
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-deep-teal leading-tight animate-fade-in mb-4 py-1" style={{ animationDelay: '0.3s' }}>
+              Become the author of your own life
             </h2>
-            <div className="handwritten-quote text-base sm:text-lg font-handwritten text-warm-gray/80 italic border-l-4 border-sage-green/30 pl-4 py-2">
+            <div className="handwritten-quote text-lg sm:text-xl font-handwritten text-deep-teal/70 italic border-l-4 border-sage-green/30 pl-4 py-2">
               Every story can be rewritten. You hold the pen.
             </div>
           </div>
           
-          <p className="text-sm sm:text-base text-warm-gray leading-relaxed animate-fade-in prose" style={{ animationDelay: '0.4s' }}>
+          <p className="text-base sm:text-lg text-warm-gray leading-relaxed animate-fade-in prose" style={{ animationDelay: '0.4s' }}>
             Let's uncover the limiting beliefs that hold you back from living fully. By releasing what no longer serves you, we can rewrite a story that truly empowers and reflects who you are and want to be.
           </p>
           
@@ -131,10 +131,10 @@ const Hero: React.FC = () => {
             <div className="space-y-8">
               {/* Main headline with journal feel */}
               <div className="bg-gradient-to-br from-white/70 to-sage-green/5 backdrop-blur-sm rounded-2xl p-8 border border-sage-green/20 story-chapter animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                <h2 className="text-2xl lg:text-3xl xl:text-4xl font-serif font-bold text-deep-teal leading-relaxed mb-6 py-2">
-                  Become the author of your own life by rewriting the story you tell yourself and others tell you
+                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-serif font-bold text-deep-teal leading-tight mb-6 py-2">
+                  Become the author of your own life
                 </h2>
-                <div className="handwritten-quote text-lg xl:text-xl font-handwritten text-warm-gray/80 italic border-l-4 border-sage-green/30 pl-6 py-2">
+                <div className="handwritten-quote text-xl xl:text-2xl font-handwritten text-deep-teal/70 italic border-l-4 border-sage-green/30 pl-6 py-2">
                   Every story can be rewritten. You hold the pen.
                 </div>
               </div>

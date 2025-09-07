@@ -22,10 +22,13 @@ const Navigation = () => {
           {/* Brand/Logo */}
           <Link 
             to="/" 
-            className="flex items-center space-x-2 text-deep-teal hover:text-sage-green transition-colors duration-300 group"
+            className="flex items-center hover:opacity-90 transition-opacity duration-300"
           >
-            <span className="text-2xl font-serif font-bold tracking-wide group-hover:scale-105 transition-transform duration-300">Mette</span>
-            <span className="hidden sm:inline text-sm text-warm-gray/70 font-light">Coaching</span>
+            <img 
+              src="/logo.png" 
+              alt="Mette Coaching" 
+              className="h-10 sm:h-24 w-auto"
+            />
           </Link>
           
           {!isMobile && (

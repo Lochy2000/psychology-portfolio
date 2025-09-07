@@ -50,10 +50,10 @@ const Contact = () => {
       <div className="container mx-auto px-4 py-8 sm:py-16">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 sm:mb-16 animate-fade-in px-4">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-deep-teal mb-4 sm:mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-deep-teal mb-4 sm:mb-6 leading-tight">
               <span className="text-shimmer-safe">Let's Connect</span>
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-warm-gray max-w-2xl mx-auto leading-relaxed px-2">
+            <p className="text-lg sm:text-xl lg:text-2xl text-warm-gray max-w-2xl mx-auto leading-relaxed px-2">
               Ready to start your journey of transformation? I'm here to support you every step of the way.
             </p>
           </div>
@@ -136,14 +136,14 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="mt-12 lg:mt-16">
             <div className="bg-gradient-to-br from-white/90 to-blush-pink/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 lg:p-12 shadow-2xl border border-sage-green/10 animate-fade-in hover-lift">
-              <h3 className="text-xl sm:text-2xl font-serif font-bold text-deep-teal mb-6 text-center">
+              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-deep-teal mb-6 text-center">
                 Send Me a Message
               </h3>
               
               <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl mx-auto">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-warm-gray mb-2">
+                    <label htmlFor="name" className="block text-base font-medium text-warm-gray mb-2">
                       Your Name
                     </label>
                     <input
@@ -159,7 +159,7 @@ const Contact = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-warm-gray mb-2">
+                    <label htmlFor="email" className="block text-base font-medium text-warm-gray mb-2">
                       Your Email
                     </label>
                     <input
@@ -176,7 +176,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-warm-gray mb-2">
+                  <label htmlFor="subject" className="block text-base font-medium text-warm-gray mb-2">
                     Subject
                   </label>
                   <input
@@ -192,7 +192,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-warm-gray mb-2">
+                  <label htmlFor="message" className="block text-base font-medium text-warm-gray mb-2">
                     Your Message
                   </label>
                   <textarea

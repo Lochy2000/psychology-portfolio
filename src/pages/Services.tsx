@@ -121,22 +121,21 @@ We believe true progress includes everyone. That's why we actively engage men - 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-4 sm:right-10 text-4xl sm:text-6xl opacity-10 animate-gentle-pulse">📚</div>
         <div className="absolute bottom-32 left-4 sm:left-10 text-3xl sm:text-4xl opacity-15 animate-gentle-pulse" style={{ animationDelay: '2s' }}>✨</div>
-        <div className="absolute top-1/2 right-1/4 text-4xl sm:text-5xl opacity-10 animate-gentle-pulse" style={{ animationDelay: '4s' }}>🌿</div>
       </div>
 
       <div className="container mx-auto px-4 py-8 sm:py-16 relative z-10">
         {/* Hero Section */}
         <div className="text-center mb-12 sm:mb-20 animate-fade-in">
           <div 
-            className="handwritten-quote text-base sm:text-lg text-warm-gray/80 mb-4 italic mouse-parallax"
+            className="handwritten-quote text-lg sm:text-xl text-deep-teal/70 mb-4 italic mouse-parallax"
             style={{ transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)` }}
           >
             "Every story can be rewritten..."
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-deep-teal mb-4 sm:mb-6 text-shimmer px-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-deep-teal mb-4 sm:mb-6 text-shimmer px-4">
             Chapters of Transformation
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl text-warm-gray max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-lg sm:text-xl lg:text-2xl text-warm-gray max-w-3xl mx-auto leading-relaxed px-4">
             Journey through the different ways we can work together to rewrite your story and step into your personal power.
           </p>
         </div>
@@ -168,16 +167,16 @@ We believe true progress includes everyone. That's why we actively engage men - 
                           <service.icon className="text-white" size={20} />
                         </div>
                         <div className="min-w-0 flex-1">
-                          <span className="text-xs sm:text-sm text-warm-gray/70 font-medium">Chapter {index + 1}</span>
-                          <h3 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-deep-teal break-words">{service.title}</h3>
+                          <span className="text-sm sm:text-base text-warm-gray/70 font-medium">Chapter {index + 1}</span>
+                          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-deep-teal break-words">{service.title}</h3>
                         </div>
                       </div>
                       
-                      <div className="handwritten-quote text-sm sm:text-base lg:text-lg text-deep-teal/80 italic mb-4 font-serif">
+                      <div className="handwritten-quote text-base sm:text-lg lg:text-xl text-deep-teal/80 italic mb-4 font-serif">
                         {service.pullQuote}
                       </div>
                       
-                      <p className="text-warm-gray leading-relaxed text-sm sm:text-base lg:text-lg max-w-none pr-0 sm:pr-12">
+                      <p className="text-warm-gray leading-relaxed text-base sm:text-lg lg:text-xl max-w-none pr-0 sm:pr-12">
                         {service.summary}
                       </p>
                     </div>
