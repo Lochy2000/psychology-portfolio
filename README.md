@@ -282,7 +282,7 @@ VITE_EMAILJS_PUBLIC_KEY=
 ## 👨‍💻 Contributors
 
 **Mette Nyholm Theilmann** - Content and Requirements
-**Development Team** - Implementation and Design
+**Development Team** - Lochlann O'Higgins - Cai Panesar 
 
 ## 📄 License
 

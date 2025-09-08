@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronRight, Sparkles, BookOpen, Heart, Compass, Star, ChevronDown } from 'lucide-react';
 import Hero from '../components/Hero';
 import ServicePreview from '../components/ServicePreview';
@@ -253,13 +254,13 @@ const Home: React.FC = () => {
                 </div>
               </div>
               
-              <a 
-                href="/contact" 
+              <Link 
+                to="/contact" 
                 className="inline-flex items-center px-10 lg:px-14 py-5 lg:py-6 bg-gradient-to-r from-sage-green to-blush-pink text-white rounded-full hover:shadow-2xl transition-all duration-500 transform hover:scale-105 text-xl lg:text-2xl font-medium group pulse-glow shadow-xl"
               >
                 Start Your Journey 
                 <ChevronRight className="ml-3 lg:ml-4 group-hover:translate-x-1 transition-transform duration-300" size={24} />
-              </a>
+              </Link>
             </div>
           </section>
         </div>

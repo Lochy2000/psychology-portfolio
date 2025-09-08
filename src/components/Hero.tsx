@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Book, Heart, Award, Users } from 'lucide-react';
 import { useMouseParallax } from '../hooks/useMouseParallax';
 
@@ -76,20 +77,20 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="flex flex-col space-y-3 pt-2 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <a 
-              href="/services" 
+            <Link 
+              to="/services" 
               className="flex items-center justify-center bg-gradient-to-r from-sage-green to-blush-pink text-white px-6 py-3 rounded-full hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-base font-medium pulse-glow"
             >
               <Book className="mr-2 shrink-0" size={18} /> 
               <span>Explore My Work</span>
-            </a>
-            <a 
-              href="/about" 
+            </Link>
+            <Link 
+              to="/about" 
               className="flex items-center justify-center border-2 border-sage-green text-sage-green px-6 py-3 rounded-full hover:bg-sage-green hover:text-white transition-all duration-300 text-base font-medium story-chapter"
             >
               <Heart className="mr-2 shrink-0" size={18} /> 
               <span>My Story</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -148,18 +149,18 @@ const Hero: React.FC = () => {
               </p>
               
               <div className="flex flex-col xl:flex-row space-y-4 xl:space-y-0 xl:space-x-6 animate-fade-in pt-4" style={{ animationDelay: '0.7s' }}>
-                <a 
-                  href="/services" 
+                <Link 
+                  to="/services" 
                   className="flex items-center justify-center bg-gradient-to-r from-sage-green to-blush-pink text-white px-8 py-4 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-lg font-medium pulse-glow whitespace-nowrap"
                 >
                   <Book className="mr-3" size={20} /> Explore My Work
-                </a>
-                <a 
-                  href="/about" 
+                </Link>
+                <Link 
+                  to="/about" 
                   className="flex items-center justify-center border-2 border-sage-green text-deep-teal px-8 py-4 rounded-full hover:bg-sage-green hover:text-white transition-all duration-300 hover:shadow-lg text-lg font-medium story-chapter whitespace-nowrap"
                 >
                   <Heart className="mr-3" size={20} /> My Story
-                </a>
+                </Link>
               </div>
             </div>
             
