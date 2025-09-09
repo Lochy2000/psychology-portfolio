@@ -72,7 +72,7 @@ const Contact = () => {
                   </div>
                   <a 
                     href="mailto:mette@metteteilmann.com" 
-                    className="inline-flex items-center justify-center px-4 py-3 bg-gradient-to-r from-sage-green to-deep-teal text-white rounded-full hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm font-medium w-full min-h-[48px]"
+                    className="inline-flex items-center justify-center px-4 py-3 bg-sage-green text-white rounded-full hover:shadow-xl hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300 text-sm font-medium w-full min-h-[48px]"
                   >
                     Send Email
                   </a>
@@ -92,7 +92,7 @@ const Contact = () => {
                     href="https://wa.me/33745233230" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-4 py-3 bg-gradient-to-r from-blush-pink to-sage-green text-white rounded-full hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm font-medium w-full min-h-[48px]"
+                    className="inline-flex items-center justify-center px-4 py-3 bg-blush-pink text-white rounded-full hover:shadow-xl hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300 text-sm font-medium w-full min-h-[48px]"
                   >
                     Chat Now
                   </a>
@@ -114,7 +114,7 @@ const Contact = () => {
                   </div>
                   <a 
                     href="tel:+33745233230" 
-                    className="inline-flex items-center justify-center px-4 py-3 bg-gradient-to-r from-deep-teal to-sage-green text-white rounded-full hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm font-medium w-full min-h-[48px]"
+                    className="inline-flex items-center justify-center px-4 py-3 bg-deep-teal text-white rounded-full hover:shadow-xl hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300 text-sm font-medium w-full min-h-[48px]"
                   >
                     Call Now
                   </a>
@@ -211,7 +211,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-sage-green to-deep-teal text-white rounded-full hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    className="inline-flex items-center px-8 py-4 bg-deep-teal text-white rounded-full hover:shadow-xl hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300 text-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                   >
                     {isSubmitting ? (
                       <>

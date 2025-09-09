@@ -305,6 +305,8 @@
 .handwritten-quote {
   font-family: 'Dancing Script', cursive;
   position: relative;
+  font-style: normal !important;
+  font-weight: 600;
 }
 
 .handwritten-quote::before {
@@ -428,7 +430,7 @@
 .prose p:first-of-type::first-letter {
   font-size: 2.5em;
   font-weight: bold;
-  color: var(--sage-green);
+  color: rgb(44, 95, 107);
   float: left;
   line-height: 1;
   margin-right: 0.1em;

@@ -27,14 +27,14 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-cream via-cream/95 to-blush-pink/10 text-deep-teal animated-background">
       <div className="container mx-auto px-4 py-8 lg:py-12">
-        <div className="space-y-16 lg:space-y-24">
+        <div className="space-y-12 lg:space-y-16">
           {/* Hero Section */}
           <div className="mb-12 lg:mb-20">
             <Hero />
           </div>
           
           {/* Chapter 1: Who You Are - Redesigned */}
-          <section ref={chapterOneRef} className="py-12 lg:py-20">
+          <section ref={chapterOneRef} className="py-8 lg:py-12">
             <div className={`max-w-7xl mx-auto transition-all duration-1000 ${chapterOneVisible ? 'story-reveal' : 'opacity-0 translate-y-10'}`}>
               {/* Chapter Header - Centered and Clean */}
               <div className="text-center mb-12 lg:mb-16">
@@ -76,7 +76,7 @@ const Home: React.FC = () => {
                           You're seeking a safe, supportive space and guide to help you explore the stories you've been told - and the ones you tell yourself - so you can reconnect with your true power.
                         </p>
                         <div className="bg-gradient-to-r from-sage-green/10 to-transparent p-4 rounded-xl border-l-3 border-sage-green/40">
-                          <p className="handwritten-quote text-xl font-handwritten text-deep-teal/80 italic text-center">
+                          <p className="handwritten-quote text-xl font-handwritten text-deep-teal/80 text-center">
                             Every story can be rewritten. You hold the pen. ✨
                           </p>
                         </div>
@@ -90,7 +90,7 @@ const Home: React.FC = () => {
                       You're seeking a safe, supportive space and guide to help you explore the stories you've been told - and the ones you tell yourself - so you can reconnect with your true power.
                     </p>
                     <div className="bg-gradient-to-r from-sage-green/10 via-sage-green/5 to-transparent p-6 lg:p-8 rounded-2xl border-l-4 border-sage-green/30 hover-lift shadow-sm">
-                      <p className="handwritten-quote text-xl lg:text-2xl font-handwritten text-deep-teal/80 italic text-center">
+                      <p className="handwritten-quote text-xl lg:text-2xl font-handwritten text-deep-teal/80 text-center">
                         Every story can be rewritten. You hold the pen. ✨
                       </p>
                     </div>
@@ -104,7 +104,7 @@ const Home: React.FC = () => {
                     <img 
                       src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=800&h=600&fit=crop"
                       alt="Trees reaching towards light - symbolizing growth"
-                      className="relative rounded-2xl shadow-2xl object-cover w-full h-[280px] lg:h-[450px] transform group-hover:scale-105 transition-transform duration-700"
+                      className="relative rounded-2xl shadow-2xl object-cover w-full h-[250px] lg:h-[320px] transform group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/30 via-transparent to-sage-green/20 rounded-2xl"></div>
                   </div>
@@ -114,7 +114,7 @@ const Home: React.FC = () => {
           </section>
 
           {/* Chapter 2: Journey - Cleaner Layout */}
-          <section ref={chapterTwoRef} className="py-12 lg:py-20">
+          <section ref={chapterTwoRef} className="py-8 lg:py-12">
             <div className={`max-w-7xl mx-auto transition-all duration-1000 ${chapterTwoVisible ? 'story-reveal' : 'opacity-0 translate-y-10'}`}>
               {/* Chapter Header */}
               <div className="text-center mb-12 lg:mb-16">
@@ -193,15 +193,50 @@ const Home: React.FC = () => {
             </div>
           </section>
 
+          {/* Identity Quote Section - New Dedicated Section */}
+          <section className="py-8 lg:py-12 bg-gradient-to-br from-white/90 to-sage-green/5 rounded-3xl mx-4 lg:mx-0">
+            <div className="max-w-5xl mx-auto px-6 lg:px-12">
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div className="order-2 lg:order-1">
+                  <div className="relative">
+                    {/* Background decorative circles */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="absolute w-64 h-64 rounded-full bg-sage-green/10 blur-2xl"></div>
+                      <div className="absolute w-48 h-48 rounded-full bg-blush-pink/10 blur-xl -top-8 -left-8"></div>
+                      <div className="absolute w-56 h-56 rounded-full bg-deep-teal/10 blur-xl -bottom-8 -right-8"></div>
+                    </div>
+                    {/* Main image */}
+                    <img 
+                      src="/img/quote-svg.png" 
+                      alt="Mind growth and transformation - tree growing from head silhouette"
+                      className="relative z-10 w-full h-auto max-w-sm mx-auto"
+                    />
+                  </div>
+                </div>
+                <div className="order-1 lg:order-2">
+                  <div className="text-center lg:text-left">
+                    <div className="mb-6">
+                      <span className="text-sage-green font-medium text-sm uppercase tracking-wider">Core Belief</span>
+                    </div>
+                    <blockquote className="text-2xl lg:text-3xl font-serif text-deep-teal leading-relaxed mb-6">
+                      "Our identity is not formed in isolation - we develop, heal, and grow through connections with others."
+                    </blockquote>
+                    <p className="text-xl font-medium text-sage-green">People are shaped by people.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Chapter 3: Services Preview */}
-          <section ref={chapterThreeRef} className="py-12 lg:py-20">
+          <section ref={chapterThreeRef} className="py-8 lg:py-12">
             <div className={`transition-all duration-1000 ${chapterThreeVisible ? 'story-reveal' : 'opacity-0 translate-y-10'}`}>
               <ServicePreview />
             </div>
           </section>
           
           {/* Call to Action - Refined */}
-          <section ref={ctaRef} className="text-center py-12 lg:py-20">
+          <section ref={ctaRef} className="text-center py-8 lg:py-12">
             <div className={`bg-gradient-to-br from-sage-green/20 via-sage-green/10 to-blush-pink/20 backdrop-blur-sm rounded-3xl p-8 lg:p-16 shadow-2xl max-w-6xl mx-auto border border-sage-green/30 transition-all duration-1000 hover-lift ${ctaVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}>
               <div className="mb-8 lg:mb-10">
                 <div className="w-18 lg:w-24 h-18 lg:h-24 icon-professional rounded-full flex items-center justify-center mx-auto mb-6 lg:mb-8">
@@ -233,7 +268,7 @@ const Home: React.FC = () => {
                         Together, we'll uncover the narratives that shape your life and rewrite them into powerful, empowering scripts that truly reflect who you are.
                       </p>
                       <div className="bg-gradient-to-r from-sage-green/10 to-transparent p-4 rounded-xl border-l-3 border-sage-green/40">
-                        <p className="handwritten-quote text-xl font-handwritten text-deep-teal/80 italic">
+                        <p className="handwritten-quote text-xl font-handwritten text-deep-teal/80">
                           Your story matters. You matter. Let's write it together. ✨
                         </p>
                       </div>
@@ -247,20 +282,20 @@ const Home: React.FC = () => {
                     Together, we'll uncover the narratives that shape your life and rewrite them into powerful, empowering scripts that truly reflect who you are.
                   </p>
                   <div className="bg-gradient-to-r from-sage-green/10 via-sage-green/5 to-transparent p-6 rounded-2xl border-l-4 border-sage-green/40">
-                    <p className="handwritten-quote text-2xl lg:text-3xl font-handwritten text-deep-teal/80 italic">
+                    <p className="handwritten-quote text-2xl lg:text-3xl font-handwritten text-deep-teal/80">
                       Your story matters. You matter. Let's write it together. ✨
                     </p>
                   </div>
                 </div>
               </div>
               
-              <Link 
-                to="/contact" 
-                className="inline-flex items-center px-10 lg:px-14 py-5 lg:py-6 bg-gradient-to-r from-sage-green to-blush-pink text-white rounded-full hover:shadow-2xl transition-all duration-500 transform hover:scale-105 text-xl lg:text-2xl font-medium group pulse-glow shadow-xl"
+              <a 
+                href="mailto:mette@metteteilmann.com?subject=Ready to Begin My Journey" 
+                className="inline-flex items-center px-10 lg:px-14 py-5 lg:py-6 bg-deep-teal text-white rounded-full hover:shadow-2xl hover:bg-opacity-90 transition-all duration-500 transform hover:scale-105 text-xl lg:text-2xl font-medium group shadow-xl"
               >
                 Start Your Journey 
                 <ChevronRight className="ml-3 lg:ml-4 group-hover:translate-x-1 transition-transform duration-300" size={24} />
-              </Link>
+              </a>
             </div>
           </section>
         </div>

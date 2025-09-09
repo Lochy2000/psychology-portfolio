@@ -1,81 +1,58 @@
-
 import React from 'react';
-import { Brain, Users, Heart, Building2 } from 'lucide-react';
-import ServiceCard from './ServiceCard';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-
-const services = [
-  {
-    icon: Brain,
-    title: "Narrative Psychology",
-    description: "Explore and challenge the stories that shape your identity. Unravel limiting narratives and reclaim your truth.",
-    details: [
-      "Explore identity-shaping stories and narratives",
-      "Challenge limiting beliefs and social expectations", 
-      "Reclaim your personal truth and authentic self",
-      "Become the author of your own empowering life story"
-    ]
-  },
-  {
-    icon: Users,
-    title: "NLP Coaching",
-    description: "Unlock limiting beliefs, build empowering habits, and gain clarity to take aligned action towards your desired life.",
-    details: [
-      "Break through unconscious limiting beliefs",
-      "Develop empowering daily habits and routines",
-      "Gain crystal-clear direction and purpose",
-      "Create sustainable positive behavioral changes"
-    ]
-  },
-  {
-    icon: Heart,
-    title: "Parenting Support",
-    description: "Build deeper, healthier family connections rooted in respect, empathy, and emotional awareness.",
-    details: [
-      "Parenting before, during, and after divorce",
-      "Supporting expat families and cultural transitions",
-      "Balancing family, work, and personal life",
-      "Building confidence in parenting decisions",
-      "Creating guilt-free work-life integration"
-    ]
-  },
-  {
-    icon: Building2,
-    title: "HerEdge Corporate",
-    description: "Creating workplaces where women are truly seen, supported, and empowered beyond simple representation.",
-    details: [
-      "Company-wide consultation and assessment",
-      "Workshops on work-life balance and wellbeing",
-      "Leadership development for women",
-      "Networking and accountability communities",
-      "Exclusive membership platform access"
-    ]
-  }
-];
 
 const ServicePreview: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="mt-16 lg:mt-20">
-      <div className={`text-center mb-12 lg:mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
-        <h2 className="text-3xl lg:text-4xl font-serif font-bold text-deep-teal mb-4">
-          My Services
-        </h2>
-        <p className="text-warm-gray max-w-2xl mx-auto text-base lg:text-lg leading-relaxed px-4">
-          Tailored approaches to help you transform your life story and step into your personal power.
-        </p>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-        {services.map((service, index) => (
-          <div 
-            key={index} 
-            className={`transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}
-            style={{ animationDelay: `${index * 0.2}s` }}
-          >
-            <ServiceCard {...service} />
+    <section ref={ref} className="mt-8 lg:mt-12">
+      <div className={`max-w-7xl mx-auto transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
+        <div className="bg-gradient-to-br from-white/90 to-sage-green/5 backdrop-blur-sm rounded-3xl overflow-hidden shadow-xl border border-sage-green/10">
+          <div className="grid lg:grid-cols-2 gap-0">
+            {/* Left Column - Image */}
+            <div className="relative h-[300px] lg:h-[400px] overflow-hidden">
+              <img 
+                src="/img/my-services.png" 
+                alt="Woman jumping freely at sunset - representing transformation and freedom"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-deep-teal/10"></div>
+            </div>
+
+            {/* Right Column - Content */}
+            <div className="p-8 lg:p-12 flex flex-col justify-center relative">
+              {/* Arrow SVG positioned in top right */}
+              <div className="absolute top-8 right-8 lg:top-12 lg:right-12">
+                <img 
+                  src="/svg/haINwM01.svg" 
+                  alt="Decorative arrow"
+                  className="w-16 h-16 lg:w-20 lg:h-20 opacity-20"
+                  style={{ filter: 'brightness(0) saturate(100%) invert(21%) sepia(17%) saturate(1352%) hue-rotate(142deg) brightness(95%) contrast(86%)' }}
+                />
+              </div>
+              
+              <div className="space-y-6">
+                <h2 className="text-3xl lg:text-4xl font-serif font-bold text-deep-teal">
+                  My Services
+                </h2>
+                
+                <p className="text-base lg:text-lg text-warm-gray leading-relaxed">
+                  Tailored approaches to help you transform your life story and step into your personal power.
+                </p>
+
+                <Link 
+                  to="/services" 
+                  className="inline-flex items-center px-6 py-3 bg-sage-green text-white rounded-full hover:shadow-xl hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300 text-base font-medium group w-fit"
+                >
+                  Explore All Services
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={18} />
+                </Link>
+              </div>
+            </div>
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
