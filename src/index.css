@@ -84,6 +84,11 @@
 }
 
 @layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
   * {
     @apply border-neutral-200;
   }
@@ -572,6 +577,45 @@ html {
   }
 }
 
+/* Typewriter cursor animation */
+@keyframes typewriter-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.typewriter-cursor {
+  animation: typewriter-blink 1s infinite;
+  display: inline-block;
+  margin-left: 2px;
+  font-weight: 100;
+}
+
+/* Mobile-specific typewriter improvements */
+@media (max-width: 768px) {
+  .typewriter-cursor {
+    margin-left: 1px;
+  }
+}
+
+/* Mobile arrow bounce animation */
+@keyframes mobile-arrow-bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(360deg);
+  }
+  50% {
+    transform: translateY(4px) rotate(360deg);
+  }
+}
+
+.mobile-arrow-animate {
+  animation: mobile-arrow-bounce 2s ease-in-out infinite;
+  transform: rotate(360deg);
+}
+
 .animate-fade-in {
   animation: animate-fade-in 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
@@ -812,8 +856,8 @@ html {
 /* Enhanced responsive breakpoints */
 @media (max-width: 640px) {
   .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
   
   .text-shimmer-safe {
@@ -823,22 +867,71 @@ html {
 
   /* Mobile spacing */
   .space-y-24 > :not([hidden]) ~ :not([hidden]) {
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 
   .space-y-32 > :not([hidden]) ~ :not([hidden]) {
-    margin-top: 4rem;
+    margin-top: 2.5rem;
+  }
+  
+  /* Mobile-specific utilities */
+  .mobile-compact {
+    padding: 0.5rem;
+  }
+  
+  .mobile-text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  
+  .mobile-button-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  /* Reduce section padding on mobile */
+  section {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  /* Mobile image sizing */
+  .mobile-image-compact {
+    max-height: 250px;
+  }
+  
+  /* Reduce card padding on mobile */
+  .content-flow {
+    padding: 0.75rem;
+  }
+  
+  /* Smaller icons on mobile */
+  .icon-professional,
+  .icon-professional-pink,
+  .icon-professional-teal {
+    width: 2rem;
+    height: 2rem;
   }
 }
 
 /* Tablet adjustments */
 @media (min-width: 641px) and (max-width: 1023px) {
   .space-y-24 > :not([hidden]) ~ :not([hidden]) {
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
 
   .space-y-32 > :not([hidden]) ~ :not([hidden]) {
-    margin-top: 5rem;
+    margin-top: 4rem;
+  }
+  
+  /* Tablet-specific utilities */
+  .tablet-compact {
+    padding: 1rem;
+  }
+  
+  section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 }
 
@@ -884,5 +977,132 @@ html {
 
   .space-y-32 > :not([hidden]) ~ :not([hidden]) {
     margin-top: 8rem;
+  }
+}
+
+/* Additional mobile optimizations for better UX */
+@media (max-width: 480px) {
+  /* Very small screens */
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  /* Reduce font sizes further on very small screens */
+  h1 {
+    font-size: 1.5rem !important;
+  }
+  
+  h2 {
+    font-size: 1.25rem !important;
+  }
+  
+  h3 {
+    font-size: 1rem !important;
+  }
+  
+  /* Compact buttons with better touch targets */
+  button, a.rounded-full {
+    padding: 0.5rem 0.875rem !important;
+    font-size: 0.8rem !important;
+    min-height: 44px; /* iOS touch target recommendation */
+  }
+  
+  /* Reduce margins between sections */
+  section + section {
+    margin-top: 1rem;
+  }
+}
+
+/* Mobile section dividers for better flow */
+.mobile-section-divider {
+  position: relative;
+  margin: 1.5rem 0;
+}
+
+.mobile-section-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(156, 175, 136, 0.4), transparent);
+}
+
+.mobile-section-divider::after {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(156, 175, 136, 0.6);
+  font-size: 0.75rem;
+  background: rgb(245, 240, 230);
+  padding: 0 0.5rem;
+}
+
+/* Enhanced mobile touch targets and spacing */
+@media (max-width: 768px) {
+  /* Ensure all interactive elements meet accessibility standards */
+  button,
+  a[role="button"],
+  .btn-enhanced,
+  .rounded-full:not(.w-1\.5):not(.w-2) {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+  
+  /* Exclude small progress indicators from min-size requirements */
+  .w-1\.5,
+  .w-2 {
+    min-height: unset !important;
+    min-width: unset !important;
+  }
+  
+  /* Improve mobile spacing for better readability */
+  .space-y-3 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1rem;
+  }
+  
+  /* Better mobile typography spacing */
+  .prose p {
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+  }
+  
+  /* Mobile-optimized section padding */
+  .py-6 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  /* Improved mobile image handling */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Mobile-friendly hover states (convert to active states) */
+  .hover\:scale-105:active {
+    transform: scale(1.02);
+  }
+  
+  .hover\:shadow-xl:active {
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Mobile section separators */
+  .mobile-section-divider {
+    display: block;
+  }
+}
+
+/* Hide section dividers on larger screens */
+@media (min-width: 769px) {
+  .mobile-section-divider {
+    display: none;
   }
 }

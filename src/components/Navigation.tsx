@@ -53,7 +53,7 @@ const Navigation = () => {
           <div className="flex items-center space-x-4">
             <Link 
               to="/contact"
-              className="bg-sage-green text-white px-3 py-2 sm:px-4 sm:py-2 rounded-full hover:bg-deep-teal transition-colors text-sm sm:text-base whitespace-nowrap"
+              className="bg-sage-green text-white px-3 py-2.5 sm:px-4 sm:py-2.5 rounded-full hover:bg-deep-teal transition-colors text-sm sm:text-base whitespace-nowrap flex items-center justify-center"
             >
               {isMobile ? 'Contact' : 'Book a Consultation'}
             </Link>

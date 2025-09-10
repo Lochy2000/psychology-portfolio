@@ -126,8 +126,8 @@ const Testimonials = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 lg:mb-16">
           <div className="inline-flex flex-col items-center gap-4 mb-8">
-            <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-sage-green to-blush-pink rounded-full flex items-center justify-center gentle-float shadow-lg">
-              <Quote className="text-white" size={24} />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-sage-green to-blush-pink rounded-full flex items-center justify-center gentle-float shadow-lg">
+              <Quote className="text-white" size={18} />
             </div>
             <h2 className="text-3xl lg:text-5xl font-serif font-bold text-deep-teal leading-tight">
               What People Say
@@ -166,12 +166,12 @@ const Testimonials = () => {
           </Carousel>
 
           {/* Progress Indicators */}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-6 sm:mt-8 space-x-1.5 sm:space-x-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  Math.floor(current * testimonials.length / testimonials.length) === index ? 'bg-sage-green scale-125' : 'bg-sage-green/30'
+                className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
+                  Math.floor(current * testimonials.length / testimonials.length) === index ? 'bg-sage-green scale-110' : 'bg-sage-green/30'
                 }`}
                 onClick={() => api?.scrollTo(index)}
               />
