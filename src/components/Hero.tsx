@@ -8,87 +8,64 @@ const Hero: React.FC = () => {
   const mousePosition = useMouseParallax(0.05);
 
   return (
-    <div className="relative animated-background paper-texture overflow-hidden">
+    <section className="relative animated-background paper-texture py-6 lg:py-8">
       {/* Mobile Layout */}
-      <div className="lg:hidden relative">
-        {/* Mobile Title - Above Image with proper spacing */}
-        <div className="px-4 pt-8 pb-3 text-center space-y-3 safe-text-container">
-          <div className="title-safe overflow-visible">
-            <h1 className="text-3xl sm:text-4xl font-serif font-bold text-deep-teal px-2 py-4 leading-tight">
-              <span className="text-shimmer-safe block">Mette Theilmann</span>
-            </h1>
-          </div>
-          <p className="text-lg sm:text-xl font-medium text-sage-green gentle-float px-2 py-1 leading-relaxed">
-            Narrative Therapist with a background in Psychology | NLP Coach | Parenting Consultant
-          </p>
-          {/* Mobile Trust Indicators */}
-          <div className="flex justify-center items-center gap-4 text-xs sm:text-sm text-warm-gray mt-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="flex items-center gap-1 hover-lift">
-              <Award size={14} className="text-sage-green pulse-glow shrink-0" />
-              <span className="whitespace-nowrap">25+ Years</span>
-            </div>
-            <div className="flex items-center gap-1 hover-lift">
-              <Users size={14} className="text-sage-green pulse-glow shrink-0" />
-              <span className="whitespace-nowrap">500+ Clients</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Cinematic intro with overlay */}
-        <div className="relative h-[50vh] sm:h-[60vh] overflow-hidden rounded-3xl mx-4 mb-4 story-chapter">
-          <img 
-            src="https://res.cloudinary.com/dpw2txejq/image/upload/v1748177635/mette-website_baxurn.jpg" 
-            alt="Mette Nyholm Theilmann - Narrative Psychologist" 
-            className="w-full h-full object-cover transition-transform duration-[3000ms] hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/80 via-deep-teal/40 to-transparent rounded-3xl"></div>
-        </div>
-        
-        {/* Content below image on mobile */}
-        <div className="px-4 pb-8 space-y-6">
-          {/* Main headline with journal background feel */}
-          <div className="bg-gradient-to-br from-white/80 to-sage-green/5 backdrop-blur-sm rounded-2xl p-6 border border-sage-green/20 story-chapter">
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-deep-teal leading-tight animate-fade-in mb-4 py-1" style={{ animationDelay: '0.3s' }}>
+      <div className="lg:hidden w-full px-4 py-4">
+        <div className="space-y-6 max-w-2xl mx-auto">
+          {/* Main Content First - Better Hierarchy */}
+          <div className="text-center space-y-6">
+            <h1 className="text-3xl lg:text-4xl font-serif font-bold text-deep-teal leading-tight">
               Become the author of your own life
-            </h2>
-            <div className="handwritten-quote text-lg sm:text-xl font-handwritten text-deep-teal/80 border-l-4 border-sage-green/30 pl-4 py-2">
-              Every story can be rewritten. You hold the pen.
-            </div>
+            </h1>
+            <p className="text-lg text-warm-gray leading-relaxed max-w-lg mx-auto">
+              Let's uncover the limiting beliefs that hold you back from living fully and rewrite your story.
+            </p>
           </div>
-          
-          <p className="text-base sm:text-lg text-warm-gray leading-relaxed animate-fade-in prose" style={{ animationDelay: '0.4s' }}>
-            Let's uncover the limiting beliefs that hold you back from living fully. By releasing what no longer serves you, we can rewrite a story that truly empowers and reflects who you are and want to be.
-          </p>
-          
-          {/* Contact Information */}
-          <div className="bg-gradient-to-br from-sage-green/10 to-blush-pink/10 p-4 sm:p-6 rounded-xl border border-sage-green/20 hover-lift animate-fade-in paper-texture" style={{ animationDelay: '0.5s' }}>
-            <div className="space-y-3 text-sm">
-              <p className="text-deep-teal font-semibold text-base sm:text-lg mb-3">Let's Connect</p>
-              <p className="text-warm-gray break-words">
-                <span className="font-medium">Email:</span> mette@metteteilmann.com
-              </p>
-              <p className="text-warm-gray">
-                <span className="font-medium">Mobile (France):</span> 0033 745 233 230
-              </p>
-              <p className="text-warm-gray">
-                <span className="font-medium">Mobile (UK):</span> 0447 756 918 126
-              </p>
+
+          {/* Professional Image */}
+          <div className="relative mx-auto max-w-sm">
+            <div className="relative rounded-2xl overflow-hidden story-chapter group">
+              <img 
+                src="https://res.cloudinary.com/dpw2txejq/image/upload/v1748177635/mette-website_baxurn.jpg" 
+                alt="Professional Portrait" 
+                className="w-full h-80 object-cover transition-transform duration-[3s] group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/60 via-transparent to-transparent rounded-2xl"></div>
+              {/* Floating credentials overlay - smaller for mobile */}
+              <div className="absolute bottom-2 left-2 right-2">
+                <div className="bg-white/95 backdrop-blur-sm rounded-lg p-2.5 shadow-xl">
+                  <p className="text-xs font-medium text-deep-teal text-center mb-1.5">
+                    Narrative Therapist | NLP Coach<br />Parenting Consultant
+                  </p>
+                  <div className="flex justify-center items-center gap-3 text-xs text-warm-gray">
+                    <div className="flex items-center gap-1">
+                      <Award size={10} className="text-sage-green" />
+                      <span className="text-xs">25+ Years</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Users size={10} className="text-sage-green" />
+                      <span className="text-xs">500+ Clients</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="flex flex-col space-y-3 pt-2 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          {/* Actions */}
+          <div className="flex flex-col space-y-3">
             <Link 
               to="/services" 
               className="flex items-center justify-center bg-sage-green text-white px-6 py-3 rounded-full hover:shadow-xl hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300 text-base font-medium"
             >
-              <Book className="mr-2 shrink-0" size={18} /> 
+              <Book className="mr-2" size={18} /> 
               <span>Explore My Work</span>
             </Link>
             <Link 
               to="/about" 
-              className="flex items-center justify-center border-2 border-sage-green text-sage-green px-6 py-3 rounded-full hover:bg-sage-green hover:text-white transition-all duration-300 text-base font-medium story-chapter"
+              className="flex items-center justify-center border-2 border-sage-green text-sage-green px-6 py-3 rounded-full hover:bg-sage-green hover:text-white transition-all duration-300 text-base font-medium"
             >
-              <Heart className="mr-2 shrink-0" size={18} /> 
+              <Heart className="mr-2" size={18} /> 
               <span>My Story</span>
             </Link>
           </div>
@@ -96,98 +73,71 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Desktop Layout */}
-      <div className="hidden lg:block animate-fade-in">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          {/* Title Section - Full Width with proper padding and spacing */}
-          <div className="text-center mb-12 py-12 px-8 safe-text-container">
-            <div 
-              className="space-y-6 mouse-parallax"
-              style={{ transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px)` }}
-            >
-              <div className="title-safe overflow-visible">
-                <h1 className="text-5xl xl:text-6xl font-serif font-bold text-deep-teal leading-tight px-8 py-6">
-                  <span className="text-shimmer-safe block">Mette Theilmann</span>
-                </h1>
-              </div>
-              <p className="text-xl xl:text-2xl text-sage-green font-medium gentle-float px-4 py-2">
-                Narrative Therapist with a background in Psychology | NLP Coach | Parenting Consultant
-              </p>
-              {/* Desktop Trust Indicators */}
-              <div className="flex justify-center items-center gap-8 text-base text-warm-gray animate-fade-in pt-4" style={{ animationDelay: '0.2s' }}>
-                <div className="flex items-center gap-3 hover-lift">
-                  <Award size={20} className="text-sage-green pulse-glow" />
-                  <span className="font-medium">25+ Years Experience</span>
-                </div>
-                <div className="flex items-center gap-3 hover-lift">
-                  <Users size={20} className="text-sage-green pulse-glow" />
-                  <span className="font-medium">500+ Clients Supported</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Content Grid - Better balanced layout */}
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+      <div className="hidden lg:block w-full px-6 py-4">
+        <div className="max-w-7xl mx-auto">
+          {/* Main Content Grid - Tighter Spacing */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div className="space-y-8">
-              {/* Main headline with journal feel */}
-              <div className="bg-gradient-to-br from-white/70 to-sage-green/5 backdrop-blur-sm rounded-2xl p-8 border border-sage-green/20 story-chapter animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                <h2 className="text-3xl lg:text-4xl xl:text-5xl font-serif font-bold text-deep-teal leading-tight mb-6 py-2">
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h1 className="text-3xl lg:text-4xl xl:text-5xl font-serif font-bold text-deep-teal leading-tight">
                   Become the author of your own life
-                </h2>
-                <div className="handwritten-quote text-xl xl:text-2xl font-handwritten text-deep-teal/80 border-l-4 border-sage-green/30 pl-6 py-2">
-                  Every story can be rewritten. You hold the pen.
-                </div>
+                </h1>
+                <p className="text-lg lg:text-xl text-warm-gray leading-relaxed">
+                  Uncover limiting beliefs. Rewrite your story. Live authentically.
+                </p>
               </div>
               
-              <p className="text-lg text-warm-gray leading-relaxed animate-fade-in prose py-2" style={{ animationDelay: '0.4s' }}>
-                Let's uncover the limiting beliefs that hold you back from living fully. By releasing what no longer serves you, we can rewrite a story that truly empowers and reflects who you are and want to be.
-              </p>
-              
-              <div className="flex flex-col xl:flex-row space-y-4 xl:space-y-0 xl:space-x-6 animate-fade-in pt-4" style={{ animationDelay: '0.7s' }}>
+              <div className="flex flex-col xl:flex-row space-y-3 xl:space-y-0 xl:space-x-4">
                 <Link 
                   to="/services" 
-                  className="flex items-center justify-center bg-sage-green text-white px-8 py-4 rounded-full hover:shadow-2xl hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300 text-lg font-medium whitespace-nowrap"
+                  className="flex items-center justify-center bg-sage-green text-white px-6 py-3 rounded-full hover:shadow-2xl hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300 text-base lg:text-lg font-medium whitespace-nowrap"
                 >
-                  <Book className="mr-3" size={20} /> Explore My Work
+                  <Book className="mr-2" size={18} /> Explore My Work
                 </Link>
                 <Link 
                   to="/about" 
-                  className="flex items-center justify-center border-2 border-sage-green text-deep-teal px-8 py-4 rounded-full hover:bg-sage-green hover:text-white transition-all duration-300 hover:shadow-lg text-lg font-medium story-chapter whitespace-nowrap"
+                  className="flex items-center justify-center border-2 border-sage-green text-deep-teal px-6 py-3 rounded-full hover:bg-sage-green hover:text-white transition-all duration-300 hover:shadow-lg text-base lg:text-lg font-medium whitespace-nowrap"
                 >
-                  <Heart className="mr-3" size={20} /> My Story
+                  <Heart className="mr-2" size={18} /> My Story
                 </Link>
               </div>
             </div>
             
             {/* Right Image */}
-            <div className="lg:sticky lg:top-8">
-              <div 
-                className="relative group mouse-parallax story-chapter"
-                style={{ transform: `translate(${-mousePosition.x * 0.3}px, ${-mousePosition.y * 0.3}px)` }}
-              >
+            <div className="relative">
+              <div className="relative group story-chapter">
                 <img 
                   src="https://res.cloudinary.com/dpw2txejq/image/upload/v1748177635/mette-website_baxurn.jpg" 
-                  alt="Mette Nyholm Theilmann - Narrative Therapist" 
-                  className="rounded-3xl shadow-2xl object-cover w-full h-[450px] xl:h-[500px] transform group-hover:scale-105 transition-transform duration-[2000ms]"
+                  alt="Professional Portrait" 
+                  className="rounded-3xl shadow-2xl object-cover w-full h-[400px] lg:h-[450px] xl:h-[500px] transform group-hover:scale-105 transition-transform duration-[2s]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/30 via-transparent to-blush-pink/10 rounded-3xl opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/20 via-transparent to-blush-pink/10 rounded-3xl opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
                 
-                {/* Floating quote overlay */}
-                <div className="absolute bottom-8 left-8 right-8">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-xl gentle-float">
-                    <p className="handwritten-quote text-base lg:text-lg font-handwritten text-deep-teal text-center py-1">
-                      "Your story is not your destiny. It's your starting point."
+                {/* Credentials card on image */}
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-5 shadow-xl">
+                    <p className="text-sm lg:text-base font-medium text-deep-teal text-center mb-3">
+                      Narrative Therapist | Psychology Background | NLP Coach | Parenting Consultant
                     </p>
+                    <div className="flex justify-center items-center gap-6 text-sm text-warm-gray">
+                      <div className="flex items-center gap-2">
+                        <Award size={16} className="text-sage-green" />
+                        <span className="font-medium">25+ Years Experience</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Users size={16} className="text-sage-green" />
+                        <span className="font-medium">500+ Clients Supported</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
