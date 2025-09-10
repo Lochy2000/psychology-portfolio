@@ -1,8 +1,9 @@
 
 import React, { useState } from 'react';
-import { Globe, Heart, BookOpen, Sparkles, Award, Users, ChevronDown } from 'lucide-react';
+import { Globe, Heart, BookOpen, Sparkles, Award, Users, ChevronDown, GraduationCap, Certificate, Star, CheckCircle, Brain, FileText, School } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useMouseParallax } from '../hooks/useMouseParallax';
+import { useTypewriterOnce } from '../hooks/useTypewriterOnce';
 
 const About = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
@@ -11,6 +12,11 @@ const About = () => {
   const { ref: passionRef, isVisible: passionVisible } = useScrollAnimation();
   const { ref: qualRef, isVisible: qualVisible } = useScrollAnimation();
   const mousePosition = useMouseParallax(0.03);
+  const { text: typewriterSubtitle } = useTypewriterOnce({
+    text: "Every therapist has their own journey of transformation. Here's mine.",
+    speed: 80,
+    startDelay: 1000,
+  });
 
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
@@ -65,14 +71,14 @@ This is where the real magic happens - when you realize you've always held the p
   ];
 
   const qualifications = [
-    "Author and blogger (for schools and companies)",
-    "Social Psychology Degree", 
-    "Narrative Therapist",
-    "Parent, Family & Youth Coach with the Coaching Academy of London",
-    "Level 3 City & Guilds 'Working with Parents'",
-    "Webster Stratton Group & Facilitation Leader",
-    "Family Link Parent Facilitator",
-    "NLP practitioner"
+    { text: "Author and blogger (for schools and companies)", icon: FileText },
+    { text: "Social Psychology Degree", icon: GraduationCap }, 
+    { text: "Narrative Therapist", icon: Brain },
+    { text: "Parent, Family & Youth Coach with the Coaching Academy of London", icon: Star },
+    { text: "Level 3 City & Guilds 'Working with Parents'", icon: Certificate },
+    { text: "Webster Stratton Group & Facilitation Leader", icon: Users },
+    { text: "Family Link Parent Facilitator", icon: Heart },
+    { text: "NLP practitioner", icon: CheckCircle }
   ];
 
   const toggleSection = (sectionId: string) => {
@@ -83,124 +89,58 @@ This is where the real magic happens - when you realize you've always held the p
     <div className="min-h-screen bg-gradient-to-br from-cream via-cream/95 to-blush-pink/10 text-deep-teal animated-background">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
-          {/* Hero Section - Improved Layout */}
-          <div className="relative">
-            {/* Mobile Hero */}
-            <div className="lg:hidden">
-              {/* Mobile Header */}
-              <div className="text-center mb-8">
-                <div className="w-20 h-20 bg-gradient-to-br from-sage-green to-blush-pink rounded-full flex items-center justify-center mx-auto mb-4 gentle-float">
-                  <BookOpen className="text-white" size={28} />
-                </div>
-                <h1 className="text-3xl sm:text-4xl font-serif font-bold text-deep-teal mb-4 leading-tight">
-                  <span className="text-shimmer-safe">My Story</span>
-                </h1>
-                <p className="handwritten-quote text-lg font-handwritten text-warm-gray/80 leading-relaxed">
-                  Every therapist has their own journey of transformation. Here's mine.
-                </p>
+          {/* Unified Hero Section */}
+          <div ref={headerRef} className={`relative transition-all duration-1000 ${headerVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
+            {/* Header */}
+            <div className="text-center mb-8 lg:mb-12">
+              <div className="w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-sage-green to-blush-pink rounded-full flex items-center justify-center mx-auto mb-4 lg:mb-6 gentle-float">
+                <BookOpen className="text-white" size={28} />
               </div>
-              
-              {/* Mobile Image */}
-              <div className="relative mb-8 rounded-2xl overflow-hidden story-chapter">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-deep-teal mb-4 lg:mb-6 leading-tight">
+                <span className="text-shimmer-safe">My Story</span>
+              </h1>
+              <p className="handwritten-quote text-lg lg:text-xl font-handwritten text-warm-gray/80 max-w-2xl mx-auto leading-relaxed min-h-[2em]">
+                {typewriterSubtitle}
+                <span className="typewriter-cursor text-warm-gray/80">|</span>
+              </p>
+            </div>
+            
+            {/* Main Content Grid */}
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
+              {/* Image */}
+              <div className="relative order-1 group">
                 <img 
                   src="https://res.cloudinary.com/dpw2txejq/image/upload/v1748177633/mette-beach_sa2rgp.jpg"
                   alt="Mette at the beach - reflecting her journey"
-                  className="w-full h-[300px] sm:h-[400px] object-cover"
+                  className="rounded-2xl shadow-2xl object-cover w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px] transform group-hover:scale-105 transition-transform duration-700"
                   loading="eager"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/40 via-transparent to-blush-pink/10"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4">
-                    <p className="handwritten-quote text-sm font-handwritten text-deep-teal italic text-center">
-                      "Our identity is not formed in isolation"
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Mobile Content */}
-              <div className="space-y-6">
-                <div className="bg-gradient-to-br from-sage-green/10 to-blush-pink/10 p-6 rounded-xl border border-sage-green/20 hover-lift paper-texture">
-                  <h2 className="text-xl font-serif font-bold text-deep-teal mb-4">Welcome to My World</h2>
-                  <p className="text-base text-warm-gray leading-relaxed mb-3 prose">
-                    I'm Mette, and like you, I've walked the path of questioning, exploring, and rewriting my own story.
-                  </p>
-                  <p className="text-sm text-warm-gray leading-relaxed prose">
-                    My journey across six countries has taught me that our narratives shape not just how we see ourselves, but how we move through the world.
-                  </p>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/30 via-transparent to-blush-pink/10 rounded-2xl opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
                 
-                <div className="flex items-center justify-center gap-6 text-sm text-warm-gray">
-                  <div className="flex items-center gap-2 hover-lift">
-                    <Award size={16} className="text-sage-green pulse-glow" />
-                    <span className="font-medium">25+ Years</span>
-                  </div>
-                  <div className="flex items-center gap-2 hover-lift">
-                    <Users size={16} className="text-sage-green pulse-glow" />
-                    <span className="font-medium">500+ Clients</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Desktop Hero */}
-            <div className="hidden lg:block">
-              <div ref={headerRef} className={`transition-all duration-1000 ${headerVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
-                {/* Desktop Header */}
-                <div className="text-center mb-12 py-8">
-                  <div className="w-24 h-24 bg-gradient-to-br from-sage-green to-blush-pink rounded-full flex items-center justify-center mx-auto mb-6 gentle-float">
-                    <BookOpen className="text-white" size={32} />
-                  </div>
-                  <h1 className="text-4xl lg:text-5xl font-serif font-bold text-deep-teal mb-6 leading-tight">
-                    <span className="text-shimmer-safe">My Story</span>
-                  </h1>
-                  <div className="handwritten-quote text-xl font-handwritten text-warm-gray/80 max-w-2xl mx-auto leading-relaxed">
-                    Every therapist has their own journey of transformation. Here's mine.
-                  </div>
-                  
-                  <div className="flex justify-center items-center gap-8 text-sm text-warm-gray mt-8">
-                    <div className="flex items-center gap-2 hover-lift">
-                      <Award size={18} className="text-sage-green pulse-glow" />
-                      <span className="font-medium">25+ Years Experience</span>
-                    </div>
-                    <div className="flex items-center gap-2 hover-lift">
-                      <Users size={18} className="text-sage-green pulse-glow" />
-                      <span className="font-medium">500+ Clients Supported</span>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Desktop Main Content Grid */}
-                <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                  <div className="relative order-2 lg:order-1 group mouse-parallax" 
-                    style={{ transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)` }}>
-                    <img 
-                      src="https://res.cloudinary.com/dpw2txejq/image/upload/v1748177633/mette-beach_sa2rgp.jpg"
-                      alt="Mette at the beach - reflecting her journey"
-                      className="rounded-2xl shadow-2xl object-cover w-full h-[500px] lg:h-[600px] transform group-hover:scale-105 transition-transform duration-700"
-                      loading="eager"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/30 via-transparent to-blush-pink/10 rounded-2xl opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
-                    <div className="absolute bottom-8 left-8 right-8">
-                      <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg">
-                        <p className="handwritten-quote text-lg font-handwritten text-deep-teal italic">
-                          "Our identity is not formed in isolation - we develop, heal, and grow through connections with others."
-                        </p>
+                {/* Experience Stats Overlay */}
+                <div className="absolute bottom-6 lg:bottom-8 left-6 lg:left-8 right-6 lg:right-8">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 lg:p-6 shadow-lg">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:gap-6">
+                      <div className="flex items-center gap-2">
+                        <Award size={18} className="text-sage-green pulse-glow" />
+                        <span className="font-bold text-deep-teal text-sm lg:text-base">25+ Years Experience</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Users size={18} className="text-sage-green pulse-glow" />
+                        <span className="font-bold text-deep-teal text-sm lg:text-base">500+ Clients Supported</span>
                       </div>
                     </div>
                   </div>
-                  
-                  <div className="order-1 lg:order-2 space-y-6">
-                    <div className="bg-gradient-to-br from-sage-green/10 to-blush-pink/10 p-8 rounded-2xl border border-sage-green/20 hover-lift paper-texture">
-                      <h2 className="text-2xl lg:text-3xl font-serif font-bold text-deep-teal mb-6">Welcome to My World</h2>
-                      <p className="text-lg text-warm-gray leading-relaxed mb-4 prose">
-                        I'm Mette, and like you, I've walked the path of questioning, exploring, and rewriting my own story. My journey across six countries has taught me that our narratives shape not just how we see ourselves, but how we move through the world.
-                      </p>
-                      <p className="text-base text-warm-gray leading-relaxed prose">
-                        Through years of study, practice, and my own personal transformation, I've discovered that the most powerful tool we have is our ability to rewrite the stories that no longer serve us.
-                      </p>
-                    </div>
-                  </div>
+                </div>
+              </div>
+              
+              {/* Content */}
+              <div className="order-2 space-y-6">
+                <div className="bg-gradient-to-br from-sage-green/10 to-blush-pink/10 p-6 lg:p-8 rounded-2xl border border-sage-green/20 hover-lift paper-texture">
+                  <h2 className="text-xl lg:text-2xl xl:text-3xl font-serif font-bold text-deep-teal mb-4 lg:mb-6">Welcome to My World</h2>
+                  <p className="text-base lg:text-lg text-warm-gray leading-relaxed prose">
+                    I'm Mette, and like you, I've walked the path of questioning, exploring, and rewriting my own story. My journey across six countries has taught me that our narratives shape not just how we see ourselves, but how we move through the world.
+                  </p>
                 </div>
               </div>
             </div>
@@ -289,20 +229,23 @@ This is where the real magic happens - when you realize you've always held the p
             
             <div className="bg-gradient-to-br from-sage-green/10 to-blush-pink/10 rounded-2xl p-6 lg:p-12 border border-sage-green/20 paper-texture">
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-                {qualifications.map((qualification, index) => (
-                  <div 
-                    key={index}
-                    className={`bg-white/60 backdrop-blur-sm p-4 lg:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 border border-sage-green/10 hover-lift ${qualVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 lg:w-8 lg:h-8 bg-gradient-to-br from-sage-green to-blush-pink rounded-full flex items-center justify-center mt-1">
-                        <BookOpen className="text-white" size={12} />
+                {qualifications.map((qualification, index) => {
+                  const IconComponent = qualification.icon;
+                  return (
+                    <div 
+                      key={index}
+                      className={`bg-white/60 backdrop-blur-sm p-4 lg:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 border border-sage-green/10 hover-lift ${qualVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      <div className="flex items-start gap-3">
+                        <div className="w-6 h-6 lg:w-8 lg:h-8 bg-deep-teal/90 rounded-lg flex items-center justify-center mt-1 shadow-sm">
+                          <IconComponent className="text-white" size={12} />
+                        </div>
+                        <span className="text-warm-gray font-medium leading-relaxed text-sm lg:text-base">{qualification.text}</span>
                       </div>
-                      <span className="text-warm-gray font-medium leading-relaxed text-sm lg:text-base">{qualification}</span>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>

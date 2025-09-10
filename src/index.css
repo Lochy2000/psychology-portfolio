@@ -346,10 +346,10 @@
 
 /* Handwritten/Narrative Typography */
 .handwritten-quote {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Kalam', cursive;
   position: relative;
-  font-style: normal !important;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: 0.025em;
 }
 
 .handwritten-quote::before {

@@ -22,7 +22,7 @@ const WhoYouAre: React.FC = () => {
           <div className="relative">
             <div className="absolute -left-6 top-0 w-2 h-full bg-gradient-to-b from-sage-green via-blush-pink to-deep-teal rounded-full journey-path"></div>
             <div className="pl-12">
-              <p className="text-2xl lg:text-3xl text-warm-gray leading-relaxed font-serif italic prose">
+              <p className="text-2xl lg:text-3xl text-warm-gray leading-relaxed font-serif prose">
                 You're someone who craves more control, freedom, and authenticity in your life - but inner doubts and external voices from society, culture, family or religion hold you back.
               </p>
               <div className="mt-8 pt-8 border-t border-sage-green/20">

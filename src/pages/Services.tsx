@@ -127,7 +127,7 @@ We believe true progress includes everyone. That's why we actively engage men - 
         {/* Hero Section */}
         <div className="text-center mb-12 sm:mb-20 animate-fade-in">
           <div 
-            className="handwritten-quote text-lg sm:text-xl text-deep-teal/70 mb-4 italic mouse-parallax"
+            className="handwritten-quote text-lg sm:text-xl text-deep-teal/70 mb-4 mouse-parallax"
             style={{ transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)` }}
           >
             "Every story can be rewritten..."
@@ -172,7 +172,7 @@ We believe true progress includes everyone. That's why we actively engage men - 
                         </div>
                       </div>
                       
-                      <div className="handwritten-quote text-base sm:text-lg lg:text-xl text-deep-teal/80 italic mb-4 font-serif">
+                      <div className="handwritten-quote text-base sm:text-lg lg:text-xl text-deep-teal/80 mb-4 font-serif">
                         {service.pullQuote}
                       </div>
                       
@@ -221,7 +221,7 @@ We believe true progress includes everyone. That's why we actively engage men - 
         <section ref={approachRef} className="mb-12 sm:mb-20">
           <div className={`bg-gradient-to-br from-white/90 via-white/80 to-sage-green/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl border border-white/30 transition-all duration-1000 ${approachVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}>
             <div className="text-center mb-8 sm:mb-12">
-              <div className="handwritten-quote text-base sm:text-lg text-warm-gray/80 mb-4 italic">
+              <div className="handwritten-quote text-base sm:text-lg text-warm-gray/80 mb-4">
                 "The journey of a thousand miles begins with a single step..."
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-deep-teal px-4">
@@ -276,7 +276,7 @@ We believe true progress includes everyone. That's why we actively engage men - 
         <section ref={workingRef}>
           <div className={`bg-gradient-to-br from-white/90 via-white/80 to-blush-pink/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl border border-white/30 transition-all duration-1000 ${workingVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}>
             <div className="text-center mb-8 sm:mb-12">
-              <div className="handwritten-quote text-base sm:text-lg text-warm-gray/80 mb-4 italic">
+              <div className="handwritten-quote text-base sm:text-lg text-warm-gray/80 mb-4">
                 "Choose your own adventure..."
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-deep-teal px-4">

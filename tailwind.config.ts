@@ -13,7 +13,7 @@ export default {
       fontFamily: {
         'serif': ['Lora', 'serif'],
         'sans': ['Open Sans', 'sans-serif'],
-        'handwritten': ['Dancing Script', 'cursive']
+        'handwritten': ['Kalam', 'cursive']
       },
       colors: {
         'sage-green': '#9CAF88',

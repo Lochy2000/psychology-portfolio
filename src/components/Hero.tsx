@@ -9,9 +9,9 @@ const Hero: React.FC = () => {
   const mousePosition = useMouseParallax(0.05);
   const { text: typewriterText } = useTypewriter({
     words: ['life', 'world', 'surroundings', 'mind', 'story', 'journey'],
-    speed: 120,
+    speed: 180,
     deleteSpeed: 80,
-    pauseTime: 1800,
+    pauseTime: 3000,
     loop: true,
   });
 
@@ -24,8 +24,8 @@ const Hero: React.FC = () => {
           <div className="text-center space-y-3">
             <h1 className="text-2xl font-serif font-bold text-deep-teal leading-tight">
               Become the author of your own{' '}
-              <span className="relative">
-                <span className="text-sage-green">{typewriterText}</span>
+              <span className="relative inline-block min-w-[80px] text-left">
+                <span className="text-sage-green">{typewriterText || '\u00A0'}</span>
                 <span className="typewriter-cursor text-sage-green">|</span>
               </span>
             </h1>
@@ -94,8 +94,8 @@ const Hero: React.FC = () => {
               <div className="space-y-4">
                 <h1 className="text-3xl lg:text-4xl xl:text-5xl font-serif font-bold text-deep-teal leading-tight">
                   Become the author of your own{' '}
-                  <span className="relative">
-                    <span className="text-sage-green">{typewriterText}</span>
+                  <span className="relative inline-block min-w-[120px] lg:min-w-[160px] xl:min-w-[200px] text-left">
+                    <span className="text-sage-green">{typewriterText || '\u00A0'}</span>
                     <span className="typewriter-cursor text-sage-green">|</span>
                   </span>
                 </h1>

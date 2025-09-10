@@ -37,11 +37,6 @@ const ChapterOne: React.FC = () => {
               <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-warm-gray leading-relaxed">
                 You're seeking a safe, supportive space and guide to help you explore the stories you've been told - and the ones you tell yourself - so you can reconnect with your true power.
               </p>
-              <div className="bg-gradient-to-r from-sage-green/10 via-sage-green/5 to-transparent p-3 sm:p-4 lg:p-6 xl:p-8 rounded-2xl border-l-4 border-sage-green/30 shadow-sm">
-                <p className="text-sm sm:text-base lg:text-xl xl:text-2xl font-handwritten text-deep-teal/80 text-center">
-                  Every story can be rewritten. You hold the pen.
-                </p>
-              </div>
             </div>
           </div>
           
@@ -55,6 +50,15 @@ const ChapterOne: React.FC = () => {
                 className="relative rounded-2xl shadow-2xl object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-deep-teal/30 via-transparent to-sage-green/20 rounded-2xl"></div>
+              
+              {/* Quote Overlay */}
+              <div className="absolute top-4 sm:top-6 left-4 sm:left-6 right-4 sm:right-6">
+                <div className="bg-white/90 backdrop-blur-sm p-3 sm:p-4 lg:p-6 rounded-xl border border-sage-green/20 shadow-lg">
+                  <p className="text-xs sm:text-sm lg:text-lg xl:text-xl font-handwritten text-deep-teal/90 text-center leading-relaxed">
+                    Every story can be rewritten. You hold the pen.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

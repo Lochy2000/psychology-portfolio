@@ -202,7 +202,7 @@ const Testimonials = () => {
                 </button>
               </div>
               
-              <p className="text-warm-gray mb-6 italic leading-relaxed text-lg">
+              <p className="text-warm-gray mb-6 leading-relaxed text-lg">
                 "{testimonials[expandedCard].fullText}"
               </p>
               
@@ -242,7 +242,7 @@ const TestimonialCard = ({
       <Quote className="text-sage-green mb-4 flex-shrink-0" size={28} />
       
       <div className="flex-1">
-        <p className="text-warm-gray mb-6 italic leading-relaxed text-base line-clamp-4">
+        <p className="text-warm-gray mb-6 leading-relaxed text-base line-clamp-4">
           "{testimonial.text}"
         </p>
       </div>
