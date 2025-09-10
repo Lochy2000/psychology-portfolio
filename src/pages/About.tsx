@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Globe, Heart, BookOpen, Sparkles, Award, Users, ChevronDown, GraduationCap, Certificate, Star, CheckCircle, Brain, FileText, School } from 'lucide-react';
+import { Globe, Heart, BookOpen, Sparkles, Award, Users, ChevronDown, GraduationCap, Medal, Star, CheckCircle, Brain, FileText, School } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useMouseParallax } from '../hooks/useMouseParallax';
 import { useTypewriterOnce } from '../hooks/useTypewriterOnce';
@@ -75,7 +75,7 @@ This is where the real magic happens - when you realize you've always held the p
     { text: "Social Psychology Degree", icon: GraduationCap }, 
     { text: "Narrative Therapist", icon: Brain },
     { text: "Parent, Family & Youth Coach with the Coaching Academy of London", icon: Star },
-    { text: "Level 3 City & Guilds 'Working with Parents'", icon: Certificate },
+    { text: "Level 3 City & Guilds 'Working with Parents'", icon: Medal },
     { text: "Webster Stratton Group & Facilitation Leader", icon: Users },
     { text: "Family Link Parent Facilitator", icon: Heart },
     { text: "NLP practitioner", icon: CheckCircle }
