@@ -86,27 +86,27 @@ This is where the real magic happens - when you realize you've always held the p
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cream via-cream/95 to-blush-pink/10 text-deep-teal animated-background">
+    <div className="min-h-screen bg-cream text-deep-teal">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
           {/* Unified Hero Section */}
           <div ref={headerRef} className={`relative transition-all duration-1000 ${headerVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
             {/* Header */}
-            <div className="text-center mb-8 lg:mb-12">
-              <div className="w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-sage-green to-blush-pink rounded-full flex items-center justify-center mx-auto mb-4 lg:mb-6 gentle-float">
-                <BookOpen className="text-white" size={28} />
+            <div className="text-center mb-12 lg:mb-16">
+              <div className="w-20 h-20 lg:w-24 lg:h-24 bg-sage-green/20 border-2 border-sage-green rounded-full flex items-center justify-center mx-auto mb-4 lg:mb-6">
+                <BookOpen className="text-sage-green" size={28} />
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-deep-teal mb-4 lg:mb-6 leading-tight">
                 <span className="text-shimmer-safe">My Story</span>
               </h1>
-              <p className="handwritten-quote text-lg lg:text-xl font-handwritten text-warm-gray/80 max-w-2xl mx-auto leading-relaxed min-h-[2em]">
+              <p className="text-lg lg:text-xl font-serif italic text-gray-600 max-w-2xl mx-auto leading-relaxed min-h-[2em]">
                 {typewriterSubtitle}
                 <span className="typewriter-cursor text-warm-gray/80">|</span>
               </p>
             </div>
             
             {/* Main Content Grid */}
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-20">
               {/* Image */}
               <div className="relative order-1 group">
                 <img 
@@ -122,11 +122,11 @@ This is where the real magic happens - when you realize you've always held the p
                   <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 lg:p-6 shadow-lg">
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:gap-6">
                       <div className="flex items-center gap-2">
-                        <Award size={18} className="text-sage-green pulse-glow" />
+                        <Award size={18} className="text-sage-green" />
                         <span className="font-bold text-deep-teal text-sm lg:text-base">25+ Years Experience</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Users size={18} className="text-sage-green pulse-glow" />
+                        <Users size={18} className="text-sage-green" />
                         <span className="font-bold text-deep-teal text-sm lg:text-base">500+ Clients Supported</span>
                       </div>
                     </div>
@@ -136,9 +136,9 @@ This is where the real magic happens - when you realize you've always held the p
               
               {/* Content */}
               <div className="order-2 space-y-6">
-                <div className="bg-gradient-to-br from-sage-green/10 to-blush-pink/10 p-6 lg:p-8 rounded-2xl border border-sage-green/20 hover-lift paper-texture">
+                <div className="bg-white p-6 lg:p-8 rounded-2xl border-2 border-sage-green/10 shadow-sm hover:shadow-md transition-all duration-300">
                   <h2 className="text-xl lg:text-2xl xl:text-3xl font-serif font-bold text-deep-teal mb-4 lg:mb-6">Welcome to My World</h2>
-                  <p className="text-base lg:text-lg text-warm-gray leading-relaxed prose">
+                  <p className="text-base lg:text-lg text-gray-700 leading-relaxed">
                     I'm Mette, and like you, I've walked the path of questioning, exploring, and rewriting my own story. My journey across six countries has taught me that our narratives shape not just how we see ourselves, but how we move through the world.
                   </p>
                 </div>
@@ -147,42 +147,51 @@ This is where the real magic happens - when you realize you've always held the p
           </div>
 
           {/* Story Chapters - Expandable Sections */}
-          <div className="space-y-8 mb-20">
+          <div className="space-y-6 mb-24">
             {aboutStories.map((story, index) => (
               <div 
                 key={story.id}
                 ref={index === 0 ? journeyRef : index === 1 ? philosophyRef : passionRef}
-                className={`story-chapter paper-texture transition-all duration-1000 ${
+                className={`story-chapter transition-all duration-1000 ${
                   (index === 0 && journeyVisible) || (index === 1 && philosophyVisible) || (index === 2 && passionVisible)
                     ? 'story-reveal' : 'opacity-0 translate-y-10'
                 }`}
+                data-expanded={expandedSection === story.id}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="bg-gradient-to-br from-white/90 to-sage-green/5 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 border border-sage-green/10 overflow-hidden">
+                <div className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border-2 border-sage-green/10 hover:border-sage-green/30 overflow-hidden">
                   {/* Chapter Header */}
-                  <div 
-                    className="p-6 lg:p-8 cursor-pointer hover-lift"
+                  <button 
+                    className="w-full text-left p-6 lg:p-8 cursor-pointer transition-all duration-300 hover:bg-sage-green/5 group dropdown-trigger focus:outline-none focus:ring-2 focus:ring-sage-green/30 focus:bg-sage-green/5"
                     onClick={() => toggleSection(story.id)}
+                    data-mobile-dropdown
+                    aria-expanded={expandedSection === story.id}
+                    aria-label={`${expandedSection === story.id ? 'Close' : 'Open'} ${story.title} section`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-4 lg:gap-6">
-                        <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-sage-green to-blush-pink rounded-full flex items-center justify-center gentle-float">
-                          <story.icon className="text-white" size={20} />
+                        <div className="w-12 h-12 lg:w-16 lg:h-16 bg-white border-2 border-sage-green/30 rounded-full flex items-center justify-center transition-all duration-300 group-hover:border-sage-green group-hover:shadow-md">
+                          <story.icon className="text-deep-teal" size={20} />
                         </div>
                         <div>
-                          <span className="text-xs lg:text-sm font-handwritten text-sage-green/70 block mb-1">{story.chapter}</span>
+                          <span className="text-xs lg:text-sm font-handwritten text-sage-green block mb-1 font-medium">{story.chapter}</span>
                           <h3 className="text-xl lg:text-2xl xl:text-3xl font-serif font-bold text-deep-teal mb-2">{story.title}</h3>
-                          <p className="text-warm-gray text-base lg:text-lg">{story.summary}</p>
+                          <p className="text-gray-700 text-base lg:text-lg">{story.summary}</p>
                         </div>
                       </div>
-                      <ChevronDown 
-                        className={`text-sage-green transition-transform duration-300 ${
-                          expandedSection === story.id ? 'rotate-180' : ''
-                        }`} 
-                        size={24} 
-                      />
+                      <div className="flex items-center gap-2">
+                        <span className="hidden lg:inline text-xs text-sage-green font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          {expandedSection === story.id ? 'Click to close' : 'Click to read more'}
+                        </span>
+                        <ChevronDown 
+                          className={`text-sage-green/60 transition-all duration-300 group-hover:text-sage-green ${
+                            expandedSection === story.id ? 'rotate-180 text-sage-green' : ''
+                          }`} 
+                          size={24} 
+                        />
+                      </div>
                     </div>
-                  </div>
+                  </button>
 
                   {/* Expandable Content */}
                   <div className={`overflow-hidden transition-all duration-500 ${
@@ -193,7 +202,7 @@ This is where the real magic happens - when you realize you've always held the p
                         <div className="space-y-4">
                           {story.fullContent.split('\n').map((paragraph, i) => (
                             paragraph.trim() && (
-                              <p key={i} className="text-warm-gray leading-relaxed prose text-sm lg:text-base">
+                              <p key={i} className="text-gray-700 leading-relaxed text-sm lg:text-base">
                                 {paragraph.trim()}
                               </p>
                             )
@@ -218,30 +227,30 @@ This is where the real magic happens - when you realize you've always held the p
           {/* Qualifications Section */}
           <div ref={qualRef} className="space-y-8 pb-12">
             <div className={`text-center mb-12 transition-all duration-1000 ${qualVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
-              <div className="w-16 h-16 bg-gradient-to-br from-deep-teal to-sage-green rounded-full flex items-center justify-center mx-auto mb-6 gentle-float">
-                <Award className="text-white" size={24} />
+              <div className="w-16 h-16 bg-deep-teal/10 border-2 border-deep-teal rounded-full flex items-center justify-center mx-auto mb-6">
+                <Award className="text-deep-teal" size={24} />
               </div>
               <h2 className="text-2xl lg:text-3xl xl:text-4xl font-serif font-bold text-deep-teal mb-6">My Professional Journey</h2>
-              <div className="handwritten-quote text-base lg:text-lg font-handwritten text-warm-gray/80 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-base lg:text-lg font-serif italic text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 Every qualification tells a story of growth, learning, and deepening understanding.
-              </div>
+              </p>
             </div>
             
-            <div className="bg-gradient-to-br from-sage-green/10 to-blush-pink/10 rounded-2xl p-6 lg:p-12 border border-sage-green/20 paper-texture">
+            <div className="bg-white rounded-2xl p-6 lg:p-10 border-2 border-sage-green/10">
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
                 {qualifications.map((qualification, index) => {
                   const IconComponent = qualification.icon;
                   return (
                     <div 
                       key={index}
-                      className={`bg-white/60 backdrop-blur-sm p-4 lg:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 border border-sage-green/10 hover-lift ${qualVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}
+                      className={`bg-white p-4 lg:p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border-2 border-sage-green/10 hover:border-sage-green/30 focus-within:border-sage-green/40 ${qualVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       <div className="flex items-start gap-3">
-                        <div className="w-6 h-6 lg:w-8 lg:h-8 bg-deep-teal/90 rounded-lg flex items-center justify-center mt-1 shadow-sm">
-                          <IconComponent className="text-white" size={12} />
+                        <div className="w-6 h-6 lg:w-8 lg:h-8 bg-deep-teal/10 border border-deep-teal/30 rounded-lg flex items-center justify-center mt-1">
+                          <IconComponent className="text-deep-teal" size={12} />
                         </div>
-                        <span className="text-warm-gray font-medium leading-relaxed text-sm lg:text-base">{qualification.text}</span>
+                        <span className="text-gray-700 font-medium leading-relaxed text-sm lg:text-base">{qualification.text}</span>
                       </div>
                     </div>
                   );

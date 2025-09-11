@@ -1,14 +1,11 @@
-
 import React, { useState } from 'react';
-import { Brain, Users, Heart, Building2, ChevronDown, ChevronUp } from 'lucide-react';
+import { Brain, Users, Heart, Building2, ChevronDown, ChevronUp, ArrowRight, CheckCircle } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { useMouseParallax } from '../hooks/useMouseParallax';
 
 const Services = () => {
   const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
   const { ref: approachRef, isVisible: approachVisible } = useScrollAnimation();
   const { ref: workingRef, isVisible: workingVisible } = useScrollAnimation();
-  const mousePosition = useMouseParallax(0.02);
   const [expandedService, setExpandedService] = useState<string | null>(null);
 
   const services = [
@@ -17,7 +14,6 @@ const Services = () => {
       title: "Narrative Psychology",
       icon: Brain,
       summary: "Explore and challenge the stories that shape your identity. Transform limiting beliefs into empowering narratives.",
-      pullQuote: "\"We are the stories we tell ourselves\"",
       fullContent: `As a Narrative Psychologist, I help you explore and challenge the stories that shape your identity – stories you tell yourself, but also the voices of others and the expectations of society.
 
 These inner narratives influence how you see yourself, what you believe is possible, and how you move through the world. Some stories empower you. Others hold you back from living your full potential.
@@ -25,31 +21,35 @@ These inner narratives influence how you see yourself, what you believe is possi
 I support you in gently unraveling those limiting narratives - so you can reclaim your truth, rewrite your story, and step fully into your own power. It's not about changing who you are or denying what the past brought you.
 
 It's about helping you accept it and by becoming the author of your own life - not only cope but fully thrive.`,
-      gradient: 'from-purple-100/80 via-indigo-50/60 to-transparent',
-      iconBg: 'from-purple-500 to-indigo-600',
-      illustration: '📖'
+      highlights: [
+        "Identify limiting narratives",
+        "Reclaim your personal truth",
+        "Rewrite empowering stories",
+        "Step into your power"
+      ]
     },
     {
       id: 'nlp',
       title: "NLP Coaching", 
       icon: Users,
       summary: "Unlock limiting beliefs, build empowering habits, and gain clarity to take aligned action toward your desired life.",
-      pullQuote: "\"Change your thoughts, change your world\"",
       fullContent: `As an NLP coach, I help you unlock limiting beliefs, build empowering habits, gain clarity, and take aligned action toward the life you truly want.
 
 Through powerful neuro-linguistic programming techniques, we'll rewire your thought patterns and create lasting positive change in your mindset and behaviors.
 
 Together, we'll identify the unconscious patterns that may be holding you back and replace them with empowering strategies that support your growth and success.`,
-      gradient: 'from-emerald-100/80 via-teal-50/60 to-transparent',
-      iconBg: 'from-emerald-500 to-teal-600',
-      illustration: '🌱'
+      highlights: [
+        "Rewire thought patterns",
+        "Build empowering habits",
+        "Create lasting change",
+        "Achieve aligned action"
+      ]
     },
     {
       id: 'parenting',
       title: "Parenting Support",
       icon: Heart, 
       summary: "Build deeper, healthier family connections rooted in respect, empathy, and emotional awareness.",
-      pullQuote: "\"Children learn who they are through our eyes\"",
       fullContent: `As a Parenting Consultant, I support parents in building deeper, healthier connections—rooted in respect, empathy, and emotional awareness.
 
 Having worked with parents for over 25 years, I bring deep insight and compassion to the journey of parenting. My approach focuses on curiosity and exploration, creating safe spaces to question existing narratives.
@@ -62,16 +62,18 @@ I specialize in:
 • Supporting guilt-free work-life integration
 
 Together, we'll create a new narrative that reflects how you want your family life to feel, look, and sound.`,
-      gradient: 'from-rose-100/80 via-pink-50/60 to-transparent',
-      iconBg: 'from-rose-500 to-pink-600',
-      illustration: '🤗'
+      highlights: [
+        "25+ years experience",
+        "Divorce & separation support",
+        "Expat family guidance",
+        "Work-life integration"
+      ]
     },
     {
       id: 'heredge-local',
       title: "HerEdge Côte d'Azur",
       icon: Building2,
       summary: "Local networking and support for women in the French Riviera region.",
-      pullQuote: "\"Together we rise\"",
       fullContent: `HerEdge Côte d'Azur is our local chapter dedicated to supporting women in the French Riviera region.
 
 We create opportunities for networking, professional development, and personal growth specifically tailored to the unique needs of women living and working on the Côte d'Azur.
@@ -84,16 +86,18 @@ Our local initiatives include:
 • Local business development opportunities
 
 Join our community of empowered women making their mark on the French Riviera.`,
-      gradient: 'from-blue-100/80 via-teal-50/60 to-transparent',
-      iconBg: 'from-blue-500 to-teal-600',
-      illustration: '🌊'
+      highlights: [
+        "Monthly networking events",
+        "Mentorship programs",
+        "Cultural integration",
+        "Local community"
+      ]
     },
     {
       id: 'heredge-corporate',
-      title: "HerEdge Corporate Support",
+      title: "HerEdge Corporate",
       icon: Building2,
       summary: "Creating workplaces where women are truly seen, supported, and empowered beyond simple representation.",
-      pullQuote: "\"Representation is just the beginning\"",
       fullContent: `At HerEdge Corporate, we go beyond checking boxes for female representation in the workplace - we help companies create workplaces where women are truly seen, supported, and empowered.
 
 Together with my professional team, we partner with organizations to build systems that prioritize women's well-being, professional growth, and inclusion.
@@ -105,9 +109,12 @@ How we work:
 • Membership Community: Exclusive platform for professional development
 
 We believe true progress includes everyone. That's why we actively engage men - educating and empowering them to become allies in creating more equitable workplaces.`,
-      gradient: 'from-amber-100/80 via-orange-50/60 to-transparent',
-      iconBg: 'from-amber-500 to-orange-600',
-      illustration: '🏢'
+      highlights: [
+        "Company consultation",
+        "Tailored workshops",
+        "Leadership communities",
+        "Ally engagement"
+      ]
     }
   ];
 
@@ -116,99 +123,112 @@ We believe true progress includes everyone. That's why we actively engage men - 
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cream via-cream/90 to-blush-pink/15 relative overflow-hidden animated-background">
-      {/* Floating decorative elements - responsive positioning */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-4 sm:right-10 text-4xl sm:text-6xl opacity-10 animate-gentle-pulse">📚</div>
-        <div className="absolute bottom-32 left-4 sm:left-10 text-3xl sm:text-4xl opacity-15 animate-gentle-pulse" style={{ animationDelay: '2s' }}>✨</div>
-      </div>
-
-      <div className="container mx-auto px-4 py-8 sm:py-16 relative z-10">
-        {/* Hero Section */}
-        <div className="text-center mb-12 sm:mb-20 animate-fade-in">
-          <div 
-            className="handwritten-quote text-lg sm:text-xl text-deep-teal/70 mb-4 mouse-parallax"
-            style={{ transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)` }}
-          >
-            "Every story can be rewritten..."
-          </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-deep-teal mb-4 sm:mb-6 text-shimmer px-4">
-            Chapters of Transformation
+    <div className="min-h-screen bg-cream">
+      <div className="container mx-auto px-4 py-12 sm:py-16">
+        {/* Hero Section - Clean and Professional */}
+        <div className="text-center mb-16 sm:mb-20">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-deep-teal mb-6">
+            How I Can Help You
           </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl text-warm-gray max-w-3xl mx-auto leading-relaxed px-4">
-            Journey through the different ways we can work together to rewrite your story and step into your personal power.
+          <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            Explore the different ways we can work together to transform your story and create meaningful change in your life.
           </p>
         </div>
         
-        {/* Services as Story Chapters */}
-        <section ref={servicesRef} className="mb-12 sm:mb-20">
-          <div className="space-y-6 sm:space-y-8">
+        {/* Services Grid - Clean Cards */}
+        <section ref={servicesRef} className="mb-20">
+          <div className="space-y-6">
             {services.map((service, index) => (
               <div 
                 key={service.id}
-                className={`story-chapter bg-gradient-to-br from-white/90 via-white/80 to-transparent backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-white/30 transition-all duration-700 hover:shadow-2xl ${servicesVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className={`bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border-2 border-gray-100 hover:border-sage-green/30 overflow-hidden ${
+                  servicesVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+                data-expanded={expandedService === service.id}
               >
-                {/* Chapter Header */}
-                <div 
-                  className={`p-6 sm:p-8 lg:p-12 bg-gradient-to-br ${service.gradient} cursor-pointer group relative overflow-hidden`}
+                {/* Service Header - Clean and Clickable */}
+                <button
+                  className="w-full text-left p-6 sm:p-8 lg:p-10 transition-all duration-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-sage-green/30 focus:bg-gray-50 group"
                   onClick={() => toggleService(service.id)}
+                  aria-expanded={expandedService === service.id}
+                  aria-label={`${expandedService === service.id ? 'Close' : 'Open'} ${service.title} details`}
                 >
-                  {/* Responsive decorative illustration */}
-                  <div className="absolute top-4 right-4 text-2xl sm:text-3xl lg:text-4xl opacity-20 group-hover:opacity-30 transition-opacity duration-300">
-                    {service.illustration}
-                  </div>
-                  
-                  <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
-                    <div className="flex-1 w-full">
-                      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
-                        {/* Responsive icon sizing */}
-                        <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${service.iconBg} rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
-                          <service.icon className="text-white" size={20} />
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-start gap-4 mb-4">
+                        {/* Clean Icon Design */}
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-sage-green/10 border-2 border-sage-green/30 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:border-sage-green transition-colors duration-300">
+                          <service.icon className="text-deep-teal" size={24} />
                         </div>
-                        <div className="min-w-0 flex-1">
-                          <span className="text-sm sm:text-base text-warm-gray/70 font-medium">Chapter {index + 1}</span>
-                          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-deep-teal break-words">{service.title}</h3>
+                        <div className="flex-1">
+                          <h3 className="text-2xl sm:text-3xl font-serif font-bold text-deep-teal mb-2">
+                            {service.title}
+                          </h3>
+                          <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
+                            {service.summary}
+                          </p>
                         </div>
                       </div>
                       
-                      <div className="handwritten-quote text-base sm:text-lg lg:text-xl text-deep-teal/80 mb-4 font-serif">
-                        {service.pullQuote}
+                      {/* Key Highlights - Visible Always */}
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        {service.highlights.slice(0, 3).map((highlight, idx) => (
+                          <span key={idx} className="text-sm text-sage-green font-medium px-3 py-1 bg-sage-green/10 rounded-full">
+                            {highlight}
+                          </span>
+                        ))}
                       </div>
-                      
-                      <p className="text-warm-gray leading-relaxed text-base sm:text-lg lg:text-xl max-w-none pr-0 sm:pr-12">
-                        {service.summary}
-                      </p>
                     </div>
                     
-                    {/* Responsive chevron button */}
-                    <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full backdrop-blur-sm group-hover:bg-white/30 transition-colors duration-300 flex-shrink-0 self-center sm:self-start">
-                      {expandedService === service.id ? 
-                        <ChevronUp className="text-deep-teal" size={16} /> : 
-                        <ChevronDown className="text-deep-teal" size={16} />
-                      }
+                    {/* Expand/Collapse Indicator */}
+                    <div className="flex items-center gap-2">
+                      <span className="hidden sm:inline text-sm text-gray-500 group-hover:text-sage-green transition-colors duration-300">
+                        {expandedService === service.id ? 'Less' : 'More'}
+                      </span>
+                      <div className="w-10 h-10 bg-gray-100 group-hover:bg-sage-green/20 rounded-full flex items-center justify-center transition-all duration-300">
+                        {expandedService === service.id ? 
+                          <ChevronUp className="text-deep-teal" size={20} /> : 
+                          <ChevronDown className="text-deep-teal" size={20} />
+                        }
+                      </div>
                     </div>
                   </div>
-                </div>
+                </button>
                 
-                {/* Expandable Content - improved overflow handling */}
-                <div className={`overflow-hidden transition-all duration-700 ease-in-out ${
-                  expandedService === service.id ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+                {/* Expandable Content - Clean Layout */}
+                <div className={`overflow-hidden transition-all duration-500 ${
+                  expandedService === service.id ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
                 }`}>
-                  <div className="p-6 sm:p-8 lg:p-12 bg-white/50 backdrop-blur-sm border-t border-white/30">
-                    <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none text-warm-gray leading-relaxed">
-                      {service.fullContent.split('\n').map((paragraph, i) => (
-                        paragraph.trim() && (
-                          <p key={i} className="mb-4 break-words">
-                            {paragraph.trim()}
-                          </p>
-                        )
-                      ))}
-                    </div>
-                    <div className="mt-6 sm:mt-8 text-center">
-                      <button className="inline-flex items-center px-6 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-sage-green to-blush-pink text-white rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105 font-medium text-sm sm:text-base">
-                        Let's start your story today →
-                      </button>
+                  <div className="px-6 sm:px-8 lg:px-10 pb-6 sm:pb-8 lg:pb-10 border-t border-gray-100">
+                    <div className="pt-6 sm:pt-8">
+                      <div className="prose prose-gray max-w-none text-gray-700 leading-relaxed">
+                        {service.fullContent.split('\n').map((paragraph, i) => (
+                          paragraph.trim() && (
+                            <p key={i} className="mb-4">
+                              {paragraph.trim()}
+                            </p>
+                          )
+                        ))}
+                      </div>
+                      
+                      {/* All Highlights */}
+                      <div className="mt-6 flex flex-wrap gap-2">
+                        {service.highlights.map((highlight, idx) => (
+                          <div key={idx} className="flex items-center gap-2 text-sm text-gray-700">
+                            <CheckCircle className="text-sage-green" size={16} />
+                            <span>{highlight}</span>
+                          </div>
+                        ))}
+                      </div>
+                      
+                      {/* CTA Button */}
+                      <div className="mt-8 flex justify-center">
+                        <button className="inline-flex items-center px-6 py-3 bg-sage-green text-white rounded-full hover:bg-sage-green/90 transition-all duration-300 font-medium group">
+                          Start Your Journey
+                          <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={18} />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -217,103 +237,106 @@ We believe true progress includes everyone. That's why we actively engage men - 
           </div>
         </section>
 
-        {/* My Approach - responsive improvements */}
-        <section ref={approachRef} className="mb-12 sm:mb-20">
-          <div className={`bg-gradient-to-br from-white/90 via-white/80 to-sage-green/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl border border-white/30 transition-all duration-1000 ${approachVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}>
-            <div className="text-center mb-8 sm:mb-12">
-              <div className="handwritten-quote text-base sm:text-lg text-warm-gray/80 mb-4">
-                "The journey of a thousand miles begins with a single step..."
-              </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-deep-teal px-4">
-                The Path We Walk Together
+        {/* My Approach - Clean Design */}
+        <section ref={approachRef} className="mb-20">
+          <div className={`bg-white rounded-2xl p-8 sm:p-10 lg:p-12 shadow-sm border-2 border-gray-100 transition-all duration-1000 ${
+            approachVisible ? 'animate-scale-in' : 'opacity-0 scale-95'
+          }`}>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-deep-teal mb-4">
+                My Approach
               </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                A journey of transformation through three essential steps
+              </p>
             </div>
             
-            <div className="relative">
-              {/* Journey Path Line - responsive */}
-              <div className="absolute left-6 sm:left-8 top-12 sm:top-16 bottom-12 sm:bottom-16 w-0.5 sm:w-1 bg-gradient-to-b from-sage-green via-blush-pink to-deep-teal rounded-full opacity-30"></div>
-              
-              <div className="space-y-8 sm:space-y-12">
-                {[
-                  {
-                    step: 1,
-                    title: "Curiosity",
-                    description: "We begin with curiosity: gently exploring the stories that shape your life today.",
-                    icon: "🔍",
-                    color: "from-sage-green to-sage-green/80"
-                  },
-                  {
-                    step: 2,
-                    title: "Safe Space",
-                    description: "Together, we'll create a safe space to question these stories and bring them out into the open.",
-                    icon: "🤝",
-                    color: "from-blush-pink to-blush-pink/80"
-                  },
-                  {
-                    step: 3,
-                    title: "New Narrative",
-                    description: "From there, we'll begin to shape a new narrative that reflects how you want your life to feel.",
-                    icon: "✍️",
-                    color: "from-deep-teal to-deep-teal/80"
-                  }
-                ].map((step, index) => (
-                  <div key={step.step} className="flex items-start gap-4 sm:gap-6 relative">
-                    <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${step.color} rounded-full flex items-center justify-center shadow-lg z-10 gentle-float flex-shrink-0`} style={{ animationDelay: `${index * 2}s` }}>
-                      <span className="text-lg sm:text-xl lg:text-2xl">{step.icon}</span>
-                    </div>
-                    <div className="flex-1 pt-1 sm:pt-2 min-w-0">
-                      <h3 className="font-serif font-bold text-deep-teal mb-2 text-lg sm:text-xl break-words">{step.title}</h3>
-                      <p className="text-warm-gray leading-relaxed text-sm sm:text-base break-words">{step.description}</p>
-                    </div>
+            <div className="space-y-8">
+              {[
+                {
+                  step: 1,
+                  title: "Discovery Through Curiosity",
+                  description: "We begin with curiosity: gently exploring the stories that shape your life today.",
+                  icon: "🔍"
+                },
+                {
+                  step: 2,
+                  title: "Creating Safe Space",
+                  description: "Together, we'll create a safe space to question these stories and bring them out into the open.",
+                  icon: "🤝"
+                },
+                {
+                  step: 3,
+                  title: "Writing New Narratives",
+                  description: "From there, we'll begin to shape a new narrative that reflects how you want your life to feel.",
+                  icon: "✍️"
+                }
+              ].map((step, index) => (
+                <div key={step.step} className="flex items-start gap-6">
+                  {/* Step Number */}
+                  <div className="w-12 h-12 bg-sage-green/10 border-2 border-sage-green/30 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-deep-teal font-bold text-lg">{step.step}</span>
                   </div>
-                ))}
-              </div>
+                  <div className="flex-1">
+                    <h3 className="font-serif font-bold text-deep-teal text-xl mb-2">{step.title}</h3>
+                    <p className="text-gray-700 leading-relaxed">{step.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* How We Work Together - responsive grid */}
+        {/* How We Work Together - Clean Grid */}
         <section ref={workingRef}>
-          <div className={`bg-gradient-to-br from-white/90 via-white/80 to-blush-pink/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 shadow-xl border border-white/30 transition-all duration-1000 ${workingVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`}>
-            <div className="text-center mb-8 sm:mb-12">
-              <div className="handwritten-quote text-base sm:text-lg text-warm-gray/80 mb-4">
-                "Choose your own adventure..."
-              </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-deep-teal px-4">
-                Ways We Can Work Together
+          <div className={`bg-white rounded-2xl p-8 sm:p-10 lg:p-12 shadow-sm border-2 border-gray-100 transition-all duration-1000 ${
+            workingVisible ? 'animate-scale-in' : 'opacity-0 scale-95'
+          }`}>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-serif font-bold text-deep-teal mb-4">
+                Ways to Connect
               </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Choose the approach that works best for you
+              </p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {[
                 {
                   title: "Discovery Call",
                   description: "Free 20-minute Zoom call to explore if we're a good fit",
-                  icon: "📞",
-                  cta: "Book a Call"
+                  icon: "📞"
                 },
                 {
                   title: "Online Sessions",
                   description: "3 x 60-minute sessions via Zoom with personalized resources",
-                  icon: "💻",
-                  cta: "Start Online"
+                  icon: "💻"
                 },
                 {
                   title: "In-Person Support",
                   description: "Creative, hands-on exploration in the Côte d'Azur region",
-                  icon: "🏡",
-                  cta: "Meet in Person"
+                  icon: "🏡"
                 }
               ].map((option, index) => (
-                <div key={index} className="text-center p-4 sm:p-6 bg-gradient-to-br from-sage-green/10 to-transparent rounded-xl sm:rounded-2xl border border-sage-green/20 hover:shadow-lg transition-all duration-300 hover:scale-105">
-                  <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{option.icon}</div>
-                  <h3 className="font-serif font-bold text-deep-teal text-base sm:text-lg mb-2 sm:mb-3 break-words">{option.title}</h3>
-                  <p className="text-warm-gray text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed break-words">{option.description}</p>
+                <div key={index} className="text-center p-6 bg-gray-50 rounded-xl border-2 border-gray-100 hover:border-sage-green/30 transition-all duration-300 hover:shadow-md">
+                  <div className="text-3xl mb-4">{option.icon}</div>
+                  <h3 className="font-serif font-bold text-deep-teal text-lg mb-2">{option.title}</h3>
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{option.description}</p>
                   <button className="text-sage-green font-medium hover:text-deep-teal transition-colors duration-300 text-sm">
-                    {option.cta} →
+                    Learn More →
                   </button>
                 </div>
               ))}
+            </div>
+            
+            {/* Final CTA */}
+            <div className="mt-12 text-center">
+              <p className="text-gray-600 mb-6">Ready to begin your transformation journey?</p>
+              <button className="inline-flex items-center px-8 py-3 bg-sage-green text-white rounded-full hover:bg-sage-green/90 transition-all duration-300 font-medium text-lg group">
+                Book Your Discovery Call
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
+              </button>
             </div>
           </div>
         </section>
