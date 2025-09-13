@@ -16,7 +16,7 @@ const ServicesHero: React.FC = () => {
         <img 
           src="/img/tree-services.png" 
           alt="Growth and transformation tree"
-          className="h-full w-full object-contain object-left-bottom lg:object-left opacity-50 lg:opacity-100"
+          className="h-full w-full object-contain object-left-bottom lg:object-left opacity-75 lg:opacity-100"
           style={{
             filter: 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1))'
           }}
@@ -24,7 +24,7 @@ const ServicesHero: React.FC = () => {
       </div>
 
       {/* Enhanced gradient overlay for mobile readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/60 backdrop-blur-[2px] lg:hidden" />
+      <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-white/50 backdrop-blur-[1px] lg:hidden" />
 
       {/* Content container - positioned right on desktop */}
       <div className="relative z-10 w-full">
@@ -41,12 +41,12 @@ const ServicesHero: React.FC = () => {
               </p>
               
               {/* Main title */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-charcoal mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-deep-teal mb-6">
                 How I Can Help You
               </h1>
               
-              {/* Description - always visible */}
-              <p className="text-base sm:text-lg text-charcoal/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-12">
+              {/* Description - hidden on mobile */}
+              <p className="hidden sm:block text-lg text-charcoal/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-12">
                 Explore the different ways we can work together to transform your story and create meaningful change in your life.
               </p>
 
@@ -54,10 +54,10 @@ const ServicesHero: React.FC = () => {
               <div className="flex flex-col items-center lg:items-start">
                 <button
                   onClick={scrollToServices}
-                  className="group animate-bounce hover:animate-none transition-all duration-300"
+                  className="group hover:animate-none transition-all duration-300"
                   aria-label="Scroll to services"
                 >
-                  <div className="bg-white/80 backdrop-blur-sm hover:bg-white rounded-full p-3 shadow-md hover:shadow-lg transition-all duration-300">
+                  <div className="bg-white/80 backdrop-blur-sm hover:bg-white rounded-full p-3 shadow-md hover:shadow-lg transition-all duration-300 animate-pulse-slow">
                     <ArrowDown 
                       className="text-deep-teal group-hover:text-deep-teal/80 group-hover:translate-y-1 transition-all duration-300" 
                       size={24} 

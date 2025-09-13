@@ -65,7 +65,7 @@ export default {
         "slide-in-left": "slide-in-left 0.6s ease-out",
         "slide-in-right": "slide-in-right 0.6s ease-out",
         "bounce-gentle": "bounce-gentle 2s ease-in-out infinite",
-        "pulse-slow": "pulse 3s ease-in-out infinite",
+        "pulse-slow": "pulse-slow 3s ease-in-out infinite",
         "floating-orbs": "floating-orbs 25s ease-in-out infinite",
         "gradient-shift": "gradient-shift 20s ease infinite",
         "subtle-float": "subtle-float 6s ease-in-out infinite",
@@ -112,6 +112,14 @@ export default {
           "100%": {
             opacity: "1",
             transform: "translateX(0)"
+          }
+        },
+        "pulse-slow": {
+          "0%, 100%": {
+            transform: "translateY(0)"
+          },
+          "50%": {
+            transform: "translateY(-10px)"
           }
         },
         "slide-in-right": {
