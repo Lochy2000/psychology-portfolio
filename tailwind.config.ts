@@ -15,6 +15,9 @@ export default {
         'sans': ['Open Sans', 'sans-serif'],
         'handwritten': ['Kalam', 'cursive']
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
       colors: {
         'sage-green': '#9CAF88',
         'blush-pink': '#E6D1C5',
@@ -67,6 +70,8 @@ export default {
         "gradient-shift": "gradient-shift 20s ease infinite",
         "subtle-float": "subtle-float 6s ease-in-out infinite",
         "gentle-pulse": "gentle-pulse 4s ease-in-out infinite",
+        "book-zoom": "book-zoom 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+        "portal-emerge": "portal-emerge 1s cubic-bezier(0.4, 0, 0.2, 1) forwards",
       },
       keyframes: {
         "fade-in": {
@@ -165,6 +170,33 @@ export default {
           "50%": {
             opacity: "1",
             transform: "scale(1.02)"
+          }
+        },
+        "book-zoom": {
+          "0%": {
+            transform: "scale(1) blur(0px)",
+            opacity: "1"
+          },
+          "100%": {
+            transform: "scale(5) blur(3px)",
+            opacity: "0.1"
+          }
+        },
+        "portal-emerge": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.3)",
+            clipPath: "circle(0% at center)"
+          },
+          "50%": {
+            opacity: "0.7",
+            transform: "scale(0.7)",
+            clipPath: "circle(30% at center)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)",
+            clipPath: "circle(100% at center)"
           }
         }
       },

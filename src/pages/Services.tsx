@@ -6,19 +6,32 @@ import ServicesContact from '../components/services/ServicesContact';
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-cream">
-      <div className="container mx-auto px-4 py-12 sm:py-16">
-        {/* Hero Section - Clean and Professional */}
-        <ServicesHero />
-        
-        {/* Services Grid - Clean Cards */}
-        <ServicesList />
-
-        {/* My Approach - Clean Design */}
-        <ServicesApproach />
-
-        {/* How We Work Together - Clean Grid */}
-        <ServicesContact />
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <ServicesHero />
+      
+      {/* Services Content */}
+      <div 
+        className="bg-gradient-to-b from-white via-cream/30 to-white"
+        data-services-section
+      >
+        <div className="container mx-auto px-4 py-16 sm:py-20">
+          {/* Services List */}
+          <ServicesList />
+          
+          {/* My Approach - Visual Timeline */}
+          <div className="mt-16 sm:mt-20">
+            <ServicesApproach />
+          </div>
+          
+          {/* Ways to Connect with enhanced CTAs */}
+          <div className="mt-16 sm:mt-20">
+            <ServicesContact />
+          </div>
+          
+          {/* Bottom spacing for footer */}
+          <div className="h-8 sm:h-12" />
+        </div>
       </div>
     </div>
   );
