@@ -3,10 +3,10 @@
 
 A modern, responsive website for Mette Nyholm Theilmann, featuring narrative psychology services, NLP coaching, parenting support, and corporate wellness solutions through HerEdge.
 
-## 🌐 Live Demo
+##  Live Demo
 // ...existing code...
 
-## 🛠️ Tech Stack
+##  Tech Stack
 - **Frontend Framework**: React 18.3.1 with TypeScript
 - **Build Tool**: Vite
 - **Styling**: Tailwind CSS with custom design system
@@ -17,7 +17,7 @@ A modern, responsive website for Mette Nyholm Theilmann, featuring narrative psy
 - **Animation**: CSS animations with Tailwind utilities
 // ...existing code...
 
-## ✨ Key Features
+##  Key Features
 - **Responsive Design**: Fully responsive across all devices and screen sizes
 - **Modern Animations**: Smooth, elegant animations and transitions
 - **Accessibility**: WCAG compliant with proper contrast ratios and keyboard navigation
@@ -27,7 +27,7 @@ A modern, responsive website for Mette Nyholm Theilmann, featuring narrative psy
 - **Multi-page Navigation**: Home, About, Services, and Contact pages
 - **Contact Integration**: Direct email, phone, and WhatsApp contact options
 
-## 🎨 Design System
+##  Design System
 - **Color Palette**: 
   - Cream (#F5F0E6) - Background
   - Sage Green (#9CAF88) - Primary accent
@@ -40,9 +40,11 @@ A modern, responsive website for Mette Nyholm Theilmann, featuring narrative psy
   - Decorative: Dancing Script for quotes
 - **Components**: Consistent card layouts, gradient backgrounds, and glass-morphism effects
 
-## 📱 Screenshots
-- Homepage with hero section and service preview
-- Responsive services page with expandable cards
+## Screenshots
+- <img width="1859" height="861" alt="image" src="https://github.com/user-attachments/assets/407c74b3-e987-4235-a429-4eee01eaa880" />
+
+- <img width="1876" height="891" alt="image" src="https://github.com/user-attachments/assets/40bd5952-dfa2-4272-82c9-39f18271f075" />
+
 - Contact page with multiple communication options
 - Mobile-optimized navigation and layouts
 
