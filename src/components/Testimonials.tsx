@@ -166,12 +166,12 @@ const Testimonials = () => {
           </Carousel>
 
           {/* Progress Indicators */}
-          <div className="flex justify-center mt-6 sm:mt-8 space-x-1.5 sm:space-x-2">
+          <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
-                  Math.floor(current * testimonials.length / testimonials.length) === index ? 'bg-sage-green scale-110' : 'bg-sage-green/30'
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  Math.floor(current * testimonials.length / testimonials.length) === index ? 'bg-sage-green scale-125' : 'bg-sage-green/30'
                 }`}
                 onClick={() => api?.scrollTo(index)}
               />

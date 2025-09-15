@@ -19,9 +19,7 @@ const CallToAction: React.FC = () => {
           </div>
 
           <div className="space-y-3 sm:space-y-4">
-            <p className="text-base sm:text-lg lg:text-xl text-warm-gray leading-relaxed font-medium">
-              Transform your story. Reconnect with your power.
-            </p>
+
             <p className="text-sm sm:text-base lg:text-lg text-warm-gray/80 leading-relaxed">
               Together, we'll rewrite the narratives that truly reflect who you are.
             </p>
