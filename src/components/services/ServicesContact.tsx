@@ -105,13 +105,13 @@ const ServicesContact = () => {
                   </div>
                   
                   <div className="flex gap-2">
-                    <span className="text-[10px] px-2 py-1 bg-gray-100 text-gray-600 rounded-full">
+                    <span className="text-xs sm:text-[10px] px-3 py-1.5 sm:px-2 sm:py-1 bg-gray-100 text-gray-600 rounded-full">
                       {option.duration}
                     </span>
                     <span className={`
-                      text-[10px] px-2 py-1 rounded-full
-                      ${option.type === 'Free' 
-                        ? 'bg-green-100 text-green-700' 
+                      text-xs sm:text-[10px] px-3 py-1.5 sm:px-2 sm:py-1 rounded-full
+                      ${option.type === 'Free'
+                        ? 'bg-green-100 text-green-700'
                         : 'bg-blue-100 text-blue-700'
                       }
                     `}>

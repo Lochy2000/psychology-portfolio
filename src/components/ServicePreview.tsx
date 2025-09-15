@@ -47,25 +47,25 @@ const ServicePreview: React.FC = () => {
                     <div className="flex flex-col items-center gap-1 mt-4">
                       {/* First row - 2 badges */}
                       <div className="flex gap-1">
-                        <span className="inline-block bg-sage-green/5 border border-sage-green/30 px-1.5 py-0.5 rounded-md">
+                        <span className="inline-flex items-center justify-center bg-sage-green/5 border border-sage-green/30 px-2 py-1 rounded-md min-w-[50px] min-h-[20px]">
                           <span className="text-[9px] font-medium text-deep-teal/80">1-on-1</span>
                         </span>
-                        <span className="inline-block bg-transparent border border-blush-pink/30 px-1.5 py-0.5 rounded-md">
+                        <span className="inline-flex items-center justify-center bg-transparent border border-blush-pink/30 px-2 py-1 rounded-md min-w-[50px] min-h-[20px]">
                           <span className="text-[9px] font-medium text-deep-teal/80">Groups</span>
                         </span>
                       </div>
                       {/* Second row - 1 badge centered */}
                       <div className="flex">
-                        <span className="inline-block bg-sage-green/5 border border-sage-green/30 px-1.5 py-0.5 rounded-md">
+                        <span className="inline-flex items-center justify-center bg-sage-green/5 border border-sage-green/30 px-2 py-1 rounded-md min-w-[50px] min-h-[20px]">
                           <span className="text-[9px] font-medium text-deep-teal/80">Workshops</span>
                         </span>
                       </div>
                       {/* Third row - 2 badges */}
                       <div className="flex gap-1">
-                        <span className="inline-block bg-transparent border border-blush-pink/30 px-1.5 py-0.5 rounded-md">
+                        <span className="inline-flex items-center justify-center bg-transparent border border-blush-pink/30 px-2 py-1 rounded-md min-w-[50px] min-h-[20px]">
                           <span className="text-[9px] font-medium text-deep-teal/80">Online</span>
                         </span>
-                        <span className="inline-block bg-sage-green/5 border border-sage-green/30 px-1.5 py-0.5 rounded-md">
+                        <span className="inline-flex items-center justify-center bg-sage-green/5 border border-sage-green/30 px-2 py-1 rounded-md min-w-[50px] min-h-[20px]">
                           <span className="text-[9px] font-medium text-deep-teal/80">Speaking</span>
                         </span>
                       </div>

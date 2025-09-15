@@ -9,13 +9,13 @@ const Services = () => {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <ServicesHero />
-      
+
       {/* Services Content */}
-      <div 
-        className="bg-gradient-to-b from-white via-cream/30 to-white"
+      <div
+        className="relative bg-transparent lg:bg-gradient-to-b lg:from-white lg:via-cream/30 lg:to-white"
         data-services-section
       >
-        <div className="container mx-auto px-4 py-16 sm:py-20">
+        <div className="container mx-auto px-4 py-8 sm:py-12">
           {/* Services List */}
           <ServicesList />
           

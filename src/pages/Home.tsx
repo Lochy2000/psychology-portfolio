@@ -19,7 +19,7 @@ const Home: React.FC = () => {
       
       {/* Main Content Container */}
       <div className="container mx-auto px-4">
-        <div className="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-16 xl:space-y-24">
+        <div className="space-y-3 sm:space-y-6 md:space-y-8 lg:space-y-16 xl:space-y-24">
           
           {/* Identity Quote Section */}
           <IdentityQuote />

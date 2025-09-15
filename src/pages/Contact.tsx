@@ -65,8 +65,8 @@ const Contact = () => {
               <div className="text-center group">
                 <div className="bg-gradient-to-br from-sage-green/10 to-blush-pink/10 rounded-2xl p-6 lg:p-8 hover:shadow-lg transition-all duration-300 border border-sage-green/20 h-full flex flex-col justify-between hover-lift pulse-glow min-h-[200px]">
                   <div className="flex-1 flex flex-col justify-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-sage-green to-sage-green/80 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg gentle-float">
-                      <Mail className="text-white" size={28} />
+                    <div className="w-16 h-10 sm:w-20 sm:h-12 bg-gradient-to-br from-sage-green to-sage-green/80 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg gentle-float">
+                      <Mail className="text-white" size={20} />
                     </div>
                     <h3 className="font-serif font-bold text-deep-teal mb-4 text-xl">Email</h3>
                   </div>
@@ -83,8 +83,8 @@ const Contact = () => {
               <div className="text-center group">
                 <div className="bg-gradient-to-br from-blush-pink/10 to-sage-green/10 rounded-2xl p-6 lg:p-8 hover:shadow-lg transition-all duration-300 border border-blush-pink/20 h-full flex flex-col justify-between hover-lift pulse-glow min-h-[200px]">
                   <div className="flex-1 flex flex-col justify-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blush-pink to-blush-pink/80 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg gentle-float" style={{ animationDelay: '2s' }}>
-                      <MessageCircle className="text-white" size={28} />
+                    <div className="w-16 h-10 sm:w-20 sm:h-12 bg-gradient-to-br from-blush-pink to-blush-pink/80 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg gentle-float" style={{ animationDelay: '2s' }}>
+                      <MessageCircle className="text-white" size={20} />
                     </div>
                     <h3 className="font-serif font-bold text-deep-teal mb-4 text-xl">WhatsApp</h3>
                   </div>
@@ -103,8 +103,8 @@ const Contact = () => {
               <div className="text-center group sm:col-span-2 lg:col-span-1">
                 <div className="bg-gradient-to-br from-deep-teal/10 to-blush-pink/10 rounded-2xl p-6 lg:p-8 hover:shadow-lg transition-all duration-300 border border-deep-teal/20 h-full flex flex-col justify-between hover-lift pulse-glow min-h-[200px]">
                   <div className="flex-1 flex flex-col justify-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-deep-teal to-deep-teal/80 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg gentle-float" style={{ animationDelay: '4s' }}>
-                      <Phone className="text-white" size={28} />
+                    <div className="w-16 h-10 sm:w-20 sm:h-12 bg-gradient-to-br from-deep-teal to-deep-teal/80 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg gentle-float" style={{ animationDelay: '4s' }}>
+                      <Phone className="text-white" size={20} />
                     </div>
                     <h3 className="font-serif font-bold text-deep-teal mb-4 text-xl">Phone</h3>
                     <div className="text-sm text-warm-gray mb-4 space-y-1">

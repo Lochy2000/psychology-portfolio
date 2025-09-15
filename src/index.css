@@ -653,7 +653,7 @@ html {
 }
 
 .mobile-arrow-animate {
-  animation: mobile-arrow-bounce 2s ease-in-out infinite;
+  animation: mobile-arrow-bounce 4s ease-in-out infinite;
   transform: rotate(360deg);
 }
 
@@ -1043,7 +1043,7 @@ html {
   }
   
   /* Compact buttons with better touch targets */
-  button, a.rounded-full {
+  button, a[role="button"].rounded-full {
     padding: 0.5rem 0.875rem !important;
     font-size: 0.8rem !important;
     min-height: 44px; /* iOS touch target recommendation */
@@ -1090,7 +1090,8 @@ html {
   button,
   a[role="button"],
   .btn-enhanced,
-  .rounded-full:not(.w-1\.5):not(.w-2) {
+  button.rounded-full,
+  a[role="button"].rounded-full {
     min-height: 44px;
     min-width: 44px;
     touch-action: manipulation;

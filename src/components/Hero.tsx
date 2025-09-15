@@ -16,10 +16,10 @@ const Hero: React.FC = () => {
   });
 
   return (
-    <section className="relative animated-background paper-texture pt-0 pb-6 lg:py-8">
+    <section className="relative animated-background paper-texture pt-0 pb-2 lg:py-8">
       {/* Mobile Layout */}
-      <div className="lg:hidden w-full px-4 py-2">
-        <div className="space-y-4 max-w-2xl mx-auto">
+      <div className="lg:hidden w-full px-4 py-1">
+        <div className="space-y-3 max-w-2xl mx-auto">
           {/* Main Content First - Better Hierarchy */}
           <div className="text-center space-y-3">
             <h1 className="text-2xl font-serif font-bold text-deep-teal leading-tight">
