@@ -1,7 +1,7 @@
 
-# Mette Theilmann - Narrative Psychology & Coaching Website
+# Mette Theilmann - Narrative Therapist & Coaching Website
 
-A modern, responsive website for Mette Nyholm Theilmann, featuring narrative psychology services, NLP coaching, parenting support, and corporate wellness solutions through HerEdge.
+A modern, responsive website for Mette Nyholm Theilmann, featuring Narrative Therapist services, NLP coaching, parenting support, and corporate wellness solutions through HerEdge.
 
 ##  Live Demo
 // ...existing code...
@@ -165,7 +165,7 @@ src/
 **Usage:**
 ```tsx
 <ServiceCard
-  title="Narrative Psychology"
+  title="Narrative Therapist"
   icon={Brain}
   description="Explore and challenge..."
   details={["Detail 1", "Detail 2"]}

@@ -10,16 +10,16 @@ const ServicesHero: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-[85vh] lg:min-h-screen flex items-center bg-gradient-to-br from-cream via-white to-soft-sage/10">
+    <div className="relative min-h-[60vh] lg:min-h-screen flex items-center bg-gradient-to-br from-cream via-white to-soft-sage/10">
       {/* Tree image - background on mobile, left side on desktop */}
-      <div className="absolute top-0 left-0 right-0 bottom-0 lg:inset-y-0 lg:left-0 lg:right-1/3 z-0 h-[120vh] lg:h-full">
+      <div className="absolute top-0 left-0 right-0 bottom-0 lg:inset-y-0 lg:left-0 lg:right-1/3 z-0 h-[150%] lg:h-full">
         <img
           src="/img/tree-services.png"
           alt="Growth and transformation tree"
           className="h-full w-full object-contain object-left-bottom lg:object-left opacity-75 lg:opacity-100"
           style={{
             filter: 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1))',
-            transform: 'translateY(10%) lg:translateY(0%)'
+            transform: 'translateY(5%) lg:translateY(0%)'
           }}
         />
       </div>
@@ -35,7 +35,7 @@ const ServicesHero: React.FC = () => {
             <div className="hidden lg:block" />
             
             {/* Text content */}
-            <div className="text-center lg:text-left py-8 sm:py-12 lg:py-0">
+            <div className="text-center lg:text-left py-4 sm:py-12 lg:py-0">
               {/* Personal quote */}
               <p className="font-handwritten text-deep-teal text-lg sm:text-xl lg:text-3xl mb-3 italic">
                 "Your story matters, and together we'll help it unfold"

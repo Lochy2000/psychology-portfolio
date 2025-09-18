@@ -25,10 +25,10 @@ const ServicesList: React.FC = () => {
   const services = [
     {
       id: 'narrative',
-      title: "Narrative Psychology",
+      title: "Narrative Therapist",
       icon: Brain,
       summary: "Transform limiting beliefs into empowering narratives",
-      fullContent: `As a Narrative Psychologist, I help you explore and challenge the stories that shape your identity – stories you tell yourself, but also the voices of others and the expectations of society.
+      fullContent: `As a Narrative Therapist, I help you explore and challenge the stories that shape your identity – stories you tell yourself, but also the voices of others and the expectations of society.
 
 These inner narratives influence how you see yourself, what you believe is possible, and how you move through the world. Some stories empower you. Others hold you back from living your full potential.
 

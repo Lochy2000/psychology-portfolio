@@ -47,7 +47,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cream via-cream/95 to-blush-pink/10 text-deep-teal animated-background">
-      <div className="container mx-auto px-4 py-8 sm:py-16">
+      <div className="container mx-auto px-4 pt-4 pb-8 sm:pt-8 sm:pb-16">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 sm:mb-16 animate-fade-in px-4">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-deep-teal mb-4 sm:mb-6 leading-tight">

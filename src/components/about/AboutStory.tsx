@@ -86,10 +86,10 @@ This is where the real magic happens - when you realize you've always held the p
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4 lg:gap-6">
-                  <div className="w-12 h-12 lg:w-16 lg:h-16 bg-white border-2 border-sage-green/30 rounded-full flex items-center justify-center transition-all duration-300 group-hover:border-sage-green group-hover:shadow-md">
-                    <story.icon className="text-deep-teal" size={20} />
+                  <div className="flex-shrink-0 w-16 h-16 lg:w-20 lg:h-20 bg-white border-2 border-sage-green/30 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:border-sage-green group-hover:shadow-md">
+                    <story.icon className="text-deep-teal" size={28} />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <span className="text-xs lg:text-sm font-handwritten text-sage-green block mb-1 font-medium">{story.chapter}</span>
                     <h3 className="text-xl lg:text-2xl xl:text-3xl font-serif font-bold text-deep-teal mb-2">{story.title}</h3>
                     <p className="text-gray-700 text-base lg:text-lg">{story.summary}</p>

@@ -19,7 +19,7 @@ const AboutQualifications = () => {
   return (
     <div ref={qualRef} className="space-y-8 pb-12">
       <div className={`text-center mb-12 transition-all duration-1000 ${qualVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
-        <div className="w-16 h-16 bg-deep-teal/10 border-2 border-deep-teal rounded-full flex items-center justify-center mx-auto mb-6">
+        <div className="w-16 h-16 bg-deep-teal/10 border-2 border-deep-teal rounded-2xl flex items-center justify-center mx-auto mb-6">
           <Award className="text-deep-teal" size={24} />
         </div>
         <h2 className="text-2xl lg:text-3xl xl:text-4xl font-serif font-bold text-deep-teal mb-6">My Professional Journey</h2>
@@ -39,10 +39,10 @@ const AboutQualifications = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 lg:w-8 lg:h-8 bg-deep-teal/10 border border-deep-teal/30 rounded-lg flex items-center justify-center mt-1">
-                    <IconComponent className="text-deep-teal" size={12} />
+                  <div className="flex-shrink-0 w-10 h-10 lg:w-12 lg:h-12 bg-deep-teal/10 border border-deep-teal/30 rounded-xl flex items-center justify-center">
+                    <IconComponent className="text-deep-teal" size={20} />
                   </div>
-                  <span className="text-gray-700 font-medium leading-relaxed text-sm lg:text-base">{qualification.text}</span>
+                  <span className="text-gray-700 font-medium leading-relaxed text-sm lg:text-base flex-1">{qualification.text}</span>
                 </div>
               </div>
             );

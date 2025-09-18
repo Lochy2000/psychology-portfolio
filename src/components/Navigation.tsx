@@ -18,7 +18,7 @@ const Navigation = () => {
   return (
     <nav className="bg-cream border-b border-sage-green/20 sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 sm:h-24">
           {/* Brand/Logo */}
           <Link 
             to="/" 
@@ -27,7 +27,7 @@ const Navigation = () => {
             <img 
               src="/logo.png" 
               alt="Mette Coaching" 
-              className="h-10 sm:h-24 w-auto"
+              className="h-14 sm:h-24 w-auto"
             />
           </Link>
           

@@ -15,8 +15,8 @@ const AboutHero = () => {
     <div ref={headerRef} className={`relative transition-all duration-1000 ${headerVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
       {/* Header */}
       <div className="text-center mb-12 lg:mb-16">
-        <div className="w-20 h-20 lg:w-24 lg:h-24 bg-sage-green/20 border-2 border-sage-green rounded-full flex items-center justify-center mx-auto mb-4 lg:mb-6">
-          <BookOpen className="text-sage-green" size={28} />
+        <div className="w-20 h-20 lg:w-24 lg:h-24 bg-sage-green/20 border-2 border-sage-green rounded-2xl flex items-center justify-center mx-auto mb-4 lg:mb-6">
+          <BookOpen className="text-sage-green" size={32} />
         </div>
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-deep-teal mb-4 lg:mb-6 leading-tight">
           <span className="text-shimmer-safe">My Story</span>
